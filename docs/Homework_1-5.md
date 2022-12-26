@@ -24,4 +24,4 @@ Create one big cmake project for the following tasks
 
 - switch
 - for
-- while
+- while (converter or triangle)
