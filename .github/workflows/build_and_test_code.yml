@@ -127,8 +127,8 @@ jobs:
       run: |
            gcc grades.c \
            && ./a.out \
-           && gcc leap_year.c \
-           && ./a.out \
+           && gcc leap_year.c 
+    # do not run the leap year binary since it expects an input from the user
            
     - name: Configure CMake "homework_1-4 - student struct"
       # Configure CMake in a 'build' subdirectory. `CMAKE_BUILD_TYPE` is only required if you are using a single-configuration generator such as make.

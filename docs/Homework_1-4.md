@@ -13,7 +13,7 @@ paginate: false
 
 # Homework #4
 
-Requirements: *CMake*, *Basics in C #2*
+Requirements: *CMake*, *User Input*, *Basics in C #2*
 
 ---
 
@@ -30,7 +30,7 @@ Average: 2.2
 ---
 
 ## Leap Year Checker
-Write a program in **C** to check if a given Year is a leap year (Schaltjahr). Create a corresponding output on the command line.
+Write a program in **C** to check if a given Year is a leap year (Schaltjahr). Read in a year from the user input on the command line. Create a corresponding output on the command line.
 Example:
 ```
 Year: 2020

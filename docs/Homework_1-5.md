@@ -22,7 +22,6 @@ Requirements: *CMake*, *User Input*, *Basics in C #2*
 TODO: 
 Create one big cmake project for the following tasks
 
-- user input
 - switch
 - for
 - while
