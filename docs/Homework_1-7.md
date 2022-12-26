@@ -11,18 +11,14 @@ class: invert
 paginate: false
 ---
 
-# Homework #5
+# Homework #6
 
-Requirements: *CMake*, *User Input*, *Basics in C #2*
+Requirements: *CMake*, *User Input*, *Basics in C #2*, *Functions*, *Libraries*
 
 ---
 
 ## ...
 
-TODO: 
-Create one big cmake project for the following tasks
+TODO
 
-- user input
-- switch
-- for
-- while
+- CMake project to create a library (e.g. for student struct)

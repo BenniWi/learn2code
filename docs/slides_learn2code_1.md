@@ -1206,15 +1206,6 @@ Even if is absolutely **mandatory** to know the git command line, VS Code gives 
 
 ---
 
-# Clean Code
-
-<a id="clean-code"></a>
-
-- using doxygen
-- using clang-format
-
----
-
 # Continuous Integration, Delivery & Deployment
 
 <a id="continuous-integration-delivery--deployment"></a>
@@ -1285,11 +1276,31 @@ In this file you need to make sure, that
 
 ---
 
+# Clean Code
+
+<a id="clean-code"></a>
+
+TODO
+- using doxygen
+- using clang-format
+
+---
+
+# Dynamic Memory
+
+<a id="dynamic-memory"></a>
+
+---
+
+# Commandline Arguments
+
+<a id="further-stuff"></a>
+
+---
+
 # Further stuff
 
 <a id="further-stuff"></a>
 
-- dynamic memory
 - strings?
-- command line arguments
 - advanced pointers

@@ -13,6 +13,8 @@ paginate: false
 
 # Homework #4
 
+Requirements: *CMake*, *Basics in C #2*
+
 ---
 
 ## Grades Average
@@ -40,7 +42,7 @@ Year: 2020
 
 ## Student Struct
 
-1. Re-Use your student structure defined in the former exercise. It was:
+1. Re-use your student structure defined in the former exercise. It was:
    - Define a new structure based type named student. An object of type student consist of:
 2. Instantiate a new student
 3. Create an output to the commandline to print the student structure. 
@@ -49,8 +51,7 @@ Year: 2020
 
 :point_up: to format your output you can use [ANSI escape sequences](https://stackoverflow.com/a/33206814)
 
----
+## Student Struct CMake
 
-## ...
-
-TODO: more homework for the stuff of basics #2
+1. Re-use your student structure code from above
+2. Create a fully working *CMake* project for your student struct code

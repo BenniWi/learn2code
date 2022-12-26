@@ -13,6 +13,8 @@ paginate: false
 
 # Homework #3
 
+Requirements: *Basics in C #1*
+
 ---
 
 ## Student Struct

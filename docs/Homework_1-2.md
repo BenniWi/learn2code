@@ -13,6 +13,8 @@ paginate: false
 
 # Homework #2
 
+Requirements: *Basics in C #1*
+
 ---
 
 ## Grades Average
