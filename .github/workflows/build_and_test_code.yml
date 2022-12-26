@@ -110,8 +110,6 @@ jobs:
       run: |
            gcc grades.c \
            && ./a.out \
-           && gcc leap_year.c \
-           && ./a.out \
            && gcc percent.c \
            && ./a.out 
         
@@ -128,6 +126,8 @@ jobs:
       working-directory: ${{github.workspace}}/code/homework_1-4/
       run: |
            gcc grades.c \
+           && ./a.out \
+           && gcc leap_year.c \
            && ./a.out \
            && gcc student.c \
            && ./a.out 
