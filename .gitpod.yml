@@ -1,0 +1,29 @@
+# specify some details about the image to use
+image:
+  file: .gitpod.dockerfile
+
+vscode:
+  extensions:
+    - donjayamanne.githistory
+    - ms-python.python
+    - twxs.cmake
+    - mhutchie.git-graph
+    - ms-vscode.cpptools-themes
+    - llvm-vs-code-extensions.vscode-clangd
+    - notskm.clang-tidy
+    - xaver.clang-format
+    - marp-team.marp-vscode
+    - zaaack.markdown-editor
+    - ms-vscode.cmake-tools
+    - ms-azuretools.vscode-docker
+    - yzhang.markdown-all-in-one
+
+# List the start up tasks. Learn more https://www.gitpod.io/docs/config-start-tasks/
+tasks:
+  - init: echo 'init script' # runs during prebuild
+    command: echo 'start script'
+
+# List the ports to expose. Learn more https://www.gitpod.io/docs/config-ports/
+ports:
+  - port: 3000
+    onOpen: open-preview

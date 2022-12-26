@@ -1,0 +1,6 @@
+vs code
+clang & clang tools
+git
+gtest
+gdb
+lldb
