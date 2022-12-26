@@ -11,7 +11,7 @@ class: invert
 paginate: false
 ---
 
-# Homework #2
+# Homework #4
 
 ---
 
@@ -24,6 +24,17 @@ Example:
 Values: 1, 2, 4, 1, 3
 Average: 2.2  
 ```
+
+---
+
+## Leap Year Checker
+Write a program in **C** to check if a given Year is a leap year (Schaltjahr). Create a corresponding output on the command line.
+Example:
+```
+Year: 2020
+2020 is a leap year!
+```
+:point_up: https://en.wikipedia.org/wiki/Leap_year
 
 ---
 
