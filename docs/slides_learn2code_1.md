@@ -36,9 +36,8 @@ The goal of this course is to enable all participants to learn proper software e
   }
 </style>
 
-- [Welcome](#welcome)
-- [Goal of this Course](#goal-of-this-course)
 - [Literature](#literature)
+- [Excercises@Home \& Exam](#excerciseshome--exam)
 - [Some Linux Basics](#some-linux-basics)
 - [The Language **C**](#the-language-c)
 - [The *basics* Example](#the-basics-example)
@@ -54,9 +53,7 @@ The goal of this course is to enable all participants to learn proper software e
 - [Test Driven Development](#test-driven-development)
 - [Debugging](#debugging)
 - [Visual Studio Code](#visual-studio-code)
-- [Clean Code](#clean-code)
 - [Continuous Integration, Delivery \& Deployment](#continuous-integration-delivery--deployment)
-- [Further stuff](#further-stuff)
 
 ---
 
@@ -1120,9 +1117,10 @@ run ```ctest``` or the test target ```./tests```
 ---
 
 ## Debug with **lldb**
+(unfortunately not working on codespace / gitpod)
 
 ```sh
-lldb example_9
+lldb debugging
 (lldb) breakpoint set --file main.c  --line 8
 (lldb) process launch
 (lldb) help # to get the possible commands
@@ -1140,7 +1138,7 @@ You can do exactly the same with your *tests* as target
 ## Debug With **gdb**
 
 ```sh
-gdb example_9
+gdb debugging
 (gdb) break main.c:8
 (gdb) run
 (gdb) help # to get the possible commands
@@ -1274,6 +1272,7 @@ In this file you need to make sure, that
 3. all your paths are correct
    ![width:1000px](images/github_actions_cmake_config.png "github cmake config")
 
+<!--
 ---
 
 # Clean Code
@@ -1304,3 +1303,5 @@ TODO
 
 - strings?
 - advanced pointers
+
+-->
