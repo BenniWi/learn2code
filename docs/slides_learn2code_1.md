@@ -223,7 +223,7 @@ You can download it [here](https://www.virtualbox.org/wiki/Downloads).
 
 ### Getting Started
 
-- Where to download? &rarr; [moodle](https://todo/link/is/still/missing)
+- Where to download? &rarr; [here](https://bwsyncandshare.kit.edu/s/Z7545N57sZRDo98?path=%2Fsuse_virtual_machine)
 - Import the downloaded virtual machine
   ![width:500px](images/v-box-add.png "v-box-add")
 - select the imported machine and click ![width:80px](images/v-box-start.png "v-box-start")
