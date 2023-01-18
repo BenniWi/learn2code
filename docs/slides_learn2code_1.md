@@ -88,7 +88,7 @@ basics of this course https://www.phys.uconn.edu/~rozman/Courses/P2200_13F/downl
 
 <style scoped>
   h1   {font-size: 60px}
-  {font-size: 20px}
+  {font-size: 18px}
 </style>
 
 # Some Linux Basics
@@ -97,19 +97,22 @@ basics of this course https://www.phys.uconn.edu/~rozman/Courses/P2200_13F/downl
 - open terminal ```ctrl + alt + t```
 - go to home ```cd ~``` or just ```cd```
 - go to last folder ```cd -```
-- go to directory
-  - absolute path ```cd /abspath/to/folder```
-  - relative path ```cd ./relpath/to/folder```
-  - one level up ```cd ..```
+- show current directory ```pwd```
+- list content of current folder ```ls -la``` (```man ls```)
 - create a new file ```touch my_new_file.ext```
 - create a new directory ```mkdir my_new_dir```
+- go to directory
+  - absolute path ```cd /home/<username>/my_new_dir```
+  - relative path ```cd ./my_new_dir```
+  - one level up ```cd ..```
 - open file in editor ```nano my_new_file.ext``` (or any other editor)
-- list content of current folder ```ls -la``` (```man ls```)
-- remove file ```rm my_new_file.ext```
+- rename (move) a file ```mv my_new_file.ext my_new_file.new_ext```
+- remove file ```rm my_new_file.new_ext```
 - remove directory ```rm -rf my_new_dir``` (:warning: very dangerous, always double check)
 - put some text to a file ```echo "some strange text" >> my_textfile.txt```
 - find text in file ```grep -rnw '.' -e 'strange' ```
-- :point_up: "tab" completes your input and gives you your possibilities
+- :point_up: "double-tab" completes your input and gives you your possibilities
+- :arrow_up: goes through the command history
 
 ---
 ## Task: Linux Basics
@@ -158,7 +161,7 @@ gcc basics.c # using the gnu compiler
 clang basics.c # using the clang compiler
 ```
 
-the result is a binary called **a.out**.
+the result is a **binary** called **a.out**.
 You can run the program with ```./a.out```
 
 ---
@@ -223,7 +226,7 @@ You can download it [here](https://www.virtualbox.org/wiki/Downloads).
 
 ### Getting Started
 
-- Where to download? &rarr; [here](https://bwsyncandshare.kit.edu/s/Z7545N57sZRDo98?path=%2Fsuse_virtual_machine)
+- Where to download? &rarr; [here](https://bwstaff-my.sharepoint.com/:f:/g/personal/thomas_kibler_bwstaff_de/EhfzkACTG7JGpk48VydgANsBwi7xBnSv8V1dSbHbCL3raQ?e=h0ukws)
 - Import the downloaded virtual machine
   ![width:500px](images/v-box-add.png "v-box-add")
 - select the imported machine and click ![width:80px](images/v-box-start.png "v-box-start")
