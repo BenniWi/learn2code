@@ -274,7 +274,7 @@ You can use this [repo](https://github.com/BenniWi/learn-git) and the correspond
 ---
 ### Version Control Example Graph
 
-![width:210px](images/version_control_example.png "version control")
+![width:800px](images/version_control_example.png "version control")
 
 ---
 
@@ -325,6 +325,25 @@ git log --graph # show the commit graph on command line
 ---
 
 ## Working on a Remote Repository
+
+---
+
+<style scoped>
+  h3   {font-size: 50px}
+  {font-size: 25px}
+</style>
+
+### Prerequisits
+1. Provide your GitHub name to get added to the project
+2. Add an SSH key for your machine (only if you don't use the codespace/gitpod)
+  - ![width:1000px](images/ssh-keygen.png "ssh-keygen")
+  - Print your public key to console: ```cat .ssh/id_rsa.pub```
+  - On GitHub: *profile* &rarr; *settings* &rarr; *SSH and GPG keys* &rarr; *New SSH key*
+    - paste and *add* your public key with a descriptive name
+
+---
+
+### Playing around
 
 we are working on this public repository https://github.com/BenniWi/learn-git
 
