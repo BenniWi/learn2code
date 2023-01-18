@@ -337,7 +337,7 @@ git log --graph # show the commit graph on command line
 </style>
 
 ### Prerequisits
-1. Provide your GitHub name to get added to the project
+1. Drop a comment [here](https://github.com/BenniWi/learn-git/issues/1) and I'll add you as a *Collaborator*
 2. Add an SSH key for your machine (only if you don't use the codespace/gitpod)
   - ![width:1000px](images/ssh-keygen.png "ssh-keygen")
   - Print your public key to console: ```cat .ssh/id_rsa.pub```
