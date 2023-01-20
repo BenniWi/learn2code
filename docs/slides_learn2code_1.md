@@ -229,6 +229,7 @@ You can download it [here](https://www.virtualbox.org/wiki/Downloads).
 - Where to download? &rarr; [here](https://bwstaff-my.sharepoint.com/:f:/g/personal/thomas_kibler_bwstaff_de/EhfzkACTG7JGpk48VydgANsBwi7xBnSv8V1dSbHbCL3raQ?e=h0ukws)
 - Import the downloaded virtual machine
   ![width:500px](images/v-box-add.png "v-box-add")
+- select the **.ova** file from your local disc &rarr; finish
 - select the imported machine and click ![width:80px](images/v-box-start.png "v-box-start")
 - username: *learn2code*, password: *dhbw2022*
 
