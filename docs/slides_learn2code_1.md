@@ -241,7 +241,7 @@ You can download it [here](https://www.virtualbox.org/wiki/Downloads).
 > ![width:200px](images/gitpod.png "gitpod")
 
 You can use this [repo](https://github.com/BenniWi/learn-git) and the corresponding [gitpod](https://gitpod.io/#https://github.com/BenniWi/learn-git)
-<a href="https://gitpod.io/#https://github.com/BenniWi/learn-git">
+<a href="https://gitpod.io/#git@github.com:BenniWi/learn2code.git">
 <img
 src="https://img.shields.io/badge/Contribute%20with-Gitpod-908a85?logo=gitpod"
 alt="Contribute with Gitpod"
