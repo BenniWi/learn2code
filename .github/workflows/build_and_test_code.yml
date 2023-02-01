@@ -104,6 +104,13 @@ jobs:
            && gcc basics_in_c_variables.c \
            && ./a.out
 
+## Build all in const_correctness
+    - name: build and run "const_correctness"
+      working-directory: ${{github.workspace}}/code/const_correctness/
+      run: |
+           gcc const_correctness.c \
+           && ./a.out
+
 ## Build homework 1-2
     - name: build and run "homework 1-2"
       working-directory: ${{github.workspace}}/code/homework_1-2/

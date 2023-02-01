@@ -36,6 +36,8 @@ The goal of this course is to enable all participants to learn proper software e
   }
 </style>
 
+- [Experience Survey](#experience-survey)
+- [Goal of this Course](#goal-of-this-course)
 - [Literature](#literature)
 - [Excercises@Home \& Exam](#excerciseshome--exam)
 - [Some Linux Basics](#some-linux-basics)
@@ -49,6 +51,7 @@ The goal of this course is to enable all participants to learn proper software e
 - [User Input in **C**](#user-input-in-c)
 - [Basics in **C** #2](#basics-in-c-2)
 - [Functions](#functions)
+- [Const Correctness](#const-correctness)
 - [Creating and Using Libraries](#creating-and-using-libraries)
 - [Test Driven Development](#test-driven-development)
 - [Debugging](#debugging)
@@ -670,10 +673,11 @@ nano example_2_macro.o # naive approach to show content of object file
 objdump -D example_2_macro.o # use linux tools to inspect the file
 ```
 
-TODO: Task - create a compiler flag list for the following flags
+#### Task: 
+Figure out the options in the following command. What are they doing?
 
 ```sh
-clang -Wall -Wextra -Werror -pedantic -O0 example_2.c
+clang -Wall -Wextra -Werror -pedantic -O0 basics_in_c_macro.c
 ```
 
 ---
@@ -977,9 +981,70 @@ Even with the prototype, the overview is not perfect. Putting code in separate f
 
 ---
 
-## TODO
+# Const Correctness
+<a id="const-correctness"></a>
 
-Const correctness, pointer als übergabe-parameter
+---
+
+## What is *const*
+[const type qualifier](https://en.cppreference.com/w/c/language/const)
+
+```C
+/* declare a const value variable */
+const int value_c = 33; // const value variable
+value_c = 0; // assign a new value -> ERROR
+```
+
+---
+
+## Differnt Types of *const* Pointers
+
+```C
+   /* declare a normale pointer */
+    int* ptr = &value_a;
+    ptr = &value_b; // assign a new memory address
+    *ptr = 33; // assign a new value
+
+    /* declare a const value pointer */
+    int const * const_s_ptr = &value_a; // const value pointer
+    const_s_ptr = &value_b; // assign a new memory address
+    *const_s_ptr = 44; // assign a new value -> ERROR
+
+    /* declare a const address pointer */
+    int * const s_const_ptr = &value_a; // const address pointer
+    s_const_ptr = &value_b; // assign a new memory address -> ERROR
+    *s_const_ptr = 55; // assign a new value
+
+    /* declare a const value and const address pointer*/
+    int const * const const_s_const_ptr = &value_a; // const value const address pointer
+    const_s_const_ptr = &value_b; // assign a new memory address -> ERROR
+    *const_s_const_ptr = 44; // assign a new value -> ERROR
+```
+
+---
+
+## *const* Correctness in Functions
+```C
+int* my_const_correct_function(int * mutable_ptr, int const * const immutable_ptr)
+{
+  int * inside_ptr; 
+  int const * const inside_csc_ptr = immutable_ptr;
+
+  inside_ptr = mutable_ptr; // fine
+  ++*inside_ptr;  // fine
+  ++*mutable_ptr; // fine
+  
+  //inside_ptr = immutable_ptr; // BAD, warning: assignment discards ‘const’ qualifier 
+  //++*immutable_ptr; // ERROR, can not change the pointer value or address
+
+  return inside_ptr; // fine
+  //return inside_csc_ptr; // BAD, return discards ‘const’ qualifier
+}
+```
+
+```C
+int* return_ptr = my_const_correct_function(ptr, s_const_ptr);
+```
 
 ---
 
