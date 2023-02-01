@@ -1106,7 +1106,12 @@ target_link_libraries(${PROJECT_NAME} PRIVATE <library_name>)
 
 ---
 
-TODO: create a task to create a static and a shared library and also check the result with ldd
+### Task: Create Two Libraries and Consume Them
+1. Create a static library which contains a function to add two integers
+2. Create a shared library which gives you a nice **Batman** print
+3. Create a *main* which consumes (links and uses) both libraries
+4. Figure out what the Linux tool **ldd** does 
+5. Check your compiled *main* with **ldd**, what do you see (and what not)?
 
 ---
 
