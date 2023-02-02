@@ -2,7 +2,7 @@
 cmake_minimum_required(VERSION 3.20)
 
 # define the project name
-project(tdd VERSION 1.0)
+project(tdd VERSION 1.0 LANGUAGES C CXX)
 
 # define the c standard version
 set(CMAKE_C_STANDARD 11)
@@ -16,16 +16,18 @@ set(CMAKE_CXX_STANDARD_REQUIRED True)
 add_compile_options(-Wall -Wextra -Werror -pedantic -O0)
 
 # add a library for your functions
-add_library(${PROJECT_NAME}_lib STATIC src/functions.c)
+# add it without SHARED/STATIC, so we can control it with
+# the variable BUILD_SHARED_LIBS
+add_library(tdd_functions_lib src/functions.c)
 # add the includes to the library
-target_include_directories(${PROJECT_NAME}_lib PUBLIC include)
+target_include_directories(tdd_functions_lib PUBLIC include)
 
 # add an executabel and assign files to it
-add_executable(${PROJECT_NAME} src/main.c)
+add_executable(tdd_ex_exec src/main.c)
 # add the include directories
-target_include_directories(${PROJECT_NAME} PUBLIC include)
+target_include_directories(tdd_ex_exec PUBLIC include)
 # link your library
-target_link_libraries(${PROJECT_NAME} PRIVATE ${PROJECT_NAME}_lib)
+target_link_libraries(tdd_ex_exec PRIVATE tdd_functions_lib)
 
 
 # enable the testing
@@ -39,8 +41,8 @@ add_executable(tests test/test_functions.cpp)
 # link the gtest libraries
 target_link_libraries(tests PRIVATE GTest::GTest GTest::Main)
 # link the library we want to test
-target_link_libraries(tests PRIVATE ${PROJECT_NAME}_lib)
-# add the inlucde direactores
+target_link_libraries(tests PRIVATE tdd_functions_lib)
+# add the include directories
 target_include_directories(tests PUBLIC include)
 # discover and add tests to the test list
 gtest_discover_tests(tests)

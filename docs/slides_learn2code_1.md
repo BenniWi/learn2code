@@ -36,9 +36,10 @@ The goal of this course is to enable all participants to learn proper software e
   }
 </style>
 
-- [Welcome](#welcome)
+- [Experience Survey](#experience-survey)
 - [Goal of this Course](#goal-of-this-course)
 - [Literature](#literature)
+- [Excercises@Home \& Exam](#excerciseshome--exam)
 - [Some Linux Basics](#some-linux-basics)
 - [The Language **C**](#the-language-c)
 - [The *basics* Example](#the-basics-example)
@@ -50,13 +51,12 @@ The goal of this course is to enable all participants to learn proper software e
 - [User Input in **C**](#user-input-in-c)
 - [Basics in **C** #2](#basics-in-c-2)
 - [Functions](#functions)
+- [Const Correctness](#const-correctness)
 - [Creating and Using Libraries](#creating-and-using-libraries)
 - [Test Driven Development](#test-driven-development)
 - [Debugging](#debugging)
 - [Visual Studio Code](#visual-studio-code)
-- [Clean Code](#clean-code)
 - [Continuous Integration, Delivery \& Deployment](#continuous-integration-delivery--deployment)
-- [Further stuff](#further-stuff)
 
 ---
 
@@ -91,7 +91,7 @@ basics of this course https://www.phys.uconn.edu/~rozman/Courses/P2200_13F/downl
 
 <style scoped>
   h1   {font-size: 60px}
-  {font-size: 20px}
+  {font-size: 18px}
 </style>
 
 # Some Linux Basics
@@ -100,19 +100,22 @@ basics of this course https://www.phys.uconn.edu/~rozman/Courses/P2200_13F/downl
 - open terminal ```ctrl + alt + t```
 - go to home ```cd ~``` or just ```cd```
 - go to last folder ```cd -```
-- go to directory
-  - absolute path ```cd /abspath/to/folder```
-  - relative path ```cd ./relpath/to/folder```
-  - one level up ```cd ..```
+- show current directory ```pwd```
+- list content of current folder ```ls -la``` (```man ls```)
 - create a new file ```touch my_new_file.ext```
 - create a new directory ```mkdir my_new_dir```
+- go to directory
+  - absolute path ```cd /home/<username>/my_new_dir```
+  - relative path ```cd ./my_new_dir```
+  - one level up ```cd ..```
 - open file in editor ```nano my_new_file.ext``` (or any other editor)
-- list content of current folder ```ls -la``` (```man ls```)
-- remove file ```rm my_new_file.ext```
+- rename (move) a file ```mv my_new_file.ext my_new_file.new_ext```
+- remove file ```rm my_new_file.new_ext```
 - remove directory ```rm -rf my_new_dir``` (:warning: very dangerous, always double check)
 - put some text to a file ```echo "some strange text" >> my_textfile.txt```
 - find text in file ```grep -rnw '.' -e 'strange' ```
-- :point_up: "tab" completes your input and gives you your possibilities
+- :point_up: "double-tab" completes your input and gives you your possibilities
+- :arrow_up: goes through the command history
 
 ---
 ## Task: Linux Basics
@@ -161,7 +164,7 @@ gcc basics.c # using the gnu compiler
 clang basics.c # using the clang compiler
 ```
 
-the result is a binary called **a.out**.
+the result is a **binary** called **a.out**.
 You can run the program with ```./a.out```
 
 ---
@@ -226,9 +229,10 @@ You can download it [here](https://www.virtualbox.org/wiki/Downloads).
 
 ### Getting Started
 
-- Where to download? &rarr; [moodle](https://todo/link/is/still/missing)
+- Where to download? &rarr; [here](https://bwstaff-my.sharepoint.com/:f:/g/personal/thomas_kibler_bwstaff_de/EhfzkACTG7JGpk48VydgANsBwi7xBnSv8V1dSbHbCL3raQ?e=h0ukws)
 - Import the downloaded virtual machine
   ![width:500px](images/v-box-add.png "v-box-add")
+- select the **.ova** file from your local disc &rarr; finish
 - select the imported machine and click ![width:80px](images/v-box-start.png "v-box-start")
 - username: *learn2code*, password: *dhbw2022*
 
@@ -240,7 +244,7 @@ You can download it [here](https://www.virtualbox.org/wiki/Downloads).
 > ![width:200px](images/gitpod.png "gitpod")
 
 You can use this [repo](https://github.com/BenniWi/learn-git) and the corresponding [gitpod](https://gitpod.io/#https://github.com/BenniWi/learn-git)
-<a href="https://gitpod.io/#https://github.com/BenniWi/learn-git">
+<a href="https://gitpod.io/#git@github.com:BenniWi/learn2code.git">
 <img
 src="https://img.shields.io/badge/Contribute%20with-Gitpod-908a85?logo=gitpod"
 alt="Contribute with Gitpod"
@@ -277,7 +281,7 @@ You can use this [repo](https://github.com/BenniWi/learn-git) and the correspond
 ---
 ### Version Control Example Graph
 
-![width:210px](images/version_control_example.png "version control")
+![width:800px](images/version_control_example.png "version control")
 
 ---
 
@@ -328,6 +332,25 @@ git log --graph # show the commit graph on command line
 ---
 
 ## Working on a Remote Repository
+
+---
+
+<style scoped>
+  h3   {font-size: 50px}
+  {font-size: 25px}
+</style>
+
+### Prerequisits
+1. Drop a comment [here](https://github.com/BenniWi/learn-git/issues/1) and I'll add you as a *Collaborator*
+2. Add an SSH key for your machine (only if you don't use the codespace/gitpod)
+  - ![width:1000px](images/ssh-keygen.png "ssh-keygen")
+  - Print your public key to console: ```cat .ssh/id_rsa.pub```
+  - On GitHub: *profile* &rarr; *settings* &rarr; *SSH and GPG keys* &rarr; *New SSH key*
+    - paste and *add* your public key with a descriptive name
+
+---
+
+### Playing around
 
 we are working on this public repository https://github.com/BenniWi/learn-git
 
@@ -646,14 +669,15 @@ Can you figure out what the preprocessor does?
 
 ```sh
 clang -c basics_in_c_macro.c
-nano example_2_macro.o # naive approach to show content of object file
-objdump -D example_2_macro.o # use linux tools to inspect the file
+nano basics_in_c_macro.o # naive approach to show content of object file
+objdump -D basics_in_c_macro.o # use linux tools to inspect the file
 ```
 
-TODO: Task - create a compiler flag list for the following flags
+#### Task: 
+Figure out the options in the following command. What are they doing?
 
 ```sh
-clang -Wall -Wextra -Werror -pedantic -O0 example_2.c
+clang -Wall -Wextra -Werror -pedantic -O0 basics_in_c_macro.c
 ```
 
 ---
@@ -713,6 +737,8 @@ What are the downsides?
 ![width:150px](images/cmake.png "cmake")
 
 > CMake is an open-source, cross-platform family of tools designed to build, test and package software. CMake is used to control the software compilation process using simple platform and compiler independent configuration files [...]. ([CMake](https://cmake.org/))
+<br>
+Book recommendation: [Professional CMake](https://crascit.com/professional-cmake/)
 
 ---
 
@@ -725,7 +751,7 @@ CMake config is always a file named CMakeLists.txt
 cmake_minimum_required(VERSION 3.20)
 
 # define the project name
-project(cmake_example VERSION 1.0) # do not overwrite cmake ;-)
+project(cmake_example VERSION 1.0 LANGUAGES C)
 
 # define the c standard version
 set(CMAKE_C_STANDARD 11)
@@ -735,7 +761,7 @@ set(CMAKE_C_STANDARD_REQUIRED True)
 add_compile_options(-Wall -Wextra -Werror -pedantic -O0)
 
 # add an executabel and assign files to it
-add_executable(${PROJECT_NAME} cmake.c)
+add_executable(cmake_example_exec cmake.c)
 ```
 
 ---
@@ -957,9 +983,70 @@ Even with the prototype, the overview is not perfect. Putting code in separate f
 
 ---
 
-## TODO
+# Const Correctness
+<a id="const-correctness"></a>
 
-Const correctness, pointer als übergabe-parameter
+---
+
+## What is *const*
+[const type qualifier](https://en.cppreference.com/w/c/language/const)
+
+```C
+/* declare a const value variable */
+const int value_c = 33; // const value variable
+value_c = 0; // assign a new value -> ERROR
+```
+
+---
+
+## Differnt Types of *const* Pointers
+
+```C
+   /* declare a normale pointer */
+    int* ptr = &value_a;
+    ptr = &value_b; // assign a new memory address
+    *ptr = 33; // assign a new value
+
+    /* declare a const value pointer */
+    int const * const_s_ptr = &value_a; // const value pointer
+    const_s_ptr = &value_b; // assign a new memory address
+    *const_s_ptr = 44; // assign a new value -> ERROR
+
+    /* declare a const address pointer */
+    int * const s_const_ptr = &value_a; // const address pointer
+    s_const_ptr = &value_b; // assign a new memory address -> ERROR
+    *s_const_ptr = 55; // assign a new value
+
+    /* declare a const value and const address pointer*/
+    int const * const const_s_const_ptr = &value_a; // const value const address pointer
+    const_s_const_ptr = &value_b; // assign a new memory address -> ERROR
+    *const_s_const_ptr = 44; // assign a new value -> ERROR
+```
+
+---
+
+## *const* Correctness in Functions
+```C
+int* my_const_correct_function(int * mutable_ptr, int const * const immutable_ptr)
+{
+  int * inside_ptr; 
+  int const * const inside_csc_ptr = immutable_ptr;
+
+  inside_ptr = mutable_ptr; // fine
+  ++*inside_ptr;  // fine
+  ++*mutable_ptr; // fine
+  
+  //inside_ptr = immutable_ptr; // BAD, warning: assignment discards ‘const’ qualifier 
+  //++*immutable_ptr; // ERROR, can not change the pointer value or address
+
+  return inside_ptr; // fine
+  //return inside_csc_ptr; // BAD, return discards ‘const’ qualifier
+}
+```
+
+```C
+int* return_ptr = my_const_correct_function(ptr, s_const_ptr);
+```
 
 ---
 
@@ -1021,7 +1108,12 @@ target_link_libraries(${PROJECT_NAME} PRIVATE <library_name>)
 
 ---
 
-TODO: create a task to create a static and a shared library and also check the result with ldd
+### Task: Create Two Libraries and Consume Them
+1. Create a static library which contains a function to add two integers
+2. Create a shared library which gives you a nice **Batman** print
+3. Create a *main* which consumes (links and uses) both libraries
+4. Figure out what the Linux tool **ldd** does 
+5. Check your compiled *main* with **ldd**, what do you see (and what not)?
 
 ---
 
@@ -1075,7 +1167,7 @@ add_executable(tests test/test_functions.cpp)
 # link the gtest libraries
 target_link_libraries(tests PRIVATE GTest::GTest GTest::Main)
 # link the library we want to test
-target_link_libraries(tests PRIVATE ${PROJECT_NAME}_lib)
+target_link_libraries(tests PRIVATE tdd_functions_lib)
 # add the include directories
 target_include_directories(tests PUBLIC include)
 # discover and add tests to the test list
@@ -1120,9 +1212,10 @@ run ```ctest``` or the test target ```./tests```
 ---
 
 ## Debug with **lldb**
+(unfortunately not working on codespace / gitpod)
 
 ```sh
-lldb example_9
+lldb debugging
 (lldb) breakpoint set --file main.c  --line 8
 (lldb) process launch
 (lldb) help # to get the possible commands
@@ -1140,7 +1233,7 @@ You can do exactly the same with your *tests* as target
 ## Debug With **gdb**
 
 ```sh
-gdb example_9
+gdb debugging
 (gdb) break main.c:8
 (gdb) run
 (gdb) help # to get the possible commands
@@ -1203,15 +1296,6 @@ Even if is absolutely **mandatory** to know the git command line, VS Code gives 
 - Check the git symbol on the left of VS Code
 - Check the additional right click actions for files
 - ...
-
----
-
-# Clean Code
-
-<a id="clean-code"></a>
-
-- using doxygen
-- using clang-format
 
 ---
 
@@ -1283,13 +1367,36 @@ In this file you need to make sure, that
 3. all your paths are correct
    ![width:1000px](images/github_actions_cmake_config.png "github cmake config")
 
+<!--
+---
+
+# Clean Code
+
+<a id="clean-code"></a>
+
+TODO
+- using doxygen
+- using clang-format
+
+---
+
+# Dynamic Memory
+
+<a id="dynamic-memory"></a>
+
+---
+
+# Commandline Arguments
+
+<a id="further-stuff"></a>
+
 ---
 
 # Further stuff
 
 <a id="further-stuff"></a>
 
-- dynamic memory
 - strings?
-- command line arguments
 - advanced pointers
+
+-->

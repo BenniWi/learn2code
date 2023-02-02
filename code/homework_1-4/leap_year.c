@@ -2,7 +2,13 @@
 
 int main(void) 
 {
-  unsigned int year = 2020;
+
+  printf("Please enter a year: ");
+
+  unsigned int year = 0;
+
+  // read in the year from the command line
+  scanf("%u", &year);
 
 /*
   A year is always a leap year, if it is a multiple of 400! -> year % 400 == 0

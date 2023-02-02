@@ -13,6 +13,8 @@ paginate: false
 
 # Homework #2
 
+Requirements: *Basics in C #1*
+
 ---
 
 ## Grades Average
@@ -35,14 +37,3 @@ Value: 90
 Percentage: 11
 11% of 90 equals 9.9!
 ```
-
----
-
-## Leap Year Checker
-Write a program in **C** to check if a given Year is a leap year (Schaltjahr). Create a corresponding output on the command line.
-Example:
-```
-Year: 2020
-2020 is a leap year!
-```
-:point_up: https://en.wikipedia.org/wiki/Leap_year

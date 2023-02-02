@@ -11,7 +11,9 @@ class: invert
 paginate: false
 ---
 
-# Homework #2
+# Homework #4
+
+Requirements: *CMake*, *User Input*, *Basics in C #2*
 
 ---
 
@@ -27,9 +29,20 @@ Average: 2.2
 
 ---
 
+## Leap Year Checker
+Write a program in **C** to check if a given Year is a leap year (Schaltjahr). Read in a year from the user input on the command line. Create a corresponding output on the command line.
+Example:
+```
+Year: 2020
+2020 is a leap year!
+```
+:point_up: https://en.wikipedia.org/wiki/Leap_year
+
+---
+
 ## Student Struct
 
-1. Re-Use your student structure defined in the former exercise. It was:
+1. Re-use your student structure defined in the former exercise. It was:
    - Define a new structure based type named student. An object of type student consist of:
 2. Instantiate a new student
 3. Create an output to the commandline to print the student structure. 
@@ -38,8 +51,7 @@ Average: 2.2
 
 :point_up: to format your output you can use [ANSI escape sequences](https://stackoverflow.com/a/33206814)
 
----
+## Student Struct CMake
 
-## ...
-
-TODO: more homework for the stuff of basics #2
+1. Re-use your student structure code from above
+2. Create a fully working *CMake* project for your student struct code
