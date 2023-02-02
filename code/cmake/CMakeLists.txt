@@ -2,7 +2,7 @@
 cmake_minimum_required(VERSION 3.20)
 
 # define the project name
-project(cmake_example VERSION 1.0)
+project(cmake_example VERSION 1.0 LANGUAGES C)
 
 # define the c standard version
 set(CMAKE_C_STANDARD 11)
@@ -16,4 +16,4 @@ set(CMAKE_CXX_STANDARD_REQUIRED True)
 add_compile_options(-Wall -Wextra -Werror -pedantic -O0)
 
 # add an executabel and assign files to it
-add_executable(${PROJECT_NAME} cmake.c)
+add_executable(cmake_example_exec cmake.c)
