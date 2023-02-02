@@ -8,10 +8,6 @@ project(cmake_example VERSION 1.0 LANGUAGES C)
 set(CMAKE_C_STANDARD 11)
 set(CMAKE_C_STANDARD_REQUIRED True)
 
-# define the c++ standard version
-set(CMAKE_CXX_STANDARD 14)
-set(CMAKE_CXX_STANDARD_REQUIRED True)
-
 # add some compile options
 add_compile_options(-Wall -Wextra -Werror -pedantic -O0)
 
