@@ -13,9 +13,9 @@ RUN \
  && sudo rm -rf /var/lib/apt/lists/*
  
 # install google chrome
-RUN wget -q https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-RUN sudo apt-get install ./google-chrome-stable_current_amd64.deb
-RUN rm ./google-chrome-stable_current_amd64.deb
+#RUN wget -q https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+#RUN sudo apt-get install ./google-chrome-stable_current_amd64.deb
+#RUN rm ./google-chrome-stable_current_amd64.deb
 
 # install latest nodejs
 RUN \
