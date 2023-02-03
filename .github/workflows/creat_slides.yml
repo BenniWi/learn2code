@@ -76,11 +76,12 @@ jobs:
         name: slides_package
         path: docs/downloads
 
-    - uses: "marvinpinto/action-automatic-releases@latest"
-        with:
-          repo_token: "${{ secrets.GITHUB_TOKEN }}"
-          automatic_release_tag: "latest"
-          prerelease: true
-          title: "Slides Package"
-          files: |
-            docs/downloads/*.pdf
+    - name: create a pre-release
+      uses: "marvinpinto/action-automatic-releases@latest"
+      with:
+        repo_token: "${{ secrets.GITHUB_TOKEN }}"
+        automatic_release_tag: "latest"
+        prerelease: true
+        title: "Slides Package"
+        files: |
+          docs/downloads/*.pdf
