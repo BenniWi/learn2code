@@ -73,5 +73,14 @@ jobs:
     - name: Use the Upload Artifact GitHub Action
       uses: actions/upload-artifact@v2
       with: 
-        name: assets-for-download
+        name: slides_package
         path: docs/downloads
+
+    - uses: "marvinpinto/action-automatic-releases@latest"
+        with:
+          repo_token: "${{ secrets.GITHUB_TOKEN }}"
+          automatic_release_tag: "latest"
+          prerelease: true
+          title: "Slides Package"
+          files: |
+            docs/downloads/*.pdf
