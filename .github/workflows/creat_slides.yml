@@ -69,16 +69,16 @@ jobs:
     - name: create homework_1-5
       working-directory: ${{github.workspace}}/docs/
       run: marp -c marp_config.yaml Homework_1-5.md -o downloads/Homework_1-5.pdf
-    
-  artifacts_and_pre_release:
-    needs: create_slides
+
+    # create artifacts
     - name: Use the Upload Artifact GitHub Action
       uses: actions/upload-artifact@v2
       with: 
         name: slides_package
         path: docs/downloads
         retention-days: 2 # delete artifacts after two days
-
+        
+    # create pre-release
     - name: create a pre-release
       if: ${{ github.ref == 'refs/heads/main' }} # pre release only on main
       uses: "marvinpinto/action-automatic-releases@latest"
