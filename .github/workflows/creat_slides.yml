@@ -39,7 +39,7 @@ jobs:
         sudo dpkg -i google-chrome-stable_current_amd64.deb
         sudo apt -f install -y
 
-    # create main slides
+    # create slides
     - name: Create a temporary artifact downloads folder
       working-directory: ${{github.workspace}}/docs/
       run: mkdir downloads
@@ -47,6 +47,28 @@ jobs:
     - name: create main pdf
       working-directory: ${{github.workspace}}/docs/
       run: marp -c marp_config.yaml slides_learn2code_1.md -o downloads/slides_learn2code_1.pdf
+    
+    - name: create homework_1-1
+      working-directory: ${{github.workspace}}/docs/
+      run: marp -c marp_config.yaml Homework_1-1.md -o downloads/Homework_1-1.pdf
+
+    - name: create homework_1-2
+      working-directory: ${{github.workspace}}/docs/
+      run: marp -c marp_config.yaml Homework_1-2.md -o downloads/Homework_1-2.pdf
+
+    - name: create homework_1-3
+      working-directory: ${{github.workspace}}/docs/
+      run: marp -c marp_config.yaml Homework_1-3.md -o downloads/Homework_1-3.pdf
+
+
+    - name: create homework_1-4
+      working-directory: ${{github.workspace}}/docs/
+      run: marp -c marp_config.yaml Homework_1-4.md -o downloads/Homework_1-4.pdf
+
+
+    - name: create homework_1-5
+      working-directory: ${{github.workspace}}/docs/
+      run: marp -c marp_config.yaml Homework_1-5.md -o downloads/Homework_1-5.pdf
     
     - name: Use the Upload Artifact GitHub Action
       uses: actions/upload-artifact@v2
