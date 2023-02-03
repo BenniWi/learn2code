@@ -44,21 +44,17 @@ jobs:
       working-directory: ${{github.workspace}}/docs/
       run: marp -c marp_config.yaml slides_learn2code_1.md
   
-  archive-build-artifacts:
-    runs-on: ubuntu-latest
-    steps:
-
-      - name: Step 1 - Create a temporary artifact downloads folder
-        run: mkdir downloads
+    - name: Step 1 - Create a temporary artifact downloads folder
+      run: mkdir downloads
         
-      - name: step 2 - Add artifacts to publish to the temp folder
-        run: |
-          cd downloads
-          cp ../slides_learn2code_1.pdf .
-          cd ..
+    - name: step 2 - Add artifacts to publish to the temp folder
+      run: |
+        cd downloads
+        cp ../slides_learn2code_1.pdf .
+        cd ..
     
-      - name: Step 3 - Use the Upload Artifact GitHub Action
-        uses: actions/upload-artifact@v2
-        with: 
-          name: assets-for-download
-          path: downloads
+    - name: Step 3 - Use the Upload Artifact GitHub Action
+      uses: actions/upload-artifact@v2
+      with: 
+        name: assets-for-download
+        path: downloads
