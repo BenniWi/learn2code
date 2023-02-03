@@ -9,7 +9,7 @@ RUN \
  && sudo apt-get install -y software-properties-common \ 
  && sudo add-apt-repository -y ppa:system76/pop \
  && sudo apt-get update \
- && sudo apt-get install -y cmake lldb gdb ninja-build libgtest-dev clang clang-tools chromium\
+ && sudo apt-get install -y cmake lldb gdb ninja-build libgtest-dev clang clang-tools\
  && sudo rm -rf /var/lib/apt/lists/*
 
 # install latest nodejs
@@ -21,3 +21,9 @@ RUN \
 
 # install marp
 RUN sudo npm install -g @marp-team/marp-cli
+
+# install google chrome
+RUN \
+ wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb \
+ && sudo apt install ./google-chrome-stable_current_amd64.deb \
+ && rm ./google-chrome-stable_current_amd64.deb
