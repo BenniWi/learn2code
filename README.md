@@ -4,10 +4,16 @@ This repository contains slides, exercise examples and more for my lecture "Soft
 
 All documents are located in the folder "docs". The documents are completely written in markdown and are optimized for [marp](https://marp.app/).
 
-possible marpit call
+## possible marpit call
 ```sh
-npx @marp-team/marp-cli@latest --pdf --pdf-outlines.headings --html 1 --allow-local-files --theme gaja --template bespoke --engine @marp-team/marp-core docs/slides_learn2code_1.md
+marp --pdf --pdf-outlines.headings --html 1 --allow-local-files docs/slides_learn2code_1.md
 ```
+
+## install latest nodejs
+https://tecadmin.net/install-latest-nodejs-npm-on-ubuntu/
+
+## install marp
+npm install -g @marp-team/marp-cli
 
 # Prepared Environments 
 
