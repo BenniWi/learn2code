@@ -12,10 +12,6 @@ RUN \
  && sudo apt-get install -y cmake lldb gdb ninja-build libgtest-dev clang clang-tools wget curl
  
 # install google chrome
-#ARG DEBIAN_FRONTEND=noninteractive
-#RUN apt-get install -y tzdata
-#ARG DEBIAN_FRONTEND=interactive
-
 RUN \
  sudo apt-get update \
  && sudo apt-get install -y fonts-liberation libasound2 libatk-bridge2.0-0 libatk1.0-0 libatspi2.0-0 libcairo2 libcups2\
@@ -25,14 +21,6 @@ RUN wget -q https://dl.google.com/linux/direct/google-chrome-stable_current_amd6
 RUN sudo dpkg -i google-chrome-stable_current_amd64.deb
 RUN sudo apt -f install -y
 RUN rm ./google-chrome-stable_current_amd64.deb
-
-#RUN curl -LO  https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-#RUN sudo apt-get install -y ./google-chrome-stable_current_amd64.deb
-#RUN rm google-chrome-stable_current_amd64.deb
-
-#RUN wget -q https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-#RUN sudo apt-get install ./google-chrome-stable_current_amd64.deb
-#RUN rm ./google-chrome-stable_current_amd64.deb
 
 # install latest nodejs
 RUN \
