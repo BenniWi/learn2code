@@ -11,7 +11,7 @@ env:
   BUILD_TYPE: Release
 
 jobs:
-  build:
+  create_slides:
     # The CMake configure and build commands are platform agnostic and should work equally well on Windows or Mac.
     # You can convert this to a matrix build if you need cross-platform coverage.
     # See: https://docs.github.com/en/free-pro-team@latest/actions/learn-github-actions/managing-complex-workflows#using-a-build-matrix
@@ -70,6 +70,8 @@ jobs:
       working-directory: ${{github.workspace}}/docs/
       run: marp -c marp_config.yaml Homework_1-5.md -o downloads/Homework_1-5.pdf
     
+  artifacts_and_pre_release:
+    - needs: create_slides
     - name: Use the Upload Artifact GitHub Action
       uses: actions/upload-artifact@v2
       with: 
