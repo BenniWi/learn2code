@@ -9,13 +9,27 @@ RUN \
  && sudo apt-get install -y software-properties-common \ 
  && sudo add-apt-repository -y ppa:system76/pop \
  && sudo apt-get update \
- && sudo apt-get install -y cmake lldb gdb ninja-build libgtest-dev clang clang-tools wget curl\
- && sudo rm -rf /var/lib/apt/lists/*
+ && sudo apt-get install -y cmake lldb gdb ninja-build libgtest-dev clang clang-tools wget curl
  
 # install google chrome
-RUN curl -LO  https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-RUN sudo apt-get install -y ./google-chrome-stable_current_amd64.deb
-RUN rm google-chrome-stable_current_amd64.deb
+#ARG DEBIAN_FRONTEND=noninteractive
+#RUN apt-get install -y tzdata
+#ARG DEBIAN_FRONTEND=interactive
+
+RUN \
+ sudo apt-get update \
+ && sudo apt-get install -y fonts-liberation libasound2 libatk-bridge2.0-0 libatk1.0-0 libatspi2.0-0 libcairo2 libcups2\
+ libdrm2 libgbm1 libgtk-3-0 libnspr4 libnss3 libpango-1.0-0 libu2f-udev libvulkan1 libx11-6 libxcb1 libxcomposite1\
+ libxdamage1 libxext6 libxfixes3 libxkbcommon0 libxrandr2 xdg-utils
+RUN wget -q https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+RUN sudo dpkg -i google-chrome-stable_current_amd64.deb
+RUN sudo apt -f install -y
+RUN rm ./google-chrome-stable_current_amd64.deb
+
+#RUN curl -LO  https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+#RUN sudo apt-get install -y ./google-chrome-stable_current_amd64.deb
+#RUN rm google-chrome-stable_current_amd64.deb
+
 #RUN wget -q https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 #RUN sudo apt-get install ./google-chrome-stable_current_amd64.deb
 #RUN rm ./google-chrome-stable_current_amd64.deb
@@ -29,3 +43,6 @@ RUN \
 
 # install marp
 RUN sudo npm install -g @marp-team/marp-cli
+
+# clean up
+RUN sudo rm -rf /var/lib/apt/lists/*
