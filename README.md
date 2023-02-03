@@ -14,3 +14,29 @@ All documents are located in the folder "docs". The documents are completely wri
     alt="Contribute with Gitpod"
   />
 </a>
+
+# How to Create the Slides
+
+## Install Latest nodejs
+https://tecadmin.net/install-latest-nodejs-npm-on-ubuntu/
+```sh
+sudo apt install -y curl 
+curl -sL https://deb.nodesource.com/setup_18.x | sudo -E bash - 
+```
+
+## Install Marp
+```sh
+npm install -g @marp-team/marp-cli
+```
+
+## Install google-chrome
+```sh
+wget -q https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+sudo apt-get install ./google-chrome-stable_current_amd64.deb
+rm ./google-chrome-stable_current_amd64.deb
+```
+
+## Possible Marp Call
+```sh
+marp -c docs/marp_config.yaml docs/slides_learn2code_1.md
+```
