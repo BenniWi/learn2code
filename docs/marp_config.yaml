@@ -6,4 +6,4 @@ options:
 pdf: true
 html: true
 pdfOutlines: 
-  headings: tru
+  headings: true
