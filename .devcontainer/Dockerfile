@@ -11,3 +11,13 @@ RUN \
  && sudo apt-get update \
  && sudo apt-get install -y cmake lldb gdb ninja-build libgtest-dev clang clang-tools chromium\
  && sudo rm -rf /var/lib/apt/lists/*
+
+# install latest nodejs
+RUN \
+ sudo apt install -y curl \
+ && curl -sL https://deb.nodesource.com/setup_18.x | sudo -E bash - \
+ && sudo apt-get update \
+ && sudo apt-get install -y nodejs
+
+# install marp
+RUN sudo npm install -g @marp-team/marp-cli
