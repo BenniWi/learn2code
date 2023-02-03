@@ -75,8 +75,10 @@ jobs:
       with: 
         name: slides_package
         path: docs/downloads
+        retention-days: 2 # delete artifacts after two days
 
     - name: create a pre-release
+      if: ${{ github.ref == 'refs/heads/main' }} # pre release only on main
       uses: "marvinpinto/action-automatic-releases@latest"
       with:
         repo_token: "${{ secrets.GITHUB_TOKEN }}"
