@@ -40,20 +40,15 @@ jobs:
         sudo apt -f install -y
 
     # create main slides
+    - name: Create a temporary artifact downloads folder
+      working-directory: ${{github.workspace}}/docs/
+      run: mkdir downloads
+
     - name: create main pdf
       working-directory: ${{github.workspace}}/docs/
-      run: marp -c marp_config.yaml slides_learn2code_1.md
-  
-    - name: Step 1 - Create a temporary artifact downloads folder
-      run: mkdir downloads
-        
-    - name: step 2 - Add artifacts to publish to the temp folder
-      run: |
-        cd downloads
-        cp ../slides_learn2code_1.pdf .
-        cd ..
+      run: marp -c marp_config.yaml slides_learn2code_1.md -o downloads/slides_learn2code_1.pdf
     
-    - name: Step 3 - Use the Upload Artifact GitHub Action
+    - name: Use the Upload Artifact GitHub Action
       uses: actions/upload-artifact@v2
       with: 
         name: assets-for-download
