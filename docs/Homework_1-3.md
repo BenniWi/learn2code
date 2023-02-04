@@ -25,22 +25,23 @@ Requirements: *Basics in C #1*
    3. list of grades (array)
    4. Use *defines* to specify the maximum name lenght and the maximum mount of grades
 2. Instantiate a new student
-3. Create an output to the commandline to print the student name and matriculation number. 
+3. Create an output to the commandline to print the student name and matriculation number.
 
 ---
 
 ## Pointer Swap
 
-Write a **C** program where you 
+Write a **C** program where you
+
 - initialize two *int*s
 - define two pointers pointing to these *int*s
 - use the two pointers to swap the content of the two *int*s
 
 Example:
-```
+
+```C
 int x = 5; int y = 4;
 printf(“x: %d, y: %d“, x, y); // x: 5, y: 4
 // pointers are swaped 
 printf(“x: %d, y: %d“, x, y); // x: 4, y: 5 
 ```
-

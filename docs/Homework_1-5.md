@@ -1,6 +1,6 @@
 ---
 marp: true
-title: Programming 1 - Homework 2
+title: Programming 1 - Homework 5
 author: Benjamin Wilking
 theme: uncover
 style: |
@@ -34,7 +34,8 @@ Create an executable to convert a decimal number to a binary number
 Create an executable to print two triangles to the console
 
 - read in the height for the triangles form the user on the command prompt
-- use two **for** loops to create two prints 
+- use two **for** loops to create two prints
+
   ```sh
   Enter height: 5
   *

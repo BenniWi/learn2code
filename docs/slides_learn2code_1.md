@@ -21,6 +21,7 @@ https://form.jotform.com/223513864665058; Password: *dhbw2022*
 ![width:500px](images/qr-code_TFE22.png "survey qr")
 
 ---
+
 # Goal of this Course
 
 The goal of this course is to enable all participants to learn proper software engineering. Being a good software engineer takes **time**, **will** to improve yourself and **commitment**. 
@@ -79,10 +80,12 @@ basics of this course https://www.phys.uconn.edu/~rozman/Courses/P2200_13F/downl
 # Excercises@Home & Exam  
 
 ## Homework
+
 - Homework is voluntary but recommended.
 - You are welcome to ask questions, I'm glad to help.
 
 ## Exam
+
 - During the last 3 weeks of the course. 
 - In teams of up to 3 people (2 preferred).
 - Delivery in [Git](#git).
@@ -95,6 +98,7 @@ basics of this course https://www.phys.uconn.edu/~rozman/Courses/P2200_13F/downl
 </style>
 
 # Some Linux Basics
+
 <a id="some-linux-basics"></a>
 
 - open terminal ```ctrl + alt + t```
@@ -113,11 +117,12 @@ basics of this course https://www.phys.uconn.edu/~rozman/Courses/P2200_13F/downl
 - remove file ```rm my_new_file.new_ext```
 - remove directory ```rm -rf my_new_dir``` (:warning: very dangerous, always double check)
 - put some text to a file ```echo "some strange text" >> my_textfile.txt```
-- find text in file ```grep -rnw '.' -e 'strange' ```
+- find text in file ```grep -rnw '.' -e 'strange'```
 - :point_up: "double-tab" completes your input and gives you your possibilities
 - :arrow_up: goes through the command history
 
 ---
+
 ## Task: Linux Basics
 
 1. Go to your home folder. 
@@ -279,6 +284,7 @@ You can use this [repo](https://github.com/BenniWi/learn-git) and the correspond
 > In software engineering, version control (also known as revision control, source control, or source code management) is a class of systems responsible for managing changes to computer programs, documents, large web sites, or other collections of information. ([wikipedia](https://en.wikipedia.org/wiki/Version_control))
 
 ---
+
 ### Version Control Example Graph
 
 ![width:800px](images/version_control_example.png "version control")
@@ -341,6 +347,7 @@ git log --graph # show the commit graph on command line
 </style>
 
 ### Prerequisits
+
 1. Drop a comment [here](https://github.com/BenniWi/learn-git/issues/1) and I'll add you as a *Collaborator*
 2. Add an SSH key for your machine (only if you don't use the codespace/gitpod)
   - ![width:1000px](images/ssh-keygen.png "ssh-keygen")
@@ -364,6 +371,7 @@ git push # bring local changes to the remote repo
 ```
 
 It is very likely, that you will run into problems because the remote repo has changed in the meantime. Try one of these:
+
 ```sh
 git pull --rebase
 git pull --merge
@@ -673,7 +681,8 @@ nano basics_in_c_macro.o # naive approach to show content of object file
 objdump -D basics_in_c_macro.o # use linux tools to inspect the file
 ```
 
-#### Task: 
+#### Task
+
 Figure out the options in the following command. What are they doing?
 
 ```sh
@@ -876,10 +885,10 @@ Read more  about [comparison operators](https://en.cppreference.com/w/c/language
 ```C
 int a=2;
 switch(a) {
-	case 1: printf("a is one\n"); break;
-	case 2: printf("a is two\n"); break;
-	case 3: printf("a is three\n"); break;
-	default: printf("a is something else\n"); break;
+    case 1: printf("a is one\n"); break;
+    case 2: printf("a is two\n"); break;
+    case 3: printf("a is three\n"); break;
+    default: printf("a is something else\n"); break;
 }
 ```
 
@@ -984,11 +993,13 @@ Even with the prototype, the overview is not perfect. Putting code in separate f
 ---
 
 # Const Correctness
+
 <a id="const-correctness"></a>
 
 ---
 
 ## What is *const*
+
 [const type qualifier](https://en.cppreference.com/w/c/language/const)
 
 ```C
@@ -1026,6 +1037,7 @@ value_c = 0; // assign a new value -> ERROR
 ---
 
 ## *const* Correctness in Functions
+
 ```C
 int* my_const_correct_function(int * mutable_ptr, int const * const immutable_ptr)
 {
@@ -1109,6 +1121,7 @@ target_link_libraries(<exec_name> PRIVATE <library_name>)
 ---
 
 ### Task: Create Two Libraries and Consume Them
+
 1. Create a static library which contains a function to add two integers
 2. Create a shared library which gives you a nice **Batman** print
 3. Create a *main* which consumes (links and uses) both libraries
@@ -1196,7 +1209,7 @@ TEST (tdd_tests, add_standard_integers) {
 ### Run the Tests
 
 after compiling everything you have two possibilites:
-``` cd <build_folder>```
+```cd <build_folder>```
 run ```ctest``` or the test target ```./tests```
 
 ---
@@ -1212,6 +1225,7 @@ run ```ctest``` or the test target ```./tests```
 ---
 
 ## Debug with **lldb**
+
 (unfortunately not working on codespace / gitpod)
 
 ```sh
@@ -1264,6 +1278,7 @@ It is time to get a bit lazy :smirk:
   cd debugging
   code . # start visual studio code
   ```
+
 - right click *CMakeLists.txt* &rarr; *Configure All Projects*
 - If you are asked for to select a *kit* &rarr; select one for linux
   ![width:700px](images/vs_code_select_configuration.png "vs code kit")
