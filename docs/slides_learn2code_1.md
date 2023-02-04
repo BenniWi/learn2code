@@ -1097,11 +1097,11 @@ Now, you can use the new library for your executable
 
 ```cmake
 # add an executable and assign files to it
-add_executable(${PROJECT_NAME} src/main.c)
+add_executable(<exec_name> src/main.c)
 # add the include directories
-target_include_directories(${PROJECT_NAME} PUBLIC include)
+target_include_directories(<exec_name> PUBLIC include)
 # link your libraries
-target_link_libraries(${PROJECT_NAME} PRIVATE <library_name>)
+target_link_libraries(<exec_name> PRIVATE <library_name>)
 ```
 
 <font size="+1">To be honest: using (3rd party) libraries can be extremely tedious &#128546;</font>
