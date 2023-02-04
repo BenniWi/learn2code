@@ -159,4 +159,18 @@ jobs:
     - name: Build "homework_1-5 - bin2dec and triangle"
       # Build your program with the given configuration
       run: cmake --build ${{github.workspace}}/code/homework_1-5/build --config ${{env.BUILD_TYPE}}
+
+## Build homework 1-6
+    - name: Configure CMake "homework_1-6 - student struct"
+      # Configure CMake in a 'build' subdirectory. `CMAKE_BUILD_TYPE` is only required if you are using a single-configuration generator such as make.
+      # See https://cmake.org/cmake/help/latest/variable/CMAKE_BUILD_TYPE.html?highlight=cmake_build_type
+      run: cmake -B ${{github.workspace}}/code/homework_1-6/build -S${{github.workspace}}/code/homework_1-6 -DCMAKE_BUILD_TYPE=${{env.BUILD_TYPE}} 
+
+    - name: Build "homework_1-6 - student struct"
+      # Build your program with the given configuration
+      run: cmake --build ${{github.workspace}}/code/homework_1-6/build --config ${{env.BUILD_TYPE}}
+
+    - name: Run "homework_1-6 - student struct"
+      working-directory: ${{github.workspace}}/code/homework_1-6/build
+      run: ./student_struct_exec 
   

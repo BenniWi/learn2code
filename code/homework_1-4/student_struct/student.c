@@ -5,9 +5,9 @@
 
 typedef struct 
 {
-	unsigned id;
+	unsigned int id;
 	char name[NAME_LENGTH];
-	double grades[NUMBER_OF_EXAMS];
+	float grades[NUMBER_OF_EXAMS];
 }student;
 
 int main(void) 
@@ -26,6 +26,7 @@ int main(void)
   // print all grades in a foor loop
   for (size_t i = 0; i < NUMBER_OF_EXAMS; ++i) 
   {
+    // we assume, that the array was initialized with zeros
     if (max.grades[i] > 0) 
     {
       if (max.grades[i] >= 4.0) 
