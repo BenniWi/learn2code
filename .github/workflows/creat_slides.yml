@@ -76,7 +76,7 @@ jobs:
 
     # create artifacts
     - name: Use the Upload Artifact GitHub Action
-      uses: actions/upload-artifact@v2
+      uses: actions/upload-artifact@v3
       with: 
         name: slides_package
         path: docs/downloads
