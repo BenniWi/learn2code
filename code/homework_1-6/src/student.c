@@ -4,7 +4,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-void student_init(student *const s, const char name[NAME_LENGTH])
+void student_init(student *const s, const char name[])
 {
 	s -> id = rand();      // Returns a pseudo-random integer between 0 and RAND_MAX.
 	//instead of using a for loop to copy the array, we can use strncpy	

@@ -11,13 +11,9 @@ class: invert
 paginate: false
 ---
 
-# Homework #6
+# Homework #8
 
 Requirements: *CMake*, *User Input*, *Basics in C #2*, *Functions*, *Libraries*, *Test Driven Development*
-
----
-
-## ...
 
 TODO
 

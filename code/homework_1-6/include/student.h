@@ -11,7 +11,7 @@ typedef struct {
 	unsigned int num_of_grades;
 } student;
 
-void student_init(student *const s, const char name[NAME_LENGTH]);
+void student_init(student *const s, const char name[]);
 void student_print(student const * const s);
 void student_add_grade(student * const s, float grade);
 
