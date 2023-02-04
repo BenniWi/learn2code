@@ -1185,7 +1185,7 @@ extern "C" { //the library we want to us is written in C
 }
 
 // the first test we want to write
-TEST (example8_tests, add_standard_integers) { 
+TEST (tdd_tests, add_standard_integers) { 
 
     EXPECT_EQ (11, add_integers(5,6));
 }
@@ -1261,7 +1261,7 @@ It is time to get a bit lazy :smirk:
 ## VS Code - Loading the Project
 
 - ```sh
-  cd example_9
+  cd debugging
   code . # start visual studio code
   ```
 - right click *CMakeLists.txt* &rarr; *Configure All Projects*
