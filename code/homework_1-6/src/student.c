@@ -2,16 +2,18 @@
 
 #include <stdio.h>
 #include <stdlib.h>
-
-srand(time(NULL));   // Initialization, should only be called once.
+#include <string.h>
 
 void student_init(student *const s, const char name[NAME_LENGTH])
 {
-	int r = rand();      // Returns a pseudo-random integer between 0 and RAND_MAX.
-		unsigned int id;
-	char name[NAME_LENGTH];
-	float grades[NUMBER_OF_EXAMS];
-	unsigned int num_of_grades;
+	s -> id = rand();      // Returns a pseudo-random integer between 0 and RAND_MAX.
+	//instead of using a for loop to copy the array, we can use strncpy	
+	strncpy(s -> name, name, strlen(name)+1);
+	for (unsigned int i = 0; i < NUMBER_OF_EXAMS; ++i)
+	{
+		s -> grades[i] = 0.0f;
+	}
+	s -> num_of_grades = 0;	
 }
 
 void student_print(student const * const s)
@@ -58,4 +60,8 @@ void student_print(student const * const s)
 }
 
 
-bool student_add_grade(student * const s, float grade);
+void student_add_grade(student * const s, float grade)
+{
+	s -> grades[s->num_of_grades] = grade;
+	++(s -> num_of_grades);
+}

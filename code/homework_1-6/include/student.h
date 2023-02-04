@@ -15,6 +15,6 @@ typedef struct {
 
 void student_init(student *const s, const char name[NAME_LENGTH]);
 void student_print(student const * const s);
-bool student_add_grade(student * const s, float grade);
+void student_add_grade(student * const s, float grade);
 
 #endif /* STUDENT_H_ */

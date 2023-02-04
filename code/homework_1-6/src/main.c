@@ -1,11 +1,18 @@
 #include "student.h"
 
-#include <string.h>
-
 int main() 
 {
-	student max = {1234, "Max ustermann", {1.2, 4.3, 1.4}, 3};
-	max.id = 4312;
-	strncpy(max.name, "Max Mustermann", NAME_LENGTH -1);
+	student max, maria; 
+
+	student_init(&max, "Max Mustermann");
+	student_add_grade(&max, 1.2f);
+	student_add_grade(&max, 4.3f);
+	student_add_grade(&max, 1.4f);
+
+	student_init(&maria, "Maria Musterfrau");
+	student_add_grade(&maria, 5.0f);
+	student_add_grade(&maria, 1.0f);
+	
 	student_print(&max);
+	student_print(&maria);
 }
