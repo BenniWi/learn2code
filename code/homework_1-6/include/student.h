@@ -4,8 +4,6 @@
 #define NUMBER_OF_EXAMS (5U)
 #define NAME_LENGTH (25U)
 
-#include <stdbool.h>
-
 typedef struct {
 	unsigned int id;
 	char name[NAME_LENGTH];
