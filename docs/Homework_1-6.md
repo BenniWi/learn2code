@@ -13,7 +13,7 @@ paginate: false
 
 # Homework #6
 
-Requirements: *CMake*, *User Input*, *Basics in C #2*, *Functions*
+Requirements: *CMake*, *User Input*, *Basics in C #2*, *Functions*, *Const Correctness*
 
 ---
 
