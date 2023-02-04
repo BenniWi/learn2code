@@ -15,6 +15,10 @@ paginate: false
 
 Requirements: *CMake*, *User Input*, *Basics in C #2*, *Functions*, *Libraries*
 
+---
+
+## Student Struct as Library
+
 TODO
 
 - CMake project to create a library (e.g. for student struct)

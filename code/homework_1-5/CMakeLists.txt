@@ -2,7 +2,7 @@
 cmake_minimum_required(VERSION 3.20)
 
 # define the project name
-project(homework51 VERSION 1.0 LANGUAGES C)
+project(homework5 VERSION 1.0 LANGUAGES C)
 
 # define the c standard version
 set(CMAKE_C_STANDARD 11)
