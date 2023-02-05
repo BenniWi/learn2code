@@ -74,6 +74,10 @@ jobs:
       working-directory: ${{github.workspace}}/docs/
       run: marp -c marp_config.yaml Homework_1-6.md -o downloads/Homework_1-6.pdf
 
+    - name: create homework_1-7
+      working-directory: ${{github.workspace}}/docs/
+      run: marp -c marp_config.yaml Homework_1-7.md -o downloads/Homework_1-7.pdf
+
     # create artifacts
     - name: Use the Upload Artifact GitHub Action
       uses: actions/upload-artifact@v3

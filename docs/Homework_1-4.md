@@ -49,11 +49,13 @@ Year: 2020
 1. Re-use your student structure defined in the former exercise. It was:
    - Define a new structure based type named student. An object of type student consist of:
 2. Instantiate a new student
-3. Create an output to the commandline to print the student structure. 
+3. Create an output to the commandline to print the student structure.
    1. The name shall be printed in magenta and shall be underlined.
    2. Print all grades using a *for loop*, where grades >= 4.0 shall be printed in red.
 
 :point_up: to format your output you can use [ANSI escape sequences](https://stackoverflow.com/a/33206814)
+
+---
 
 ## Student Struct CMake
 
