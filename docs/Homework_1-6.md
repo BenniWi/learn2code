@@ -11,15 +11,13 @@ class: invert
 paginate: false
 ---
 
-<style scoped>
-  section{
-  font-size: 20px;
-  }
-</style>
-
 # Homework #6
 
 Requirements: *CMake*, *User Input*, *Basics in C #2*, *Functions*, *Const Correctness*
+
+---
+
+## Student Struct with Functions
 
 In Homework 1-4 we implemented the student struct. We want to re-use this struct here and extend it a bit.
 

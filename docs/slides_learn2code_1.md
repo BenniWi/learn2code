@@ -1207,6 +1207,7 @@ TEST (tdd_tests, add_standard_integers) {
     EXPECT_EQ (11, add_integers(5,6));
 }
 ```
+[GTest CheatSheet](https://qiangbo-workspace.oss-cn-shanghai.aliyuncs.com/2018-12-05-gtest-and-coverage/PlainGoogleQuickTestReferenceGuide1.pdf)
 
 ---
 
