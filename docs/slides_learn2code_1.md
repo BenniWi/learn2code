@@ -53,7 +53,7 @@ The goal of this course is to enable all participants to learn proper software e
 - [Basics in **C** #2](#basics-in-c-2)
 - [Functions](#functions)
 - [Const Correctness](#const-correctness)
-- [Creating and Using Libraries](#creating-and-using-libraries)
+- [Libraries](#libraries)
 - [Test Driven Development](#test-driven-development)
 - [Debugging](#debugging)
 - [Visual Studio Code](#visual-studio-code)
@@ -809,6 +809,10 @@ Figure out what these options are doing with:
 cmake --help
 ```
 
+<font size="+1">
+(Learn more about <a href="[url](https://cmake.org/cmake/help/latest/manual/cmake-generators.7.html)">generators</a>, <a href="https://en.wikipedia.org/wiki/Make_(software)">make</a>, <a href="https://en.wikipedia.org/wiki/Ninja_(build_system)">ninja</a>)
+</font>
+
 ---
 
 Still, calling **CMake** seems to be tedious :sweat:
@@ -1077,9 +1081,9 @@ From now on, we will stick to the following folder structure
 
 ---
 
-# Creating and Using Libraries
+# Libraries
 
-<a id="creating-and-using-libraries"></a>
+<a id="libraries"></a>
 
 So, we learned how to extract code into extra files :sparkler:.
 It could be even better.
