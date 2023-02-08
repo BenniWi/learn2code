@@ -6,8 +6,10 @@ int main()
     printf("Enter height: ");
     scanf("%d", &triangleSize);
 
-    for(int i = 0; i < triangleSize; ++i) {
-        for(int j = 0; j <= i; ++j) {
+    for (int i = 0; i < triangleSize; ++i)
+    {
+        for (int j = 0; j <= i; ++j)
+        {
             printf("*");
         }
         printf("\n");
@@ -15,11 +17,16 @@ int main()
 
     printf("\n\n");
 
-    for(int i = 0; i < triangleSize; ++i) {
-        for(int j = 1; j <= triangleSize + i; ++j) {
-            if((triangleSize - i) > j) {
+    for (int i = 0; i < triangleSize; ++i)
+    {
+        for (int j = 1; j <= triangleSize + i; ++j)
+        {
+            if ((triangleSize - i) > j)
+            {
                 printf(" ");
-            } else {
+            }
+            else
+            {
                 printf("*");
             }
         }

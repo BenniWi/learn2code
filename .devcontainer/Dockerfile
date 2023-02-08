@@ -9,7 +9,7 @@ RUN \
  && sudo apt-get install -y software-properties-common \ 
  && sudo add-apt-repository -y ppa:system76/pop \
  && sudo apt-get update \
- && sudo apt-get install -y build-essential cmake lldb gdb ninja-build libgtest-dev clang clang-tools wget curl
+ && sudo apt-get install -y build-essential cmake lldb gdb ninja-build libgtest-dev clang clang-tools clang-format wget curl
  
 # install google chrome
 RUN \

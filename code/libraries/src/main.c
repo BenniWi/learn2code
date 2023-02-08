@@ -1,6 +1,6 @@
-#include <stdio.h>
 #include <functions.h>
 #include <prints.h>
+#include <stdio.h>
 
 int main(void)
 {
