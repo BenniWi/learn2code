@@ -552,7 +552,8 @@ int main()
   struct my_struct ms2;
   // instantiate a structure with initialization
   struct my_struct ms3 = {.a=5, .b=6, .c=7, .d=0.1, .e=0.2, .f=0.3};
-
+  // access elements of a structure 
+  int k = ms3.a + ms3.b + ms3.c;
   return 0;
 }
 ```
@@ -578,10 +579,10 @@ typedef struct
 
 int main()
 {
-  //locally instantiated structure with direct initialization 
+  //locally instantiated structure "or" with direct initialization 
   struct outer_struct or = {.a=5, .b=6, .c=7, .d=0.1, .e=0.2, .f=0.3};
 
-  //using the new type of structure
+  //using the new type of structure to instantiate structure "otd"
   outer_td_struct otd = {.a=5, .b=6, .c=7, .d=0.1, .e=0.2, .f=0.3};
 
   return 0;
