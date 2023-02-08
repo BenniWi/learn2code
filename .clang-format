@@ -5,4 +5,4 @@ BasedOnStyle: Google
 IndentWidth: 4
 BreakBeforeBraces: Allman
 ColumnLimit: 120
-AllowShortFunctionsOnASingleLine: None 
+AllowShortFunctionsOnASingleLine: None

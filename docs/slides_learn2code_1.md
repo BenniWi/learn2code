@@ -11,7 +11,7 @@ class: invert
 paginate: false
 ---
 
-![width:800px](images/welcome.jpg "welcome") 
+![width:800px](images/welcome.jpg "welcome")
 
 ---
 
@@ -24,7 +24,7 @@ https://form.jotform.com/223513864665058; Password: *dhbw2022*
 
 # Goal of this Course
 
-The goal of this course is to enable all participants to learn proper software engineering. Being a good software engineer takes **time**, **will** to improve yourself and **commitment**. 
+The goal of this course is to enable all participants to learn proper software engineering. Being a good software engineer takes **time**, **will** to improve yourself and **commitment**.
 
 ![width:450px](images/Dunning-Kruger-Effect-en.png "dunning kruger effect")
 <font size="+1"><a href=https://commons.wikimedia.org/wiki/File:Dunning-Kruger-Effect-en.png>wikimedia</a></font>
@@ -71,9 +71,9 @@ The goal of this course is to enable all participants to learn proper software e
 
 <a id="literature"></a>
 
-free c-books http://www.freebookcentre.net/Language/Free-C-Programming-Books-Download-1.htm
+[free c-books](http://www.freebookcentre.net/Language/Free-C-Programming-Books-Download-1.htm)
 
-basics of this course https://www.phys.uconn.edu/~rozman/Courses/P2200_13F/downloads/TheBasicsofCProgramming-draft-20131030.pdf
+[basics of this course](https://www.phys.uconn.edu/~rozman/Courses/P2200_13F/downloads/TheBasicsofCProgramming-draft-20131030.pdf)
 
 ---
 
@@ -86,7 +86,7 @@ basics of this course https://www.phys.uconn.edu/~rozman/Courses/P2200_13F/downl
 
 ## Exam
 
-- During the last 3 weeks of the course. 
+- During the last 3 weeks of the course.
 - In teams of up to 3 people (2 preferred).
 - Delivery in [Git](#git).
 
@@ -125,8 +125,8 @@ basics of this course https://www.phys.uconn.edu/~rozman/Courses/P2200_13F/downl
 
 ## Task: Linux Basics
 
-1. Go to your home folder. 
-2. Create a new file in a new folder. 
+1. Go to your home folder.
+2. Create a new file in a new folder.
 3. "echo" some text to the file
 4. open the file with an editor and add more lines
 5. find a certain string in the file with *grep*
@@ -191,6 +191,7 @@ Finally, you can run the binary with
 ```sh
 ./basics
 ```
+
 :point_up: you can check the *return* value with: ```./basics; echo $?```
 
 ---
@@ -359,7 +360,7 @@ git log --graph # show the commit graph on command line
 
 ### Playing around
 
-we are working on this public repository https://github.com/BenniWi/learn-git
+we are working on this public repository [learn-git](https://github.com/BenniWi/learn-git)
 
 ```sh
 git clone git@github.com:BenniWi/learn-git.git # get the repo
@@ -1131,7 +1132,7 @@ target_link_libraries(<exec_name> PRIVATE <library_name>)
 1. Create a static library which contains a function to add two integers
 2. Create a shared library which gives you a nice **Batman** print
 3. Create a *main* which consumes (links and uses) both libraries
-4. Figure out what the Linux tool **ldd** does 
+4. Figure out what the Linux tool **ldd** does
 5. Check your compiled *main* with **ldd**, what do you see (and what not)?
 
 ---
@@ -1209,6 +1210,7 @@ TEST (tdd_tests, add_standard_integers) {
     EXPECT_EQ (11, add_integers(5,6));
 }
 ```
+
 [GTest CheatSheet](https://qiangbo-workspace.oss-cn-shanghai.aliyuncs.com/2018-12-05-gtest-and-coverage/PlainGoogleQuickTestReferenceGuide1.pdf)
 
 ---
@@ -1227,7 +1229,7 @@ run ```ctest``` or the test target ```./tests```
 
 - extend CMake Build with: -D CMAKE_BUILD_TYPE=Debug
   - you need the compiler to create debug symbols
-- either use gdb or lldb https://lldb.llvm.org/use/map.html
+- either use gdb or [lldb](https://lldb.llvm.org/use/map.html)
 
 ---
 
