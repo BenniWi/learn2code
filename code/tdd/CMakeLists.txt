@@ -37,12 +37,12 @@ find_package(GTest REQUIRED)
 # include the gtest CMake stuff
 include(GoogleTest)
 # create a test executable
-add_executable(tests test/test_functions.cpp)
+add_executable(tdd_tests test/test_functions.cpp)
 # link the gtest libraries
-target_link_libraries(tests PRIVATE GTest::GTest GTest::Main)
+target_link_libraries(tdd_tests PRIVATE GTest::GTest GTest::Main)
 # link the library we want to test
-target_link_libraries(tests PRIVATE tdd_functions_lib)
+target_link_libraries(tdd_tests PRIVATE tdd_functions_lib)
 # add the include directories
-target_include_directories(tests PUBLIC include)
+target_include_directories(tdd_tests PUBLIC include)
 # discover and add tests to the test list
-gtest_discover_tests(tests)
+gtest_discover_tests(tdd_tests)

@@ -12,9 +12,9 @@ set(CMAKE_C_STANDARD_REQUIRED True)
 add_compile_options(-Wall -Wextra -Werror -pedantic -O0)
 
 # add an executabel and assign files to it
-add_executable(student_struct_exec
+add_executable(student_struct_hw_6_exec
                     src/main.c
                     src/student.c)
 
 # add include directories to executable
-target_include_directories(student_struct_exec PRIVATE include)
+target_include_directories(student_struct_hw_6_exec PRIVATE include)

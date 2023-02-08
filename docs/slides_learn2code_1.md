@@ -561,7 +561,8 @@ int main()
 ---
 
 ```C
-// globally defined structure
+// globally defined structure (outside of main)
+// works equivalent to define a structure inside of main
 struct outer_struct 
 {
   int a,b,c;

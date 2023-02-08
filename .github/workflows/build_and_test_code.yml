@@ -148,7 +148,7 @@ jobs:
 
     - name: Run "homework_1-4 - student struct"
       working-directory: ${{github.workspace}}/code/homework_1-4/student_struct/build
-      run: ./student_project_exec
+      run: ./student_struct_hw4_exec
     
 ## Build homework 1-5
     - name: Configure CMake "homework_1-5 - bin2dec and triangle"
@@ -172,7 +172,7 @@ jobs:
 
     - name: Run "homework_1-6 - student struct"
       working-directory: ${{github.workspace}}/code/homework_1-6/build
-      run: ./student_struct_exec 
+      run: ./student_struct_hw_6_exec 
 
 ## Build homework 1-7
     - name: Configure CMake "homework_1-7 - student struct"
@@ -186,7 +186,7 @@ jobs:
 
     - name: Run "homework_1-7 - student struct"
       working-directory: ${{github.workspace}}/code/homework_1-7/build
-      run: ./student_struct_exec 
+      run: ./student_struct_hw7_exec 
 
     - name: Test "homework_1-7 - student struct"
       working-directory: ${{github.workspace}}/code/homework_1-7/build
