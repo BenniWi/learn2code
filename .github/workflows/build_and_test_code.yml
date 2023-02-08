@@ -186,7 +186,7 @@ jobs:
 
     - name: Run "homework_1-7 - student struct"
       working-directory: ${{github.workspace}}/code/homework_1-7/build
-      run: ./student_struct_exec 
+      run: ./student_struct_hw7_exec 
 
     - name: Test "homework_1-7 - student struct"
       working-directory: ${{github.workspace}}/code/homework_1-7/build
