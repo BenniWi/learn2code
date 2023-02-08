@@ -9,9 +9,9 @@ int main()
     unsigned long long result = 0;
 
     int factor = 1;
-    while(userInput > 0) 
+    while (userInput > 0)
     {
-        if(userInput % 2) 
+        if (userInput % 2)
         {
             result += factor;
         }

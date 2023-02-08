@@ -4,7 +4,7 @@ int main()
 {
     /* print something to the command line
     make sure to end with a new line "\n"
-    you can find more "control-characters" 
+    you can find more "control-characters"
     on e.g. https://en.wikipedia.org/wiki/Control_character
     BTW: this is a multi-line comment */
     printf("Hello World!\n");

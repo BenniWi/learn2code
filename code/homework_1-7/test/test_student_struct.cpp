@@ -1,37 +1,38 @@
 
-#include "gtest/gtest.h" // include the gtest functions & macros
-extern "C" { //the library we want to us is written in C
-  #include "student.h"
+#include "gtest/gtest.h"  // include the gtest functions & macros
+extern "C"
+{  // the library we want to us is written in C
+#include "student.h"
 }
 
-class StudentTest : public :: testing :: Test
+class StudentTest : public ::testing ::Test
 {
-    protected:
-        student max;
-        virtual void SetUp()
-        {
-            // set some values to check if the init method overwrites them correctly
-            max.id = 0;
-            max.num_of_grades = 100;
-            // init the student
-            student_init(&max, "Max Mustermann");
-        }
+   protected:
+    student max;
+    virtual void SetUp()
+    {
+        // set some values to check if the init method overwrites them correctly
+        max.id = 0;
+        max.num_of_grades = 100;
+        // init the student
+        student_init(&max, "Max Mustermann");
+    }
 };
 
 // the first test we want to write
-TEST_F(StudentTest, init) 
-{ 
+TEST_F(StudentTest, init)
+{
     ASSERT_STREQ("Max Mustermann", max.name);
     ASSERT_NE(0, max.id);
     ASSERT_EQ(0, max.num_of_grades);
-    for(unsigned int i = 0; i < NUMBER_OF_EXAMS; ++i)
+    for (unsigned int i = 0; i < NUMBER_OF_EXAMS; ++i)
     {
         ASSERT_EQ(0, max.grades[i]);
     }
 }
 
 TEST_F(StudentTest, add_grades)
-{ 
+{
     student_add_grade(&max, 1.0f);
     ASSERT_EQ(1, max.num_of_grades);
     student_add_grade(&max, 2.0f);
@@ -48,7 +49,7 @@ TEST_F(StudentTest, add_grades)
 }
 
 TEST_F(StudentTest, add_grades_overflow)
-{ 
+{
     student_add_grade(&max, 1.0f);
     student_add_grade(&max, 2.0f);
     student_add_grade(&max, 3.0f);
