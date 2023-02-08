@@ -21,12 +21,12 @@ add_library(student_struct src/student.c)
 target_include_directories(student_struct PUBLIC include)
 
 # add an executabel and assign files to it
-add_executable(student_struct_exec src/main.c)
+add_executable(student_struct_hw7_exec src/main.c)
 
 # add include directories to executable
-target_include_directories(student_struct_exec PRIVATE include)
+target_include_directories(student_struct_hw7_exec PRIVATE include)
 # link your libraries
-target_link_libraries(student_struct_exec PRIVATE student_struct)
+target_link_libraries(student_struct_hw7_exec PRIVATE student_struct)
 
 
 enable_testing()
