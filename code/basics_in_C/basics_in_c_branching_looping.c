@@ -50,7 +50,7 @@ int main()
             while (a < b)
             {
                 printf("while: %d\n", a);
-                a++;
+                ++a;
             }
         }
         {
@@ -58,7 +58,7 @@ int main()
             do
             {
                 printf("do while: %d\n", a);
-                a++;
+                ++a;
             } while (a < b);
         }
     }
@@ -70,12 +70,12 @@ int main()
             while (a < b)
             {
                 printf("while: %d\n", a);
-                a++;
+                ++a;
             }
         }
         {
             int a, b;
-            for (a = 0, b = 10; a < b; a++)
+            for (a = 0, b = 10; a < b; ++a)
             {
                 printf("for: %d\n", a);
             }

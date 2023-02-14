@@ -900,12 +900,21 @@ Read more  about [comparison operators](https://en.cppreference.com/w/c/language
 ### switch case
 
 ```C
-int a=2;
-switch(a) {
-    case 1: printf("a is one\n"); break;
-    case 2: printf("a is two\n"); break;
-    case 3: printf("a is three\n"); break;
-    default: printf("a is something else\n"); break;
+int a = 2;
+switch (a)
+{
+    case 1:
+        printf("a is one\n");
+        break;
+    case 2:
+        printf("a is two\n");
+        break;
+    case 3:
+        printf("a is three\n");
+        break;
+    default:
+        printf("a is something else\n");
+        break;
 }
 ```
 
@@ -918,7 +927,7 @@ int a = 0, b = 10;
 while (a < b)
 {
   printf("%d\n", a);
-  a++;
+  ++a;
 }
 ```
 
@@ -927,7 +936,7 @@ int a = 0, b = 10;
 do
 {
   printf("%d\n", a);
-  a++;
+  ++a;
 }while (a < b);
 ```
 
@@ -942,13 +951,13 @@ int a = 0, b = 10;
 while (a < b)
 {
   printf("%d\n", a);
-  a++;
+  ++a;
 }
 ```
 
 ```C
 int a, b;
-for (a = 0, b = 10; a < b; a++)
+for (a = 0, b = 10; a < b; ++a)
 {
   printf("%d\n", a);
 }
