@@ -719,6 +719,7 @@ printf("float a = %.3f\n", a);  // definitely wrong output -> a = 2.000
 ```
 
 You could find this problem with the *gcc flag* ```-Wconversion```
+
 ![width:1000px](images/implicit_conversion.png "implicit-conversion")
 
 ---
