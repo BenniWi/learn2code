@@ -49,14 +49,14 @@ The goal of this course is to enable all participants to learn proper software e
 - [Basics in **C** #1](#basics-in-c-1)
 - [What is **Compiling**?](#what-is-compiling)
 - [CMake](#cmake)
+- [Debugging](#debugging)
+- [Visual Studio Code](#visual-studio-code)
 - [User Input in **C**](#user-input-in-c)
 - [Basics in **C** #2](#basics-in-c-2)
 - [Functions](#functions)
-- [Const Correctness](#const-correctness)
 - [Libraries](#libraries)
 - [Test Driven Development](#test-driven-development)
-- [Debugging](#debugging)
-- [Visual Studio Code](#visual-studio-code)
+- [Const Correctness](#const-correctness)
 - [Continuous Integration, Delivery \& Deployment](#continuous-integration-delivery--deployment)
 
 ---
@@ -704,13 +704,40 @@ clang -Wall -Wextra -Werror -pedantic -O0 basics_in_c_macro.c
 
 ---
 
+#### Example *Implicit Conversion*
+
+Additional compiler flags can help you in finding bugs very early.
+A typical example is the *implicit conversion*
+
+```C
+int b = 2;
+float a = 5.0F;
+a = 5.0 / b;
+printf("float a = %.3f\n", a);  // seems to work correctly -> a = 2.500
+a = 5 / b;
+printf("float a = %.3f\n", a);  // definitely wrong output -> a = 2.000
+```
+
+You could find this problem with the *gcc flag* ```-Wconversion```
+![width:1000px](images/implicit_conversion.png "implicit-conversion")
+
+---
+
 ### Linker
 
 We did not call the linker!
 Well, let's check if we linked something
 
+On Linux
+
 ```sh
 ldd a.out
+```
+
+On Mac
+
+```sh
+otool -L a.out
 ```
 
 ---
@@ -843,6 +870,116 @@ cmake -S . -B build #add all your options
 
 1. You probably recognized, that you have to go to the *build* folder bevor calling ```make``` :wink:
 2. Can you run your script *run_cmake.sh*? Probably not! Try ```chmod +x run_cmake.sh```! - What does this?
+
+---
+
+# Debugging
+
+<a id="debugging"></a>
+
+- you need the compiler to create debug symbols
+  - extend CMake build with: 
+  ```sh
+  cmake -S . -B build -DCMAKE_BUILD_TYPE=DEBUG
+  ```
+- either use gdb or [lldb](https://lldb.llvm.org/use/map.html)
+
+---
+
+## Debug with **lldb**
+
+(unfortunately not working on codespace / gitpod)
+
+```sh
+lldb debugging
+(lldb) breakpoint set --file debugging.c  --line 12
+(lldb) process launch
+(lldb) help # to get the possible commands
+(lldb) v # shows all variables
+(lldb) v val1 # shows only variable val1
+(lldb) s # step to next line or step into current function
+(lldb) c # continue to next breakpoint or end
+(lldb) exit # leave lldb
+```
+
+---
+
+## Debug With **gdb**
+
+```sh
+gdb debugging
+(gdb) break debugging.c:12
+(gdb) run
+(gdb) help # to get the possible commands
+(gdb) info locals # shows all variables
+(gdb) p val1 # shows only variable val1
+(gdb) s # step to next line or step into current function
+(gdb) next # continue to next breakpoint or end
+(gdb) q # leave gdb
+```
+
+You can do exactly the same with your *tests* as target
+
+---
+
+# Visual Studio Code
+
+<a id="visual-studio-code"></a>
+
+Until now, we did everything on the command line.
+It is time to get a bit lazy :smirk:
+(You have to have the [CMake Tools Extension](https://code.visualstudio.com/docs/cpp/cmake-linux) installed)
+
+---
+
+## VS Code - Loading the Project
+
+- right click *CMakeLists.txt* &rarr; *Configure All Projects*
+- If you are asked for to select a *kit* &rarr; select one for linux
+  ![width:700px](images/vs_code_select_configuration.png "vs code kit")
+
+---
+
+## VS Code - Build, Run & Debug
+
+After configuring the project, you can build, run & debug your project using the extension buttons on the bottom of the window.
+
+![width:1000px](images/vs_code_build_and_run.png "vs code build")
+
+There, you can also change:
+
+- build toolkit
+- Debug/Release configuration
+- build target
+  ...
+
+(Setting breakpoints in a code file is easy, try to figure it out)
+
+---
+
+## VS Code - Git
+
+There are also several Git Extensions.
+A very good one is [Git Lense](https://marketplace.visualstudio.com/items?itemName=eamodio.gitlens).
+Even if is absolutely **mandatory** to know the git command line, VS Code gives you some comfort:
+
+- Check the git symbol on the left of VS Code
+- Check the additional right click actions for files
+- ...
+
+---
+
+## Code Formatting with VS Code
+
+Using a common coding format easens collaboration on code *a lot*.
+Common coding format contains rules about: braces, brackets, number of spaces (tab usage), spaces between operators, and many more.
+
+VS Code provides an easy way to format your files automatically.
+* install clang-tidy
+* install VS Code extension *xaver.clang-format*
+* copy the [.clang-format config file](https://github.com/BenniWi/learn-git/blob/main/.clang-format) to your main folder
+* open a file and press *Ctrl* + &#8679; + *P* (&#8984; + &#8679; + *P*)
+* search for *format document* &rarr; click to execute
 
 ---
 
@@ -1018,76 +1155,6 @@ Even with the prototype, the overview is not perfect. Putting code in separate f
 
 ---
 
-# Const Correctness
-
-<a id="const-correctness"></a>
-
----
-
-## What is *const*
-
-[const type qualifier](https://en.cppreference.com/w/c/language/const)
-
-```C
-/* declare a const value variable */
-const int value_c = 33; // const value variable
-value_c = 0; // assign a new value -> ERROR
-```
-
----
-
-## Differnt Types of *const* Pointers
-
-```C
-   /* declare a normale pointer */
-    int* ptr = &value_a;
-    ptr = &value_b; // assign a new memory address
-    *ptr = 33; // assign a new value
-
-    /* declare a const value pointer */
-    int const * const_s_ptr = &value_a; // const value pointer
-    const_s_ptr = &value_b; // assign a new memory address
-    *const_s_ptr = 44; // assign a new value -> ERROR
-
-    /* declare a const address pointer */
-    int * const s_const_ptr = &value_a; // const address pointer
-    s_const_ptr = &value_b; // assign a new memory address -> ERROR
-    *s_const_ptr = 55; // assign a new value
-
-    /* declare a const value and const address pointer*/
-    int const * const const_s_const_ptr = &value_a; // const value const address pointer
-    const_s_const_ptr = &value_b; // assign a new memory address -> ERROR
-    *const_s_const_ptr = 44; // assign a new value -> ERROR
-```
-
----
-
-## *const* Correctness in Functions
-
-```C
-int* my_const_correct_function(int * mutable_ptr, int const * const immutable_ptr)
-{
-  int * inside_ptr; 
-  int const * const inside_csc_ptr = immutable_ptr;
-
-  inside_ptr = mutable_ptr; // fine
-  ++*inside_ptr;  // fine
-  ++*mutable_ptr; // fine
-  
-  //inside_ptr = immutable_ptr; // BAD, warning: assignment discards ‘const’ qualifier 
-  //++*immutable_ptr; // ERROR, can not change the pointer value or address
-
-  return inside_ptr; // fine
-  //return inside_csc_ptr; // BAD, return discards ‘const’ qualifier
-}
-```
-
-```C
-int* return_ptr = my_const_correct_function(ptr, s_const_ptr);
-```
-
----
-
 ## Future Project Structure
 
 From now on, we will stick to the following folder structure
@@ -1242,103 +1309,73 @@ run ```ctest``` or the test target ```./tests```
 
 ---
 
-# Debugging
+# Const Correctness
 
-<a id="debugging"></a>
-
-- extend CMake Build with: -D CMAKE_BUILD_TYPE=Debug
-  - you need the compiler to create debug symbols
-- either use gdb or [lldb](https://lldb.llvm.org/use/map.html)
+<a id="const-correctness"></a>
 
 ---
 
-## Debug with **lldb**
+## What is *const*
 
-(unfortunately not working on codespace / gitpod)
+[const type qualifier](https://en.cppreference.com/w/c/language/const)
 
-```sh
-lldb debugging
-(lldb) breakpoint set --file main.c  --line 8
-(lldb) process launch
-(lldb) help # to get the possible commands
-(lldb) v # shows all variables
-(lldb) v val1 # shows only variable val1
-(lldb) s # step to next line or step into current function
-(lldb) c # continue to next breakpoint or end
-(lldb) exit # leave lldb
+```C
+/* declare a const value variable */
+const int value_c = 33; // const value variable
+value_c = 0; // assign a new value -> ERROR
 ```
 
-You can do exactly the same with your *tests* as target
-
 ---
 
-## Debug With **gdb**
+## Differnt Types of *const* Pointers
 
-```sh
-gdb debugging
-(gdb) break main.c:8
-(gdb) run
-(gdb) help # to get the possible commands
-(gdb) info locals # shows all variables
-(gdb) p val1 # shows only variable val1
-(gdb) s # step to next line or step into current function
-(gdb) next # continue to next breakpoint or end
-(gdb) q # leave gdb
+```C
+/* declare a normale pointer */
+int* ptr = &value_a;
+ptr = &value_b; // assign a new memory address
+*ptr = 33; // assign a new value
+
+/* declare a const value pointer */
+int const * const_s_ptr = &value_a; // const value pointer
+const_s_ptr = &value_b; // assign a new memory address
+*const_s_ptr = 44; // assign a new value -> ERROR
+
+/* declare a const address pointer */
+int * const s_const_ptr = &value_a; // const address pointer
+s_const_ptr = &value_b; // assign a new memory address -> ERROR
+*s_const_ptr = 55; // assign a new value
+
+/* declare a const value and const address pointer*/
+int const * const const_s_const_ptr = &value_a; // const value const address pointer
+const_s_const_ptr = &value_b; // assign a new memory address -> ERROR
+*const_s_const_ptr = 44; // assign a new value -> ERROR
 ```
 
-You can do exactly the same with your *tests* as target
-
 ---
 
-# Visual Studio Code
+## *const* Correctness in Functions
 
-<a id="visual-studio-code"></a>
+```C
+int* my_const_correct_function(int * mutable_ptr, int const * const immutable_ptr)
+{
+  int * inside_ptr; 
+  int const * const inside_csc_ptr = immutable_ptr;
 
-Until now, we did everything on the command line.
-It is time to get a bit lazy :smirk:
-(You have to have the [CMake Tools Extension](https://code.visualstudio.com/docs/cpp/cmake-linux) installed)
+  inside_ptr = mutable_ptr; // fine
+  ++*inside_ptr;  // fine
+  ++*mutable_ptr; // fine
+  
+  //inside_ptr = immutable_ptr; // BAD, warning: assignment discards ‘const’ qualifier 
+  //++*immutable_ptr; // ERROR, can not change the pointer value or address
 
----
+  return inside_ptr; // fine
+  //return inside_csc_ptr; // BAD, return discards ‘const’ qualifier
+}
+```
 
-## VS Code - Loading the Project
-
-- ```sh
-  cd debugging
-  code . # start visual studio code
-  ```
-
-- right click *CMakeLists.txt* &rarr; *Configure All Projects*
-- If you are asked for to select a *kit* &rarr; select one for linux
-  ![width:700px](images/vs_code_select_configuration.png "vs code kit")
-
----
-
-## VS Code - Build, Run & Debug
-
-After configuring the project, you can build, run & debug your project using the extension buttons on the bottom of the window.
-
-![width:1000px](images/vs_code_build_and_run.png "vs code build")
-
-There, you can also change:
-
-- build toolkit
-- Debug/Release configuration
-- build target
-  ...
-
-(Setting breakpoints in a code file is easy, try to figure it out)
-
----
-
-## VS Code - Git
-
-There are also several Git Extensions.
-A very good one is [Git Lense](https://marketplace.visualstudio.com/items?itemName=eamodio.gitlens).
-Even if is absolutely **mandatory** to know the git command line, VS Code gives you some comfort:
-
-- Check the git symbol on the left of VS Code
-- Check the additional right click actions for files
-- ...
+```C
+int* return_ptr = my_const_correct_function(ptr, s_const_ptr);
+```
 
 ---
 
