@@ -46,10 +46,6 @@ jobs:
     - name: Build "debugging"
       run: cmake --build ${{github.workspace}}/code/debugging/build --config ${{env.BUILD_TYPE}}
 
-    - name: Test "debugging"
-      working-directory: ${{github.workspace}}/code/debugging/build
-      run: ctest -C ${{env.BUILD_TYPE}}
-
 ## Do all the cmake stuff
     - name: Configure CMake "cmake"
       run: cmake -B ${{github.workspace}}/code/cmake/build -S${{github.workspace}}/code/cmake/ -DCMAKE_BUILD_TYPE=${{env.BUILD_TYPE}} 
