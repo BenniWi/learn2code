@@ -4,12 +4,16 @@ This repository contains slides, exercise examples and more for my lecture "Soft
 
 All documents are located in the folder [docs](docs). The documents are completely written in markdown and are optimized for [marp](https://marp.app/).
 
+All documents are automatically exported to pdf and can be found in pre-release with the [latest](https://github.com/BenniWi/learn2code/releases/tag/latest) tag.
+
 - [Content of the Lecture](#content-of-the-lecture)
 - [Prepared Environments](#prepared-environments)
 - [How to Create the Slides](#how-to-create-the-slides)
 - [How to Build the Code](#how-to-build-the-code)
 
 ## Content of the Lecture
+
+This lecture about "Software Development" is split in two parts. The main content of lecture is the introduction of the programming languages **C** and **C++** as well as the introduction of the most basic software development tools.
 
 ### Part I
 In the first part of the lecture, the programming language **C** is introduced.
