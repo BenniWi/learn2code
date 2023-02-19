@@ -4,10 +4,37 @@ This repository contains slides, exercise examples and more for my lecture "Soft
 
 All documents are located in the folder [docs](docs). The documents are completely written in markdown and are optimized for [marp](https://marp.app/).
 
+- [Content of the Lecture](#content-of-the-lecture)
+- [Prepared Environments](#prepared-environments)
+- [How to Create the Slides](#how-to-create-the-slides)
+- [How to Build the Code](#how-to-build-the-code)
 
-1. [Prepared Environments](#prepared-environments)
-2. [How to Create the Slides](#how-to-create-the-slides)
-3. [How to Build the Code](#how-to-build-the-code)
+## Content of the Lecture
+
+### Part I
+In the first part of the lecture, the programming language **C** is introduced.
+On the one hand, the lecture deals with the necessary basics like *datatypes, structures, arrays, pointers, branching, looping*, and many more. On the other hand, basic tools of software engineering are introduced. Among others, these tools are: *Linux Terminal, GCC, Clang, Git, CMake, google-test, VS Code, clang-format*, and some more. 
+
+The slides of the first part of the lecture can be found in [slides_learn2code_1.md](docs/slides_learn2code_1.md). Respectively, the content of the first part is given in the [Table of Contents](docs/slides_learn2code_1.md#table-of-contents).
+
+For each part of the lecture, the corresponding [code](code) can be found.
+Further, there are some homeworks. The homeworks for part I are named *Homework_1-\*.md* and can be found in de folder [docs](docs). The solutions to the homeworks are again to be found in the [code](code) folder.
+
+### Part II
+In the second part of the lecture, the programming language **C++** is introduced.
+This part is currently under construction. Expected content could be (incomplete):
+- doxygen
+- clang-tidy
+- from C to C++
+- dynamic memory in C, C++, and C++14 (and later)
+- namespaces
+- stl and some basic containers (like string, vector, array, queues, ...)
+- inheritance
+- polymorphism
+- open topics
+  - static_asserts??
+  - opencv examples??
+  - Qt examples??
 
 ## Prepared Environments 
 

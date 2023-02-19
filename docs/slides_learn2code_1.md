@@ -17,12 +17,17 @@ paginate: false
 
 # Experience Survey
 
+<a id="experience-survey"></a>
+
 https://form.jotform.com/223513864665058; Password: *dhbw2022*
 ![width:500px](images/qr-code_TFE22.png "survey qr")
 
 ---
 
 # Goal of this Course
+
+<a id="goal-of-this-course"></a>
+
 
 The goal of this course is to enable all participants to learn proper software engineering. Being a good software engineer takes **time**, **will** to improve yourself and **commitment**.
 
@@ -37,8 +42,10 @@ The goal of this course is to enable all participants to learn proper software e
   }
 </style>
 
-- [Experience Survey](#experience-survey)
-- [Goal of this Course](#goal-of-this-course)
+## Table of Contents
+
+<a id="table-of-contents"></a>
+
 - [Literature](#literature)
 - [Excercises@Home \& Exam](#excerciseshome--exam)
 - [Some Linux Basics](#some-linux-basics)
@@ -78,6 +85,8 @@ The goal of this course is to enable all participants to learn proper software e
 ---
 
 # Excercises@Home & Exam  
+
+<a id="excerciseshome--exam"></a>
 
 ## Homework
 
@@ -1449,22 +1458,6 @@ In this file you need to make sure, that
    ![width:1000px](images/github_actions_cmake_config.png "github cmake config")
 
 <!--
----
-
-# Clean Code
-
-<a id="clean-code"></a>
-
-TODO
-- using doxygen
-- using clang-format
-
----
-
-# Dynamic Memory
-
-<a id="dynamic-memory"></a>
-
 ---
 
 # Commandline Arguments
