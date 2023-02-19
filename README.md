@@ -80,6 +80,6 @@ marp -c docs/marp_config.yaml docs/slides_learn2code_1.md
 ## How to Build the Code
 Most of the code samples are supporting [CMake](https://cmake.org/).
 All *CMake* capable samples are collected in the top-level [CMakeLists.txt](CMakeLists.txt).
-Configure this top level project and your good to go.
+Configure this top level project and you are good to go.
 
 For all non CMake samples you should use the compiler of your joice (mostly [gcc](https://gcc.gnu.org/) or [clang](https://clang.llvm.org/) and build it manually.
