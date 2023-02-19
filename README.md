@@ -4,7 +4,7 @@ This repository contains slides, exercise examples and more for my lecture "Soft
 
 All documents are located in the folder [docs](docs). The documents are completely written in markdown and are optimized for [marp](https://marp.app/).
 
-All documents are automatically exported to pdf and can be found in pre-release with the [latest](https://github.com/BenniWi/learn2code/releases/tag/latest) tag.
+All documents are automatically exported to pdf and can be found in the pre-release with the [latest](https://github.com/BenniWi/learn2code/releases/tag/latest) tag.
 
 - [Content of the Lecture](#content-of-the-lecture)
 - [Prepared Environments](#prepared-environments)
@@ -48,10 +48,14 @@ This part is currently under construction. Expected content could be (incomplete
   <img
     src="https://img.shields.io/badge/Contribute%20with-Gitpod-908a85?logo=gitpod"
     alt="Contribute with Gitpod"
+    width="250"
   />
 </a>
 
 ## How to Create the Slides
+
+Most simple solution to work with [marp](https://marp.app/) ist the [Marp for VS Code](https://marketplace.visualstudio.com/items?itemName=marp-team.marp-vscode) extension. Using this extension you most probably won't need anything else.
+If you want to run the PDF export on the command line you will need the following install steps.
 
 ### Install Latest nodejs
 https://tecadmin.net/install-latest-nodejs-npm-on-ubuntu/
