@@ -11,7 +11,7 @@ env:
   BUILD_TYPE: Release
 
 jobs:
-  build:
+  build_C_code:
     # The CMake configure and build commands are platform agnostic and should work equally well on Windows or Mac.
     # You can convert this to a matrix build if you need cross-platform coverage.
     # See: https://docs.github.com/en/free-pro-team@latest/actions/learn-github-actions/managing-complex-workflows#using-a-build-matrix
@@ -25,24 +25,24 @@ jobs:
 
     ## Configure and Build all projects
     - name: Configure CMake
-      run: cmake -B ${{github.workspace}}/build -S${{github.workspace}} -DCMAKE_BUILD_TYPE=${{env.BUILD_TYPE}} 
+      run: cmake -B ${{github.workspace}}/build -S${{github.workspace}} -DCMAKE_BUILD_TYPE=${{env.BUILD_TYPE}} -DBUILD_PART2=OFF
 
     - name: Build
       run: cmake --build ${{github.workspace}}/build --config ${{env.BUILD_TYPE}}
     
     ## Test TDD
     - name: Test "tdd"
-      working-directory: ${{github.workspace}}/build/code/tdd
+      working-directory: ${{github.workspace}}/build/code/part_1/tdd
       run: ctest -C ${{env.BUILD_TYPE}}
 
     ## run code in basics
     - name: run "basics"
-      working-directory: ${{github.workspace}}/build/code/basics/
+      working-directory: ${{github.workspace}}/build/code/part_1/basics/
       run: ./basics
 
     ## run all in basics_in_C
     - name: run "basics_in_C"
-      working-directory: ${{github.workspace}}/build/code/basics_in_C/
+      working-directory: ${{github.workspace}}/build/code/part_1/basics_in_C/
       run: |
            ./basics_in_c \
            && ./branching_and_looping \
@@ -54,47 +54,65 @@ jobs:
 
     ## run homework 1-2
     - name: run "homework 1-2"
-      working-directory: ${{github.workspace}}/build/code/homework_1-2/
+      working-directory: ${{github.workspace}}/build/code/part_1/homework_1-2/
       run: |
            ./grades \
            && ./percent
         
     ## run homework 1-3
     - name: run "homework 1-3"
-      working-directory: ${{github.workspace}}/build/code/homework_1-3/
+      working-directory: ${{github.workspace}}/build/code/part_1/homework_1-3/
       run: |
            ./pointer_swap \
            && ./student
 
     ## run homework 1-4
     - name: run "homework 1-4"
-      working-directory: ${{github.workspace}}/build/code/homework_1-4/
+      working-directory: ${{github.workspace}}/build/code/part_1/homework_1-4/
       run: |
            ./grades_1_4 
       # do not run the leap year binary since it expects an input from the user
            
     ## run homework 1-4 student struct
     - name: run "homework_1-4 - student struct"
-      working-directory: ${{github.workspace}}/build/code/homework_1-4/student_struct
+      working-directory: ${{github.workspace}}/build/code/part_1/homework_1-4/student_struct
       run: ./student_struct_hw4_exec
 
     ## run homework 1-6
     - name: run "homework_1-6 - student struct"
-      working-directory: ${{github.workspace}}/build/code/homework_1-6
+      working-directory: ${{github.workspace}}/build/code/part_1/homework_1-6
       run: ./student_struct_hw_6_exec 
 
     ## run & test homework 1-7
     - name: run "homework_1-7 - student struct"
-      working-directory: ${{github.workspace}}/build/code/homework_1-7
+      working-directory: ${{github.workspace}}/build/code/part_1/homework_1-7
       run: ./student_struct_hw7_exec 
 
     - name: test "homework_1-7 - student struct"
-      working-directory: ${{github.workspace}}/build/code/homework_1-7
+      working-directory: ${{github.workspace}}/build/code/part_1/homework_1-7
       run: ctest -C ${{env.BUILD_TYPE}}
-      
+  
+  build_Cpp_code:
+    # The CMake configure and build commands are platform agnostic and should work equally well on Windows or Mac.
+    # You can convert this to a matrix build if you need cross-platform coverage.
+    # See: https://docs.github.com/en/free-pro-team@latest/actions/learn-github-actions/managing-complex-workflows#using-a-build-matrix
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+    
+    - name: Install gtest manually
+      run: sudo apt-get install libgtest-dev
+
+    ## Configure and Build all projects
+    - name: Configure CMake
+      run: cmake -B ${{github.workspace}}/build -S${{github.workspace}} -DCMAKE_BUILD_TYPE=${{env.BUILD_TYPE}} -DBUILD_PART1=OFF
+
+    - name: Build
+      run: cmake --build ${{github.workspace}}/build --config ${{env.BUILD_TYPE}}
     ## run all in basics_in_Cpp
     - name: run "basics_in_Cpp"
-      working-directory: ${{github.workspace}}/build/code/basics_in_Cpp/
+      working-directory: ${{github.workspace}}/build/code/part_2/basics_in_Cpp/
       run: |
            ./hello_world_cpp \
            && ./inheritance \
