@@ -68,7 +68,7 @@ jobs:
 
     ## run homework 1-4
     - name: build and run "homework 1-4"
-      working-directory: ${{github.workspace}}/code/homework_1-4/
+      working-directory: ${{github.workspace}}/build/code/homework_1-4/
       run: |
            ./grades_1_4 
       # do not run the leap year binary since it expects an input from the user
