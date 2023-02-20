@@ -1158,7 +1158,7 @@ return_value my_function_name(<datatype> input_1, <datatype> input_2)
 
 Even with the prototype, the overview is not perfect. Putting code in separate files would help!
 
-1. Create a header file for the prototype (e.g. *include/functions.h*). Always use include guards
+1. Create a header file for the prototype (e.g. *include/functions.h*). Always use [include guards](#include-guards)
 2. Create a source file for the definition (e.g. *src/functions.c*)
 3. Include the header in your main file
 4. Tell the compiler where to find everything (*CMakeLists.txt*)
@@ -1166,6 +1166,8 @@ Even with the prototype, the overview is not perfect. Putting code in separate f
 ---
 
 ## Include Guards
+
+<a id="include-guards"></a>
 
 ```C
 /*
@@ -1183,7 +1185,9 @@ Even with the prototype, the overview is not perfect. Putting code in separate f
 #endif /* FUNCTIONS_H_18RqkXbbAj */
 ```
 
-[random string](https://www.random.org/strings/?num=1&len=8&digits=on&upperalpha=on&loweralpha=on&unique=on&format=html&rnd=new)
+[random string](https://www.random.org/strings/?num=1&len=8&digits=on&upperalpha=on&loweralpha=on&unique=on&format=html&rnd=new) online
+or
+VS Code extension [insert-random-text](https://marketplace.visualstudio.com/items?itemName=ElecTreeFrying.insert-random-text&utm_source=VSCode.pro&utm_campaign=AhmadAwais)
 
 ---
 
