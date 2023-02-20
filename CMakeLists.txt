@@ -12,7 +12,7 @@ add_subdirectory(./code/functions)
 add_subdirectory(./code/libraries)
 add_subdirectory(./code/tdd)
 add_subdirectory(./code/user_input)
-
+# add the C homeworks
 add_subdirectory(./code/homework_1-2)
 add_subdirectory(./code/homework_1-3)
 add_subdirectory(./code/homework_1-4)
@@ -20,5 +20,7 @@ add_subdirectory(./code/homework_1-5)
 add_subdirectory(./code/homework_1-6)
 add_subdirectory(./code/homework_1-7)
 
+
 # add the C++ projects
 add_subdirectory(./code/basics_in_Cpp)
+# add the C++ homeworks

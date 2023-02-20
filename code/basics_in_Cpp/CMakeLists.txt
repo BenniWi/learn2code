@@ -14,3 +14,6 @@ add_compile_options(-Wall -Wextra -pedantic -O0)
 # add an executabel and assign files to it
 add_executable(hello_world_cpp hello_world.cpp)
 add_executable(struct_to_class struct_to_class.cpp)
+add_executable(namespace namespace.cpp)
+add_executable(inheritance inheritance.cpp)
+add_executable(multi_inheritance multi_inheritance.cpp)

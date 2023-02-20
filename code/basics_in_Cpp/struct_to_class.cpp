@@ -1,8 +1,9 @@
+#include <cstdint>
 #include <iostream>
 
 typedef struct
 {
-    int a = 0;
+    int8_t a = 0;
     float b = 0.0F;
 
     void print() const
@@ -13,8 +14,8 @@ typedef struct
 
 class my_cpp_class
 {
-   public:
-    int a = 0;
+   public:  // C++ Access Specifiers
+    int8_t a = 0;
     float b = 0.0F;
 
     void print() const

@@ -27,14 +27,23 @@ Further, there are some homeworks. The homeworks for part I are named *Homework_
 ### Part II
 In the second part of the lecture, the programming language **C++** is introduced.
 This part is currently under construction. Expected content could be (incomplete):
-- doxygen
-- clang-tidy
-- from C to C++
-- dynamic memory in C, C++, and C++14 (and later)
-- namespaces
-- stl and some basic containers (like string, vector, array, queues, ...)
-- inheritance
-- polymorphism
+- [ ] doxygen
+- [ ] clang-tidy
+- [x] from C to C++ (code)
+- [ ] from C to C++ (chapter)
+- [ ] dynamic memory in C, C++, and C++14 (and later)
+- [x] namespaces (code)
+- [ ] namespaces (chapter)
+  - [ ] "using namespace" -> NO in headers, MAYBE in Sources
+  - [ ] "namespace abbreviations"
+- [ ] stl and some basic containers (like string, vector, array, queues, ...) (code)
+- [ ] stl and some basic containers (like string, vector, array, queues, ...) (chapter)
+- [x] inheritance + access specifiers (code)
+- [ ] inheritance + access specifiers (chapter)
+- [x] multi-inheritance (code)
+- [ ] multi-inheritance (chapter)
+- [ ] polymorphism (code)
+- [ ] polymorphism (chapter)
 - open topics
   - static_asserts??
   - opencv examples??
