@@ -32,7 +32,7 @@ jobs:
     
     ## Test TDD
     - name: Test "tdd"
-      working-directory: ${{github.workspace}}/build/tdd
+      working-directory: ${{github.workspace}}/build/code/tdd
       run: ctest -C ${{env.BUILD_TYPE}}
 
     ## run code in basics
