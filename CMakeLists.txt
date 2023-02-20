@@ -3,6 +3,7 @@ cmake_minimum_required(VERSION 3.20)
 project(learn2code LANGUAGES C CXX)
 
 # add the C projects
+add_subdirectory(./code/basics)
 add_subdirectory(./code/basics_in_C)
 add_subdirectory(./code/cmake)
 add_subdirectory(./code/const_correctness)
