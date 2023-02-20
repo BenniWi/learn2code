@@ -1,4 +1,17 @@
 {
+    "git.autofetch": true,
+    
+    "cmake.generator": "Unix Makefiles",
+
+    "markdown.marp.enableHtml": true,
+
     "markdown.extension.toc.levels": "1..1",
-    "markdown.extension.toc.updateOnSave": false
+    "markdown.extension.toc.updateOnSave": false,
+
+    "[cpp]": {
+        "editor.defaultFormatter": "xaver.clang-format"
+    },
+    "[c]": {
+        "editor.defaultFormatter": "xaver.clang-format"
+    },
 }
