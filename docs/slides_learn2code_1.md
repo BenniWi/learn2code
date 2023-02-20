@@ -1165,6 +1165,28 @@ Even with the prototype, the overview is not perfect. Putting code in separate f
 
 ---
 
+## Include Guards
+
+```C
+/*
+    always put an "include guard" on top.
+    good practice is to use the uppercase file name + a random string.
+    In big projects you never know if somebody else named the file and the
+    include guard the same.
+    For random Strings use e.g. https://www.random.org/strings/
+*/
+#ifndef FUNCTIONS_H_18RqkXbbAj
+#define FUNCTIONS_H_18RqkXbbAj
+
+// prototypes and definitions go here!
+
+#endif /* FUNCTIONS_H_18RqkXbbAj */
+```
+
+[random string](https://www.random.org/strings/?num=1&len=8&digits=on&upperalpha=on&loweralpha=on&unique=on&format=html&rnd=new)
+
+---
+
 ## Future Project Structure
 
 From now on, we will stick to the following folder structure

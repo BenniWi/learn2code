@@ -23,7 +23,8 @@
 				"ms-vscode.cpptools-extension-pack",
 				"franneck94.c-cpp-runner",
 				"DavidAnson.vscode-markdownlint",
-				"mdickin.markdown-shortcuts"
+				"mdickin.markdown-shortcuts",
+				"ElecTreeFrying.insert-random-text"
 			]
 		}
 	}
