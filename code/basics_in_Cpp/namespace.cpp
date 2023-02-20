@@ -1,12 +1,12 @@
-#include <iostream>
 #include <cstdint>
+#include <iostream>
 
 namespace my_awesome_namespace
 {
 class awesome_class
 {
    public:
-    int8_t a = 0; // type from cstdint https://en.cppreference.com/w/cpp/types/integer
+    int8_t a = 0;  // type from cstdint https://en.cppreference.com/w/cpp/types/integer
     float b = 0.0F;
 
     void print() const
