@@ -45,7 +45,7 @@ jobs:
       working-directory: ${{github.workspace}}/build/code/basics_in_C/
       run: |
            ./basics_in_c \
-           && ./branching_looping \
+           && ./branching_and_looping \
            && ./c_arrays \
            && ./macro \
            && ./pointers \
