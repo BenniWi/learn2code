@@ -3,7 +3,7 @@ cmake_minimum_required(VERSION 3.20)
 project(learn2code LANGUAGES C CXX)
 
 set(BUILD_PART_1 ON, CACHE BOOL "Enable building code of part 1")
-set(BUILD_PART_2 ON, CACHE BOOL "Enable building code of part 1")
+set(BUILD_PART_2 ON, CACHE BOOL "Enable building code of part 2")
 
 if(BUILD_PART_1)
     # add the C projects
