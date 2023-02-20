@@ -91,4 +91,14 @@ jobs:
     - name: test "homework_1-7 - student struct"
       working-directory: ${{github.workspace}}/build/code/homework_1-7
       run: ctest -C ${{env.BUILD_TYPE}}
+      
+    ## run all in basics_in_Cpp
+    - name: run "basics_in_Cpp"
+      working-directory: ${{github.workspace}}/build/code/basics_in_Cpp/
+      run: |
+           ./hello_world_cpp \
+           && ./inheritance \
+           && ./multi-inheritance \
+           && ./namespace \
+           && ./struct_to_class
   
