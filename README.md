@@ -48,6 +48,7 @@ This part is currently under construction. Expected content could be (incomplete
   - static_asserts??
   - opencv examples??
   - Qt examples??
+  - templates??
 
 ## Prepared Environments 
 
