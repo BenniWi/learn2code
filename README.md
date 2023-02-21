@@ -38,8 +38,8 @@ This part is currently under construction. Expected content could be (incomplete
   - [ ] "namespace abbreviations"
 - [ ] stl and some basic containers (like string, vector, array, queues, ...) (code)
 - [ ] stl and some basic containers (like string, vector, array, queues, ...) (chapter)
-- [x] inheritance + access specifiers (code)
-- [ ] inheritance + access specifiers (chapter)
+- [x] inheritance + access specifiers + access specifiers in inheritance (code)
+- [ ] inheritance + access specifiers + access specifiers in inheritance (chapter) https://www.programiz.com/cpp-programming/public-protected-private-inheritance
 - [x] multi-inheritance (code)
 - [ ] multi-inheritance (chapter)
 - [ ] polymorphism (code)
