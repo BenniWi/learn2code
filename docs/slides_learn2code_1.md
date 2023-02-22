@@ -844,6 +844,10 @@ Define sources and build folder
 cmake -S . -B build
 ```
 
+<font size="+1">
+&#9757; Please delete all generated files from your workspace first
+</font>
+<br>
 Still, there are some things undefined.
 Add:
 
@@ -887,7 +891,14 @@ cmake -S . -B build #add all your options
 
 <a id="debugging"></a>
 
-- you need the compiler to create debug symbols
+![width:250px](images/debugging_monkeyuser.png "debugging")
+>In computer programming and software development, **debugging** is the process of finding and resolving bugs (defects or problems that prevent correct operation) within computer programs, software, or systems. ([wikipedia](https://en.wikipedia.org/wiki/Debugging))
+
+---
+
+# Debugging-Prerequisits
+
+- you have to tell the compiler to create *debug symbols*
   - extend CMake build with: 
   ```sh
   cmake -S . -B build -DCMAKE_BUILD_TYPE=DEBUG
@@ -898,11 +909,11 @@ cmake -S . -B build #add all your options
 
 ## Debug with **lldb**
 
-(unfortunately not working on codespace / gitpod)
+(:warning: unfortunately not working on codespace / gitpod)
 
 ```sh
-lldb debugging
-(lldb) breakpoint set --file debugging.c  --line 12
+lldb debugging_example_exec # this is the name of your binary defined in CMakeLists.txt
+(lldb) breakpoint set --file debugging.c  --line 12 # this is the name of your source file
 (lldb) process launch
 (lldb) help # to get the possible commands
 (lldb) v # shows all variables
@@ -917,8 +928,8 @@ lldb debugging
 ## Debug With **gdb**
 
 ```sh
-gdb debugging
-(gdb) break debugging.c:12
+gdb debugging_example_exec # this is the name of your binary defined in CMakeLists.txt
+(gdb) break debugging.c:12 # this is the name of your source file
 (gdb) run
 (gdb) help # to get the possible commands
 (gdb) info locals # shows all variables
@@ -927,8 +938,6 @@ gdb debugging
 (gdb) next # continue to next breakpoint or end
 (gdb) q # leave gdb
 ```
-
-You can do exactly the same with your *tests* as target
 
 ---
 

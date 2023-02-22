@@ -12,5 +12,5 @@ set(CMAKE_C_STANDARD_REQUIRED True)
 add_compile_options(-Wall -Wextra -Werror -pedantic -O0)
 
 # add an executabel and assign files to it
-add_executable(debugging debugging.c)
+add_executable(debugging_example_exec debugging.c)
 
