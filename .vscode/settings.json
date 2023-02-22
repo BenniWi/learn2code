@@ -14,4 +14,17 @@
     "[c]": {
         "editor.defaultFormatter": "xaver.clang-format"
     },
+    "clang-tidy.checks": [
+        "-*",
+        "modernize-*",
+        "performance-*",
+        "portability-*",
+        "readability-*",
+        "google-*",
+        "llvm-*",
+        "clang-analyzer-*",
+        "cppcoreguidelines",
+        "cert-*",
+        "-readability-magic-numbers"
+    ],
 }

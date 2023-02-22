@@ -31,11 +31,13 @@ This part is currently under construction. Expected content could be (incomplete
 - [ ] clang-tidy
 - [x] from C to C++ (code)
 - [ ] from C to C++ (chapter)
+  - [ ] trailing return type
 - [ ] dynamic memory in C, C++, and C++14 (and later)
 - [x] namespaces (code)
 - [ ] namespaces (chapter)
   - [ ] "using namespace" -> NO in headers, MAYBE in Sources
   - [ ] "namespace abbreviations"
+  - [ ] https://en.cppreference.com/w/cpp/language/using_declaration
 - [ ] stl and some basic containers (like string, vector, array, queues, ...) (code)
 - [ ] stl and some basic containers (like string, vector, array, queues, ...) (chapter)
 - [x] inheritance + access specifiers + access specifiers in inheritance (code)
@@ -44,6 +46,11 @@ This part is currently under construction. Expected content could be (incomplete
 - [ ] multi-inheritance (chapter)
 - [ ] polymorphism (code)
 - [ ] polymorphism (chapter)
+  - https://www.mygreatlearning.com/blog/polymorphism-in-cpp/#:~:text=Polymorphism%20in%20C%2B%2B%20means%2C%20the,in%20numbers%2C%20it%20performs%20addition.
+  - function
+  - operator
+  - virtual
+  - pure virtual
 - open topics
   - static_asserts??
   - opencv examples??
