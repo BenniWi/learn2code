@@ -794,10 +794,15 @@ What are the downsides?
 <a id="cmake"></a>
 
 ![width:150px](images/cmake.png "cmake")
-
 > CMake is an open-source, cross-platform family of tools designed to build, test and package software. CMake is used to control the software compilation process using simple platform and compiler independent configuration files [...]. ([CMake](https://cmake.org/))
-<br>
+
 Book recommendation: [Professional CMake](https://crascit.com/professional-cmake/)
+
+---
+
+## CMake Toolchain Workflow
+
+![width:800px](images/cmake_make_gcc.png "cmake")
 
 ---
 
