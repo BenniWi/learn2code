@@ -23,8 +23,12 @@
         "google-*",
         "llvm-*",
         "clang-analyzer-*",
-        "cppcoreguidelines",
+        "cppcoreguidelines-*",
         "cert-*",
-        "-readability-magic-numbers"
+        "-readability-magic-numbers",
+        "-cppcoreguidelines-avoid-magic-numbers"
     ],
+    "files.associations": {
+        "iostream": "cpp"
+    },
 }

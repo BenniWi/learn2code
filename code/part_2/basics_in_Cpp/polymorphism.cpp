@@ -7,7 +7,7 @@ using std::endl;
 using std::string;
 
 /*
-Example for function / method overloading
+Example for function / method overloading -> compile time polymorphism
 */
 class Addition
 {
@@ -24,7 +24,7 @@ class Addition
 };
 
 /*
-Example for operator overloading
+Example for operator overloading -> compile time polymorphism
 */
 class A
 {
@@ -43,18 +43,77 @@ class A
     }
 };
 
+/*
+Example for function overriding -> runtime polymorphism
+*/
+class Animal
+{
+   public:
+    void function()
+    {
+        cout << "Eating..." << endl;
+    }
+};
+class Man : public Animal
+{
+   public:
+    void function()
+    {
+        cout << "Walking ..." << endl;
+    }
+};
+
+/*
+Example for virtual function -> runtime polymorphism
+*/
+class Add
+{
+    int x = 5, y = 20;
+
+   public:
+    void display()  // overridden function
+    {
+        cout << "Add value of x is : " << x + y << endl;
+    }
+};
+class Substract : public Add
+{
+    int y = 10, z = 30;
+
+   public:
+    void display()  // overridden function
+    {
+        cout << "Substract value of y is : " << y - z << endl;
+    }
+};
+
 auto main() -> int
 {
     // Example for function / method overloading
     cout << "Function Overloading:" << endl;
-    cout << Addition::ADD(3, 9) << endl;          // first method is called
-    cout << Addition::ADD("Hallo", " Welt") << endl;  // first method is called
+    cout << +Addition::ADD(3, 9) << endl;             // first method is called
+    cout << Addition::ADD("Hallo", " Welt") << endl;  // second method is called
 
     // Example for operator overloading
     cout << "Operator Overloading:" << endl;
-    A a1("Welcome");  
-    A a2(" Back");  
-    a1+a2;
+    A a1("Welcome");
+    A a2(" Back");
+    a1 + a2;
+
+    // Example for function overriding
+    cout << "Funciton Overriding:" << endl;
+    Animal animal = Animal();
+    animal.function();  // parent class object
+    Man man = Man();
+    man.function();  // child class object
+
+    // Example for virtual function
+    // TODO: nicht fertig
+    Add *add;     // base class pointer .it can only access the base class members
+    Substract s;  // making object of derived class
+    s.display();
+    add = &s;
+    add->display();  // Accessing the function by using base class  pointer
 
     return 0;
 }
