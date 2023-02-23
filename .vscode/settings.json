@@ -14,19 +14,12 @@
     "[c]": {
         "editor.defaultFormatter": "xaver.clang-format"
     },
-    "clang-tidy.checks": [
-        "-*",
-        "modernize-*",
-        "performance-*",
-        "portability-*",
-        "readability-*",
-        "google-*",
-        "llvm-*",
-        "clang-analyzer-*",
-        "cppcoreguidelines-*",
-        "cert-*",
-        "-readability-magic-numbers",
-        "-cppcoreguidelines-avoid-magic-numbers"
+    "clang-format.executable": "clang-format-16",
+    "clang-tidy.executable": "clang-tidy-16",
+    "clang-tidy.fixOnSave": true,
+    "clang-tidy.lintOnSave": true,
+    "clang-tidy.compilerArgs": [
+        "--config-file=.clang-tidy"
     ],
     "files.associations": {
         "iostream": "cpp"

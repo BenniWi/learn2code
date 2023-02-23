@@ -12,14 +12,14 @@ Example for function / method overloading -> compile time polymorphism
 class Addition
 {
    public:
-    static auto ADD(int8_t x, int8_t y) -> int8_t
+    static auto add(int8_t num_x, int8_t num_y) -> int16_t
     {
-        return x + y;  // this function is performing addition of  two Integer value
+        return num_x + num_y;  // this function is performing addition of  two Integer value
     }
 
-    static auto ADD(const string &x, const string &y) -> string
+    static auto add(const string &str1, const string &str2) -> string
     {
-        return x + y;  // this function concatenates two strings
+        return str1 + str2;  // this function concatenates two strings
     }
 };
 
@@ -28,18 +28,18 @@ Example for operator overloading -> compile time polymorphism
 */
 class A
 {
-    string x;
+    string str_x_;
 
    public:
     A() = default;
-    explicit A(const string &i)
+    explicit A(const string &str_i)
     {
-        x = i;
+        str_x_ = str_i;
     }
-    void operator+(const A &a)
+    void operator+(const A &class_a)
     {
-        string m = x + a.x;
-        cout << "The result of the addition of two objects is : " << m << endl;
+        string str_m = str_x_ + class_a.str_x_;
+        cout << "The result of the addition of two objects is : " << str_m << endl;
     }
 };
 
@@ -68,22 +68,22 @@ Example for virtual function -> runtime polymorphism
 */
 class Add
 {
-    int x = 5, y = 20;
+    int x_ = 5, y_ = 20;
 
    public:
     void display()  // overridden function
     {
-        cout << "Add value of x is : " << x + y << endl;
+        cout << "Add value of x is : " << x_ + y_ << endl;
     }
 };
 class Substract : public Add
 {
-    int y = 10, z = 30;
+    int y_ = 10, z_ = 30;
 
    public:
     void display()  // overridden function
     {
-        cout << "Substract value of y is : " << y - z << endl;
+        cout << "Substract value of y is : " << y_ - z_ << endl;
     }
 };
 
@@ -91,14 +91,14 @@ auto main() -> int
 {
     // Example for function / method overloading
     cout << "Function Overloading:" << endl;
-    cout << +Addition::ADD(3, 9) << endl;             // first method is called
-    cout << Addition::ADD("Hallo", " Welt") << endl;  // second method is called
+    cout << +Addition::add(3, 9) << endl;             // first method is called
+    cout << Addition::add("Hallo", " Welt") << endl;  // second method is called
 
     // Example for operator overloading
     cout << "Operator Overloading:" << endl;
-    A a1("Welcome");
-    A a2(" Back");
-    a1 + a2;
+    A ca1("Welcome");
+    A ca2(" Back");
+    ca1 + ca2;
 
     // Example for function overriding
     cout << "Funciton Overriding:" << endl;
@@ -109,10 +109,10 @@ auto main() -> int
 
     // Example for virtual function
     // TODO: nicht fertig
-    Add *add;     // base class pointer .it can only access the base class members
-    Substract s;  // making object of derived class
-    s.display();
-    add = &s;
+    Add *add;       // base class pointer .it can only access the base class members
+    Substract sub;  // making object of derived class
+    sub.display();
+    add = &sub;
     add->display();  // Accessing the function by using base class  pointer
 
     return 0;
