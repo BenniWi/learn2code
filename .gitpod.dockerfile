@@ -5,7 +5,13 @@ RUN \
  sudo wget -qO /etc/apt/trusted.gpg.d/kitware-key.asc https://apt.kitware.com/keys/kitware-archive-latest.asc \ 
  && echo "deb https://apt.kitware.com/ubuntu/ focal main" | sudo tee /etc/apt/sources.list.d/kitware.list \
  && sudo add-apt-repository -y ppa:system76/pop \
+# bring in latest clang toolchain
+ && sudo add-apt-repository "deb http://apt.llvm.org/focal/ llvm-toolchain-15 main"\
+ # install packages
  && sudo apt-get update \
- && sudo apt-get install -y build-essential cmake lldb gdb ninja-build libgtest-dev clang clang-tools clang-format chromium\
+ && sudo apt-get install -y build-essential cmake gdb ninja-build libgtest-dev chromium clang-tools clang-format clang-tidy\
+ # install latest llvm tools like clang etc.
+ && sudo bash -c "$(wget -O - https://apt.llvm.org/llvm.sh)"\
+ # clean up
  && sudo rm -rf /var/lib/apt/lists/*
- # && sudo snap install marp-cli-carroarmato0 
+
