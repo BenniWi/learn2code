@@ -1,6 +1,6 @@
 #include <stdio.h>  //scanf is also part of stdio
 
-int main()
+int main(void)
 {
     // define our variables
     int val1, val2, res;

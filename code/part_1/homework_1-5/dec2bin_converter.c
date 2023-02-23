@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-int main()
+int main(void)
 {
     printf("Enter a decimal number: ");
     int userInput = 0;

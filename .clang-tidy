@@ -1,5 +1,5 @@
 ---
-Checks:          '-*,clang-diagnostic-*,clang-analyzer-*,modernize-*,performance-*,portability-*,readability-*,google-*,llvm-*,cppcoreguidelines-*,cert-*,hicpp-*,-readability-magic-numbers,-cppcoreguidelines-avoid-magic-numbers*'
+Checks:          '-*,clang-diagnostic-*,clang-analyzer-*,modernize-*,performance-*,portability-*,readability-*,google-*,llvm-*,cppcoreguidelines-*,cert-*,hicpp-*,-readability-magic-numbers,-cppcoreguidelines-avoid-magic-numbers*,-cppcoreguidelines-non-private-member-variables-in-classes*'
 WarningsAsErrors: ''
 HeaderFilterRegex: ''
 AnalyzeTemporaryDtors: false
@@ -227,12 +227,10 @@ CheckOptions:
   modernize-use-emplace.EmplacyFunctions: 'vector::emplace_back;vector::emplace;deque::emplace;deque::emplace_front;deque::emplace_back;forward_list::emplace_after;forward_list::emplace_front;list::emplace;list::emplace_back;list::emplace_front;set::emplace;set::emplace_hint;map::emplace;map::emplace_hint;multiset::emplace;multiset::emplace_hint;multimap::emplace;multimap::emplace_hint;unordered_set::emplace;unordered_set::emplace_hint;unordered_map::emplace;unordered_map::emplace_hint;unordered_multiset::emplace;unordered_multiset::emplace_hint;unordered_multimap::emplace;unordered_multimap::emplace_hint;stack::emplace;queue::emplace;priority_queue::emplace'
   hicpp-use-emplace.TupleTypes: '::std::pair;::std::tuple'
   cppcoreguidelines-narrowing-conversions.WarnOnEquivalentBitWidth: 'true'
-  cppcoreguidelines-non-private-member-variables-in-classes.IgnorePublicMemberVariables: 'false'
   cppcoreguidelines-special-member-functions.AllowMissingMoveFunctionsWhenCopyIsDeleted: 'false'
   cert-oop57-cpp.MemCmpNames: ''
   modernize-use-noexcept.UseNoexceptFalse: 'true'
   readability-function-cognitive-complexity.Threshold: '25'
-  cppcoreguidelines-non-private-member-variables-in-classes.IgnoreClassesWithAllMemberVariablesBeingPublic: 'true'
   readability-simplify-boolean-expr.SimplifyDeMorganRelaxed: 'false'
   performance-faster-string-find.StringLikeClasses: '::std::basic_string;::std::basic_string_view'
   cppcoreguidelines-narrowing-conversions.WarnOnIntegerToFloatingPointNarrowingConversion: 'true'

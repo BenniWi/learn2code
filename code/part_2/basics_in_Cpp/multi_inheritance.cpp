@@ -3,26 +3,26 @@
 // Base class Shape
 class Shape
 {
-   public:
-    void setWidth(int8_t w)
+   public:  // C++ Access Specifiers
+    void set_width(int8_t width_in)
     {
-        width = w;
+        width_ = width_in;
     }
-    void setHeight(int8_t h)
+    void set_height(int8_t height_in)
     {
-        height = h;
+        height_ = height_in;
     }
 
-   protected:
-    int8_t width;
-    int8_t height;
+   protected:  // C++ Access Specifiers
+    int8_t width_;
+    int8_t height_;
 };
 
 // Base class PaintCost
 class PaintCost
 {
    public:
-    int32_t getCost(int16_t area)
+    auto get_cost(int16_t area) -> int32_t
     {
         return area * 70;
     }
@@ -32,27 +32,25 @@ class PaintCost
 class Rectangle : public Shape, public PaintCost
 {
    public:
-    int16_t getArea()
+    auto get_area() -> int16_t
     {
-        return (width * height);
+        return (width_ * height_);
     }
 };
 
-int main(void)
+auto main() -> int
 {
-    Rectangle Rect;
-    int8_t area;
+    Rectangle rect;
+    rect.set_width(5);
+    rect.set_height(7);
 
-    Rect.setWidth(5);
-    Rect.setHeight(7);
-
-    area = Rect.getArea();
+    int16_t area = rect.get_area();
 
     // Print the area of the object.
-    std::cout << "Total area: " << Rect.getArea() << std::endl;
+    std::cout << "Total area: " << rect.get_area() << std::endl;
 
     // Print the total cost of painting
-    std::cout << "Total paint cost: $" << Rect.getCost(area) << std::endl;
+    std::cout << "Total paint cost: $" << rect.get_cost(area) << std::endl;
 
     return 0;
 }

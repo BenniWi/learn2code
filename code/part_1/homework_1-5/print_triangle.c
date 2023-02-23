@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-int main()
+int main(void)
 {
     int triangleSize = 0;
     printf("Enter height: ");

@@ -1,6 +1,6 @@
 #include <iostream>
 
-int main(void)
+auto main() -> int
 {
     std::cout << "Hallo Welt" << std::endl;
 }
