@@ -14,7 +14,7 @@ typedef struct
     float d, e, f;
 } outer_td_struct;
 
-int main()
+int main(void)
 {
     // locally instantiated structure with direct initialization
     struct outer_struct or = {.a = 5, .b = 6, .c = 7, .d = 0.1, .e = 0.2, .f = 0.3};
