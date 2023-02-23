@@ -9,7 +9,7 @@ RUN \
  && wget https://apt.llvm.org/llvm.sh \
  && chmod +x llvm.sh \
  && sudo ./llvm.sh 16 all \
- && rm .llvm.sh \
+ && rm llvm.sh \
  # install packages
  && sudo apt-get update \
  && sudo apt-get install -y build-essential cmake gdb ninja-build libgtest-dev chromium\
