@@ -1210,10 +1210,10 @@ VS Code extension [insert-random-text](https://marketplace.visualstudio.com/item
 From now on, we will stick to the following folder structure
 
 - \<project-name\>
-  - `include` (-> contains all header files)
-  - `src`     (-> contains all source files)
-  - `test`    (-> contains test files)
-  - `doc`     (-> contains relevant files for documentation)
+  - `include` ( ➡️ contains all header files)
+  - `src`     ( ➡️ contains all source files)
+  - `test`    ( ➡️ contains test files)
+  - `doc`     ( ➡️ contains relevant files for documentation)
   - `CMakeLists.txt`
   - `readme.md`
   - ...
