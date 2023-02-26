@@ -1175,7 +1175,7 @@ Even with the prototype, the overview is not perfect. Putting code in separate f
 1. Create a header file for the prototype (e.g. *include/functions.h*). Always use [include guards](#include-guards)
 2. Create a source file for the definition (e.g. *src/functions.c*)
 3. Include the header in your main file
-4. Tell the compiler where to find everything (*CMakeLists.txt*)
+4. Tell the compiler where to find everything (*CMakeLists.txt* ➡️ [target_inlude_directories](https://cmake.org/cmake/help/latest/command/target_include_directories.html))
 
 ---
 
