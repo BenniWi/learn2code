@@ -901,7 +901,7 @@ cmake -S . -B build #add all your options
 
 ---
 
-# Debugging-Prerequisits
+## Debugging-Prerequisits
 
 - you have to tell the compiler to create *debug symbols*
   - extend CMake build with: 
