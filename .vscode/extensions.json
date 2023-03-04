@@ -1,0 +1,22 @@
+{
+    "recommendations": [
+        "donjayamanne.githistory",
+        "ms-python.python",
+        "twxs.cmake",
+        "mhutchie.git-graph",
+        "ms-vscode.cpptools-themes",
+        "notskm.clang-tidy",
+        "xaver.clang-format",
+        "marp-team.marp-vscode",
+        "zaaack.markdown-editor",
+        "ms-vscode.cmake-tools",
+        "ms-azuretools.vscode-docker",
+        "yzhang.markdown-all-in-one",
+        "ms-vscode.cpptools",
+        "ms-vscode.cpptools-extension-pack",
+        "franneck94.c-cpp-runner",
+        "DavidAnson.vscode-markdownlint",
+        "mdickin.markdown-shortcuts",
+        "ElecTreeFrying.insert-random-text"
+    ],
+}
