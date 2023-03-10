@@ -14,13 +14,13 @@ class Addition
    public:
     static auto add(int8_t num_x, int8_t num_y) -> int16_t
     {
-        return num_x + num_y;  // this function is performing addition of  two Integer value
+        return num_x + num_y;  // this function is performing addition of two Integer value
     }
 
     static auto add(const string &str1, const string &str2) -> string
     {
         return str1 + str2;  // this function concatenates two strings
-    }
+    } 
 };
 
 /*
@@ -32,9 +32,11 @@ class A
 
    public:
     A() = default;
-    explicit A(const string &str_i)
+    // What is explicit?? -> https://stackoverflow.com/a/121163
+    // Why prefer std::move?? over explicit A(const string &str_i) : str_x_{str_i}
+    // -> https://clang.llvm.org/extra/clang-tidy/checks/modernize/pass-by-value.html
+    explicit A(string str_i) : str_x_{std::move(str_i)}
     {
-        str_x_ = str_i;
     }
     void operator+(const A &class_a)
     {
@@ -49,7 +51,7 @@ Example for function overriding -> runtime polymorphism
 class Animal
 {
    public:
-    void function()
+    void function() const
     {
         cout << "Eating..." << endl;
     }
@@ -57,7 +59,7 @@ class Animal
 class Man : public Animal
 {
    public:
-    void function()
+    void function() const
     {
         cout << "Walking ..." << endl;
     }
@@ -66,54 +68,68 @@ class Man : public Animal
 /*
 Example for virtual function -> runtime polymorphism
 */
-class Add
+class ParentWVirtual
 {
-    int x_ = 5, y_ = 20;
-
    public:
-    void display()  // overridden function
+    void non_virtual_display() const
     {
-        cout << "Add value of x is : " << x_ + y_ << endl;
+        cout << "Parent non_virutal speaking !!" << endl;
     }
-};
-class Substract : public Add
-{
-    int y_ = 10, z_ = 30;
 
-   public:
-    void display()  // overridden function
+    virtual void virtual_display() const
     {
-        cout << "Substract value of y is : " << y_ - z_ << endl;
+        cout << "Parent virtual speaking !!" << endl;
+    }
+
+    // if we have defined a base class with "virtual", 
+    // it is good practice to define the behaviour of the
+    // destructor
+    virtual ~ParentWVirtual() = default;
+};
+
+class DerivedWVirtual : public ParentWVirtual
+{
+   public:
+    void non_virtual_display() const  // overridden function
+    {
+        cout << "Derived non_virtual speaking !!"<< endl;
+    }
+
+    void virtual_display() const
+    {
+        cout << "Derived virtual speaking !!" << endl;
     }
 };
 
 auto main() -> int
 {
     // Example for function / method overloading
-    cout << "Function Overloading:" << endl;
+    cout << "------ Function Overloading: ------" << endl;
     cout << +Addition::add(3, 9) << endl;             // first method is called
     cout << Addition::add("Hallo", " Welt") << endl;  // second method is called
 
     // Example for operator overloading
-    cout << "Operator Overloading:" << endl;
+    cout << "------ Operator Overloading: ------" << endl;
     A ca1("Welcome");
     A ca2(" Back");
     ca1 + ca2;
 
     // Example for function overriding
-    cout << "Funciton Overriding:" << endl;
+    cout << "------ Function Overriding: ------" << endl;
     Animal animal = Animal();
     animal.function();  // parent class object
     Man man = Man();
     man.function();  // child class object
 
     // Example for virtual function
-    // TODO: nicht fertig
-    Add *add;       // base class pointer .it can only access the base class members
-    Substract sub;  // making object of derived class
-    sub.display();
-    add = &sub;
-    add->display();  // Accessing the function by using base class  pointer
+    cout << "------ Virtual Overriding: ------" << endl;
+    DerivedWVirtual dwv;  // making object of derived class
+    ParentWVirtual *pwv = &dwv;       // base class pointer .it can only access the base class members
+    pwv->non_virtual_display(); // call the parent class method
+    dwv.non_virtual_display();  // call the overriden derived class method
+    pwv->virtual_display();     // call the overriden virtual derived class method via parent class pointer,
+    dwv.virtual_display();      // call the overriden virtual derived class method via derived class
+    
 
     return 0;
 }
