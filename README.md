@@ -35,16 +35,15 @@ This part is currently under construction. Expected content could be (incomplete
 - [x] from C to C++ (code)
 - [ ] from C to C++ (chapter)
   - [ ] trailing return type
-- [ ] dynamic memory in C, C++, and C++14 (and later)
+- [x] dynamic memory in C, C++, and C++14 (and later) (code)
+- [ ] dynamic memory in C, C++, and C++14 (and later) (chapter)
 - [x] namespaces (code)
 - [ ] namespaces (chapter)
   - [ ] "using namespace" -> NO in headers, MAYBE in Sources
   - [ ] "namespace abbreviations"
   - [ ] https://en.cppreference.com/w/cpp/language/using_declaration
-- [ ] stl and some basic containers (like string, vector, array, queues, ...) (code)
+- [x] stl and some basic containers (like string, vector, array, queues, ...) (code)
 - [ ] stl and some basic containers (like string, vector, array, queues, ...) (chapter)
-- [ ] auto & iterators (also for loops with auto) (code)
-- [ ] auto & iterators (chapter)
 - [x] inheritance + access specifiers + access specifiers in inheritance (code)
 - [ ] inheritance + access specifiers + access specifiers in inheritance (chapter) https://www.programiz.com/cpp-programming/public-protected-private-inheritance
 - [x] multi-inheritance (code)
@@ -56,8 +55,6 @@ This part is currently under construction. Expected content could be (incomplete
   - operator
   - virtual
   - pure virtual
-- [ ] using templates (code)
-- [ ] using templates (chapter)
 - open topics
   - static_asserts??
   - opencv examples??
