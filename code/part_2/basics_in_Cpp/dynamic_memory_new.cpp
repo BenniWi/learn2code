@@ -47,7 +47,7 @@ auto main() -> int
     // BAD EXAMPLE from bevor has no leak any more
     for (int i = 0; i < noe; i++)
     {
-        auto ptr2 = std::make_shared<int[]>(0);  // "make" syntax
+        auto ptr2 = std::make_unique<int[]>(0);  // "make" syntax
     }
 
     return 0;
