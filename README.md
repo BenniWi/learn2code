@@ -43,6 +43,8 @@ This part is currently under construction. Expected content could be (incomplete
   - [ ] https://en.cppreference.com/w/cpp/language/using_declaration
 - [ ] stl and some basic containers (like string, vector, array, queues, ...) (code)
 - [ ] stl and some basic containers (like string, vector, array, queues, ...) (chapter)
+- [ ] auto & iterators (also for loops with auto) (code)
+- [ ] auto & iterators (chapter)
 - [x] inheritance + access specifiers + access specifiers in inheritance (code)
 - [ ] inheritance + access specifiers + access specifiers in inheritance (chapter) https://www.programiz.com/cpp-programming/public-protected-private-inheritance
 - [x] multi-inheritance (code)
@@ -54,11 +56,13 @@ This part is currently under construction. Expected content could be (incomplete
   - operator
   - virtual
   - pure virtual
+- [ ] using templates (code)
+- [ ] using templates (chapter)
 - open topics
   - static_asserts??
   - opencv examples??
   - Qt examples??
-  - templates??
+  - writing templates??
 
 ## Prepared Environments
 

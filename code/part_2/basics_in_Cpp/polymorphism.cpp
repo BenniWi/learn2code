@@ -20,7 +20,7 @@ class Addition
     static auto add(const string &str1, const string &str2) -> string
     {
         return str1 + str2;  // this function concatenates two strings
-    } 
+    }
 };
 
 /*
@@ -81,7 +81,7 @@ class ParentWVirtual
         cout << "Parent virtual speaking !!" << endl;
     }
 
-    // if we have defined a base class with "virtual", 
+    // if we have defined a base class with "virtual",
     // it is good practice to define the behaviour of the
     // destructor
     virtual ~ParentWVirtual() = default;
@@ -92,7 +92,7 @@ class DerivedWVirtual : public ParentWVirtual
    public:
     void non_virtual_display() const  // overridden function
     {
-        cout << "Derived non_virtual speaking !!"<< endl;
+        cout << "Derived non_virtual speaking !!" << endl;
     }
 
     void virtual_display() const
@@ -123,13 +123,12 @@ auto main() -> int
 
     // Example for virtual function
     cout << "------ Virtual Overriding: ------" << endl;
-    DerivedWVirtual dwv;  // making object of derived class
-    ParentWVirtual *pwv = &dwv;       // base class pointer .it can only access the base class members
-    pwv->non_virtual_display(); // call the parent class method
-    dwv.non_virtual_display();  // call the overriden derived class method
-    pwv->virtual_display();     // call the overriden virtual derived class method via parent class pointer,
-    dwv.virtual_display();      // call the overriden virtual derived class method via derived class
-    
+    DerivedWVirtual dwv;         // making object of derived class
+    ParentWVirtual *pwv = &dwv;  // base class pointer .it can only access the base class members
+    pwv->non_virtual_display();  // call the parent class method
+    dwv.non_virtual_display();   // call the overriden derived class method
+    pwv->virtual_display();      // call the overriden virtual derived class method via parent class pointer,
+    dwv.virtual_display();       // call the overriden virtual derived class method via derived class
 
     return 0;
 }
