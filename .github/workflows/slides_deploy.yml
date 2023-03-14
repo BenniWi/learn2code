@@ -40,16 +40,19 @@ jobs:
       
       - name: Checkout
         uses: actions/checkout@v3
-      - name: create main pdf for part I
+      - name: Create a temporary folder
+        working-directory: ${{github.workspace}}
+        run: mkdir deploy
+      - name: create main html for part I
         working-directory: ${{github.workspace}}/docs/
-        run: marp slides_learn2code_1.md -o ${{github.workspace}}/index.html
+        run: marp slides_learn2code_1.md -o ${{github.workspace}}/deploy/index.html
       - name: Setup Pages
         uses: actions/configure-pages@v3
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
         with:
           # Upload entire repository
-          path: '${{github.workspace}}/index.html'
+          path: '${{github.workspace}}/deploy'
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v1
