@@ -48,6 +48,10 @@ jobs:
       working-directory: ${{github.workspace}}/docs/
       run: marp -c marp_config.yaml slides_learn2code_1.md -o downloads/slides_learn2code_1.pdf
       
+    - name: create main html for part I
+      working-directory: ${{github.workspace}}/docs/
+      run: marp -c marp_config.yaml slides_learn2code_1.md -o downloads/slides_learn2code_1.html
+      
     - name: create main pdf for part II
       working-directory: ${{github.workspace}}/docs/
       run: marp -c marp_config.yaml slides_learn2code_2.md -o downloads/slides_learn2code_2.pdf
