@@ -118,5 +118,5 @@ jobs:
            && ./inheritance \
            && ./multi_inheritance \
            && ./namespace \
-           && ./struct_to_class
-  
+           && ./struct_to_class \
+           && ./polymorphism

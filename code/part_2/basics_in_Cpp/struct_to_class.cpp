@@ -1,7 +1,8 @@
 #include <cstdint>
 #include <iostream>
 
-typedef struct
+// typedef struct {} MyCppStruct  -->  using
+using MyCppStruct = struct
 {
     int8_t a = 0;
     float b = 0.0F;
@@ -10,9 +11,9 @@ typedef struct
     {
         std::cout << "a = " << a << "; b = " << b << std::endl;
     }
-} my_cpp_struct;
+};
 
-class my_cpp_class
+class MyCppClass
 {
    public:  // C++ Access Specifiers
     int8_t a = 0;
@@ -24,16 +25,16 @@ class my_cpp_class
     }
 };
 
-int main(void)
+auto main() -> int
 {
     {
-        my_cpp_struct my_struct;
+        MyCppStruct my_struct;
 
         std::cout << "Printing struct my_struct: " << std::endl;
         my_struct.print();
     }
     {
-        my_cpp_class my_class;
+        MyCppClass my_class;
 
         std::cout << "Printing class my_class: " << std::endl;
         my_class.print();

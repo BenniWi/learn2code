@@ -1,5 +1,5 @@
 
-int main()
+int main(void)
 {
     int a[5];                         // declare an array without initialization
     int b[5] = {0};                   // initialize all values with zeros

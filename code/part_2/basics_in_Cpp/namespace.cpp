@@ -3,7 +3,7 @@
 
 namespace my_awesome_namespace
 {
-class awesome_class
+class AwesomeClass
 {
    public:
     int8_t a = 0;  // type from cstdint https://en.cppreference.com/w/cpp/types/integer
@@ -20,7 +20,7 @@ namespace my_awesome_namespace
 {
 namespace my_more_awesome_namespace
 {
-class more_awesome_class
+class MoreAwesomeClass
 {
    public:
     static void print_hello()
@@ -31,11 +31,11 @@ class more_awesome_class
 };  // namespace my_more_awesome_namespace
 }  // namespace my_awesome_namespace
 
-int main(void)
+auto main() -> int
 {
-    my_awesome_namespace::awesome_class my_class;
+    my_awesome_namespace::AwesomeClass my_class;
     std::cout << "Printing class my_class from namespace: " << std::endl;
     my_class.print();
 
-    my_awesome_namespace::my_more_awesome_namespace::more_awesome_class::print_hello();
+    my_awesome_namespace::my_more_awesome_namespace::MoreAwesomeClass::print_hello();
 }

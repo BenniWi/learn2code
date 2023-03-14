@@ -1,6 +1,6 @@
 #include <stdio.h>  //specify where to look for the functions you need
 
-int main()
+int main(void)
 {
     /* print something to the command line
     make sure to end with a new line "\n"

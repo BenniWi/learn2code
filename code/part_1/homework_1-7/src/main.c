@@ -1,6 +1,6 @@
 #include "student.h"
 
-int main()
+int main(void)
 {
     student max, maria;
 

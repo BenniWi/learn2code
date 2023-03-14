@@ -3,7 +3,7 @@
 // define a macro, from now on we can use "new_line" instead of "\n"
 #define new_line "\n"
 
-int main()
+int main(void)
 {
     // append the macro to the string
     printf("Hello World!" new_line);

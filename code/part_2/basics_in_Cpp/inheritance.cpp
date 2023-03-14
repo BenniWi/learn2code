@@ -5,39 +5,39 @@
 class Shape
 {
    public:  // C++ Access Specifiers
-    void setWidth(int8_t w)
+    void set_width(int8_t width_in)
     {
-        width = w;
+        width_ = width_in;
     }
-    void setHeight(int8_t h)
+    void set_height(int8_t height_in)
     {
-        height = h;
+        height_ = height_in;
     }
 
    protected:  // C++ Access Specifiers
-    int8_t width;
-    int8_t height;
+    int8_t width_;
+    int8_t height_;
 };
 
 // Derived class
 class Rectangle : public Shape
 {
    public:
-    int16_t getArea()
+    auto get_area() -> int16_t
     {
-        return (width * height);
+        return (width_ * height_);
     }
 };
 
-int main(void)
+auto main() -> int
 {
-    Rectangle Rect;
+    Rectangle rect;
 
-    Rect.setWidth(5);
-    Rect.setHeight(7);
+    rect.set_width(5);
+    rect.set_height(7);
 
     // Print the area of the object.
-    std::cout << "Total area: " << Rect.getArea() << std::endl;
+    std::cout << "Total area: " << rect.get_area() << std::endl;
 
     return 0;
 }
