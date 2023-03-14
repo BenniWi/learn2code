@@ -44,7 +44,7 @@ jobs:
         working-directory: ${{github.workspace}}
         run: mkdir deploy
       - name: copy all images to deploy
-        run: cp ${{github.workspace}}/docs/images/* ${{github.workspace}}/deploy
+        run: cp -R ${{github.workspace}}/docs/images ${{github.workspace}}/deploy/
       - name: create main html for part I
         working-directory: ${{github.workspace}}/docs/
         run: marp -c marp_config.yaml slides_learn2code_1.md -o ${{github.workspace}}/deploy/index.html
