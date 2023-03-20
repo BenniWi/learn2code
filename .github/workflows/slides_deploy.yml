@@ -47,7 +47,15 @@ jobs:
         run: cp -R ${{github.workspace}}/docs/images ${{github.workspace}}/deploy/
       - name: create main html for part I
         working-directory: ${{github.workspace}}/docs/
-        run: marp -c marp_config.yaml slides_learn2code_1.md -o ${{github.workspace}}/deploy/index.html
+        run: marp -c marp_config.yaml slides_learn2code_1.md -o ${{github.workspace}}/deploy/part1.html
+      - name: create main html for part II
+        working-directory: ${{github.workspace}}/docs/
+        run: marp -c marp_config.yaml slides_learn2code_2.md -o ${{github.workspace}}/deploy/part2.html
+      - name: Create index.html
+        working-directory: ${{github.workspace}}/deploy
+        run: |
+          echo "<a href="part1.html">Part I</a>" > index.html
+          echo "<a href="part2.html">Part II</a>" > index.html
       - name: Setup Pages
         uses: actions/configure-pages@v3
       - name: Upload artifact
@@ -58,3 +66,5 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v1
+
+
