@@ -102,7 +102,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED True)
 
 ---
 
-## Hello World
+## *C++* Hello World
 
 ```cpp
 #include <iostream>
@@ -239,6 +239,24 @@ auto main() -> int
     my_awesome_namespace::my_more_awesome_namespace::MoreAwesomeClass::print_hello();
 }
 ```
+
+---
+
+### **"using"** Namespaces
+
+The [keyword](https://en.cppreference.com/w/cpp/language/using_declaration) ```using``` simplyfies things a lot.
+
+```cpp
+using namespace std
+[...]
+cout << "Hello World" << endl;
+```
+
+:warning: But:
+- :zap: *NEVER* :zap: put ```using``` into a header file
+- you *MIGHT* put it into the source file carefully
+- prefer [namespace aliases](https://en.cppreference.com/w/cpp/language/namespace_alias) (only in source files)
+  ```namespace fbz = foo::bar::baz;```
 
 ---
 
