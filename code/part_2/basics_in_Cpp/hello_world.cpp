@@ -2,5 +2,5 @@
 
 auto main() -> int
 {
-    std::cout << "Hallo Welt" << std::endl;
+    std::cout << "Hello World" << std::endl;
 }

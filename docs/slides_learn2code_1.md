@@ -90,13 +90,13 @@ The goal of this course is to enable all participants to learn proper software e
 
 ## Homework
 
-- Homework is voluntary but recommended.
+- Homework is voluntary but strongly recommended.
 - You are welcome to ask questions, I'm glad to help.
 
 ## Exam
 
 - During the last 3 weeks of the course.
-- In teams of up to 3 people (2 preferred).
+- In teams of up to 2 people.
 - Delivery in [Git](#git).
 
 ---
@@ -999,11 +999,11 @@ Using a common coding format easens collaboration on code *a lot*.
 Common coding format contains rules about: braces, brackets, number of spaces (tab usage), spaces between operators, and many more.
 
 VS Code provides an easy way to format your files automatically.
-* install clang-tidy
-* install VS Code extension *xaver.clang-format*
-* copy the [.clang-format config file](https://github.com/BenniWi/learn-git/blob/main/.clang-format) to your main folder
-* open a file and press *Ctrl* + &#8679; + *P* (&#8984; + &#8679; + *P*)
-* search for *format document* &rarr; click to execute
+- install clang-tidy
+- install VS Code extension *xaver.clang-format*
+- copy the [.clang-format config file](https://github.com/BenniWi/learn-git/blob/main/.clang-format) to your main folder
+- open a file and press *Ctrl* + &#8679; + *P* (&#8984; + &#8679; + *P*)
+- search for *format document* &rarr; click to execute
 
 ---
 

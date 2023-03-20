@@ -33,8 +33,8 @@ This part is currently under construction. Expected content could be (incomplete
 - [ ] doxygen
 - [ ] clang-tidy
 - [x] from C to C++ (code)
-- [ ] from C to C++ (chapter)
-  - [ ] trailing return type
+- [x] from C to C++ (chapter)
+  - [x] trailing return type
 - [x] dynamic memory in C, C++, and C++14 (and later) (code)
 - [ ] dynamic memory in C, C++, and C++14 (and later) (chapter)
 - [x] namespaces (code)
