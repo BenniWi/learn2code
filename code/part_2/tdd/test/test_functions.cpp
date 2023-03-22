@@ -1,9 +1,6 @@
 
-#include "gtest/gtest.h"  // include the gtest functions & macros
-extern "C"
-{  // the library we want to us is written in C
 #include "functions.h"
-}
+#include "gtest/gtest.h"  // include the gtest functions & macros
 
 // the first test we want to write
 TEST(tdd_tests, add_standard_integers)

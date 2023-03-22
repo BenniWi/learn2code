@@ -14,7 +14,6 @@ if(BUILD_PART_1)
     add_subdirectory(./code/part_1/debugging)
     add_subdirectory(./code/part_1/functions)
     add_subdirectory(./code/part_1/libraries)
-    add_subdirectory(./code/part_1/tdd)
     add_subdirectory(./code/part_1/user_input)
     # add the C homeworks
     add_subdirectory(./code/part_1/homework_1-2)
@@ -29,5 +28,6 @@ endif()
 if(BUILD_PART_2)
     # add the C++ projects
     add_subdirectory(./code/part_2/basics_in_Cpp)
+    add_subdirectory(./code/part_2/tdd)
     # add the C++ homeworks
 endif()
