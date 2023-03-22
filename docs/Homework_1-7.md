@@ -21,7 +21,7 @@ Requirements: *CMake*, *User Input*, *Basics in C #2*, *Functions*, *Libraries*,
 
 Modify the *student struct* from *homework 1-6* to create a **student struct library** and a **main** executable
 
----
+<!-- ---
 
 ## Testing the Student Struct
 
@@ -33,4 +33,4 @@ Exend the *student struct* project by adding some tests using **gtest**
   - Create a [test fixture](https://developer.ibm.com/articles/au-googletestingframework/#understanding-test-fixtures)
   - Test the initialization of the student structure
   - Test adding some grades to the student structure
-  - Test adding more grades than theoretically possible
+  - Test adding more grades than theoretically possible -->

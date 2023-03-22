@@ -28,19 +28,20 @@ target_include_directories(student_struct_hw7_exec PRIVATE include)
 # link your libraries
 target_link_libraries(student_struct_hw7_exec PRIVATE student_struct)
 
-
-enable_testing()
 # check if we have gtest
-find_package(GTest REQUIRED)
-# include the gtest CMake stuff
-include(GoogleTest)
-# create a test executable
-add_executable(tests test/test_student_struct.cpp)
-# link the gtest libraries
-target_link_libraries(tests PRIVATE GTest::GTest GTest::Main)
-# link the library we want to test
-target_link_libraries(tests PRIVATE student_struct)
-# add the include directories
-target_include_directories(tests PUBLIC include)
-# discover and add tests to the test list
-gtest_discover_tests(tests)
+find_package(GTest)
+if(GTEST_LIBRARY)
+    enable_testing()
+    # include the gtest CMake stuff
+    include(GoogleTest)
+    # create a test executable
+    add_executable(tests test/test_student_struct.cpp)
+    # link the gtest libraries
+    target_link_libraries(tests PRIVATE GTest::GTest GTest::Main)
+    # link the library we want to test
+    target_link_libraries(tests PRIVATE student_struct)
+    # add the include directories
+    target_include_directories(tests PUBLIC include)
+    # discover and add tests to the test list
+    gtest_discover_tests(tests)
+endif()
