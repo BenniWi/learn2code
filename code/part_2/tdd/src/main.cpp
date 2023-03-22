@@ -1,13 +1,13 @@
-#include <stdio.h>
+#include <iostream>
 
 #include "functions.h"
 
-int main(void)
+auto main() -> int
 {
     int val1 = 5;
     int val2 = 6;
     int ret_val = add_integers(val1, val2);
 
-    printf("Result of addition is: %d\n", ret_val);
+    std::cout << "Result of addition is: " << ret_val << std::endl;
     return 0;
 }

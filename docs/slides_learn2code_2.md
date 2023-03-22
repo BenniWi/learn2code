@@ -29,6 +29,7 @@ paginate: false
 - [Excercises@Home \& Exam](#excerciseshome--exam)
 - [Preparations for Every Lesson](#preparations-for-every-lesson)
 - [From *C* to *C++*](#from-c-to-c)
+- [Testing Code & Test Driven Development](#test-driven-development)
 - [Dynamic Memory in *C* \& *C++*](#dynamic-memory-in-c--c)
 - [Inheritance](#inheritance)
 - [Polymorphism](#polymorphism)
@@ -257,6 +258,90 @@ cout << "Hello World" << endl;
 - you *MIGHT* put it into the source file carefully
 - prefer [namespace aliases](https://en.cppreference.com/w/cpp/language/namespace_alias) (only in source files)
   ```namespace fbz = foo::bar::baz;```
+
+---
+
+# Testing Code & Test Driven Development
+
+<a id="test-driven-development"></a>
+
+> Test-driven development (TDD) is a software development process relying on software requirements being converted to test cases before software is fully developed, and tracking all software development by repeatedly testing the software against all test cases. ([wikipedia](https://en.wikipedia.org/wiki/Test-driven_development))
+
+---
+
+## TDD Process
+
+1. What are your requirements? What do you want to achieve?
+2. Write your tests (using a test framework)
+3. Write the most simple code to pass the tests
+4. Improve your code to pass all tests
+5. Beautify the code
+
+---
+
+## googletest
+
+![width:300px](images/googletest.jpg "googletest")
+
+> googletest is a testing framework developed by the Testing Technology team with Google’s specific requirements and constraints in mind. Whether you work on Linux, Windows, or a Mac, if you write C++ code, googletest can help you. ([googletest](https://google.github.io/googletest/primer.html))
+
+---
+
+## How to Use googletest
+
+1. You only can test libraries, not executables
+2. googletest is a **C++** library, so we have to use **C++** for our tests
+3. add googletest to your *CMakeLists.txt*
+4. write your tests
+5. Run your tests
+
+---
+
+### Add googeltest to Your CMakeLists.txt
+
+```cmake
+# enable the testing
+enable_testing()
+# check if we have gtest
+find_package(GTest REQUIRED)
+# include the gtest CMake stuff
+include(GoogleTest)
+# create a test executable
+add_executable(tests test/test_functions.cpp)
+# link the gtest libraries
+target_link_libraries(tests PRIVATE GTest::GTest GTest::Main)
+# link the library we want to test
+target_link_libraries(tests PRIVATE tdd_functions_lib)
+# add the include directories
+target_include_directories(tests PUBLIC include)
+# discover and add tests to the test list
+gtest_discover_tests(tests)
+```
+
+---
+
+### Write a Test
+
+```C
+#include "gtest/gtest.h" // include the gtest functions & macros
+#include "functions.h"
+
+// the first test we want to write
+TEST (tdd_tests, add_standard_integers) { 
+
+    EXPECT_EQ (11, add_integers(5,6));
+}
+```
+
+[GTest CheatSheet](https://qiangbo-workspace.oss-cn-shanghai.aliyuncs.com/2018-12-05-gtest-and-coverage/PlainGoogleQuickTestReferenceGuide1.pdf)
+
+---
+
+### Run the Tests
+
+after compiling everything you have two possibilites:
+```cd <build_folder>```
+run ```ctest``` or the test target ```./tests```
 
 ---
 
