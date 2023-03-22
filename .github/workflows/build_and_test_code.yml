@@ -29,11 +29,6 @@ jobs:
 
     - name: Build
       run: cmake --build ${{github.workspace}}/build --config ${{env.BUILD_TYPE}}
-    
-    ## Test TDD
-    - name: Test "tdd"
-      working-directory: ${{github.workspace}}/build/code/part_1/tdd
-      run: ctest -C ${{env.BUILD_TYPE}}
 
     ## run code in basics
     - name: run "basics"
@@ -110,6 +105,7 @@ jobs:
 
     - name: Build
       run: cmake --build ${{github.workspace}}/build --config ${{env.BUILD_TYPE}}
+      
     ## run all in basics_in_Cpp
     - name: run "basics_in_Cpp"
       working-directory: ${{github.workspace}}/build/code/part_2/basics_in_Cpp/
@@ -120,3 +116,8 @@ jobs:
            && ./namespace \
            && ./struct_to_class \
            && ./polymorphism
+           
+    ## Test TDD
+    - name: Test "tdd"
+      working-directory: ${{github.workspace}}/build/code/part_2/tdd
+      run: ctest -C ${{env.BUILD_TYPE}}
