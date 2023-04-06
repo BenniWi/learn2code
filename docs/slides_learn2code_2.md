@@ -153,7 +153,6 @@ auto main() -> int
         MyCppStruct my_struct;
         std::cout << "Printing struct my_struct: " << std::endl;
         my_struct.print();
-        MyCppClass my_class;
 }
 ```
 
