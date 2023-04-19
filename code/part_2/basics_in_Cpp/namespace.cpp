@@ -6,7 +6,7 @@ namespace my_awesome_namespace
 class AwesomeClass
 {
    public:
-    int8_t a = 0;  // type from cstdint https://en.cppreference.com/w/cpp/types/integer
+    int16_t a = 0;  // type from cstdint https://en.cppreference.com/w/cpp/types/integer
     float b = 0.0F;
 
     void print() const

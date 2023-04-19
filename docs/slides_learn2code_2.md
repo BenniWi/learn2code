@@ -103,6 +103,15 @@ set(CMAKE_CXX_STANDARD_REQUIRED True)
 
 ---
 
+## *C++* Filenames
+
+In order to tell CMake and the compiler you should use the following file names:
+
+```*.cpp``` for all source files
+```*.h``` and ```*.hpp``` for all header files
+
+---
+
 ## *C++* Hello World
 
 ```cpp
@@ -111,6 +120,8 @@ set(CMAKE_CXX_STANDARD_REQUIRED True)
 auto main() -> int // see also "trailing return type"
 {
     std::cout << "Hello World" << std::endl;
+
+    return 0;
 }
 ```
 
@@ -139,7 +150,7 @@ using MyCppStruct = struct
 ```cpp
 using MyCppStruct = struct
 {
-    int8_t a = 0;
+    int16_t a = 0; // type from cstdint https://en.cppreference.com/w/cpp/types/integer
     float b = 0.0F;
 
     void print() const
@@ -164,7 +175,7 @@ auto main() -> int
 class MyCppClass
 {
    public:  // C++ Access Specifiers
-    int8_t a = 0;
+    int16_t a = 0;
     float b = 0.0F;
 
     void print() const
@@ -193,7 +204,7 @@ namespace my_awesome_namespace
 class AwesomeClass
 {
    public:
-    int8_t a = 0;  // type from cstdint https://en.cppreference.com/w/cpp/types/integer
+    int16_t a = 0;  // type from cstdint https://en.cppreference.com/w/cpp/types/integer
     float b = 0.0F;
 
     void print() const
@@ -340,7 +351,9 @@ TEST (tdd_tests, add_standard_integers) {
 
 after compiling everything you have two possibilites:
 ```cd <build_folder>```
-run ```ctest``` or the test target ```./tests```
+run ```ctest``` 
+or 
+run the created the test target ```./tests```
 
 ---
 

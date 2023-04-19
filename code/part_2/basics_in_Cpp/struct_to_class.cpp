@@ -4,7 +4,7 @@
 // typedef struct {} MyCppStruct  -->  using
 using MyCppStruct = struct
 {
-    int8_t a = 0;  // type from cstdint https://en.cppreference.com/w/cpp/types/integer
+    int16_t a = 0;  // type from cstdint https://en.cppreference.com/w/cpp/types/integer
     float b = 0.0F;
 
     void print() const
@@ -16,7 +16,7 @@ using MyCppStruct = struct
 class MyCppClass
 {
    public:  // C++ Access Specifiers
-    int8_t a = 0;
+    int16_t a = 0;
     float b = 0.0F;
 
     void print() const
