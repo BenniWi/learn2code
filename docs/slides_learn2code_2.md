@@ -361,6 +361,139 @@ run the created the test target ```./tests```
 
 <a id="dynamic-memory-in-c--c"></a>
 
+Every instantiated variable is allocated on the **stack**. The **stack** memory is very limited in size.
+If more memory is needed, the solution is to use the **heap** memory instead.
+
+---
+
+## Dynamic Memory in *C*
+
+1. [malloc](https://en.cppreference.com/w/c/memory/malloc)
+Allocates memory on the heap and returns a pointer to this memory
+2. [calloc](https://en.cppreference.com/w/c/memory/calloc)
+Allocates memory for an array of num objects of size and initializes all bytes in the allocated storage to zero.
+
+:warning: It is very important to free the memory if it is not needed anymore. Either use [free](https://en.cppreference.com/w/c/memory/free) or [realloc](https://en.cppreference.com/w/c/memory/realloc)
+
+---
+
+### Example for *malloc* & *calloc*
+
+```C
+int num_of_elements = 5;
+
+// Dynamically allocate memory using malloc()
+int* mal_ptr = (int*)malloc(num_of_elements * sizeof(int));
+// do some stuff
+// free the memory again
+free(mal_ptr);
+
+// Dynamically allocate memory using malloc()
+int* cal_ptr = (int*)calloc(num_of_elements, sizeof(int));
+// do some stuff
+// free the memory again
+free(cal_ptr);
+```
+
+----
+
+### Example for memory leak with malloc/calloc
+
+```C
+// BAD EXAMPLE -- MEMORY LEAK
+int* ptr2 = NULL;
+for (int i = 0; i < noe; i++)
+{
+    ptr2 = (int*)calloc(100000, sizeof(int));
+}
+free(ptr2);
+```
+
+---
+
+### Exercise for *malloc* & *calloc*
+
+Write a small *C* program to 
+* read in a number as size of an array.
+* create an array by allocating the corresponding amount of memory.
+* initialize the elements of the array with numbers from 1 to *size*
+* print the elements of the array to the terminal.
+
+You can find the code for this exercise in the file [dynamic_memory.c](https://github.com/BenniWi/learn2code/blob/main/code/part_2/basics_in_Cpp/dynamic_memory.c)
+
+---
+
+## Dynamic Memory in *C++03* and Earlier
+
+The **OLD** way of allocating memory in C++ is quite similar to *C*.
+Instead of using ```malloc``` and ```free```, *C++* provides the functions
+[new](https://en.cppreference.com/w/cpp/language/new) and [delete](https://en.cppreference.com/w/cpp/language/delete)
+
+---
+
+### Example for *new*
+
+```Cpp
+int num_of_elements = 5;
+
+// Allocate memory for a single value
+int* single_ptr = new int;
+// Allocate memory for an array
+int* arr_ptr = new int[num_of_elements];
+// do some stuff
+// free the memory again
+delete single_ptr; 
+delete[] arr_ptr; // Be aware of the [] in case of an array
+
+```
+
+---
+
+### Exercise for *new*
+
+Write a small *C++* program to 
+* read in a number as size of an array.
+* create an array by allocating the corresponding amount of memory.
+* initialize the elements of the array with numbers from 1 to *size*
+* print the elements of the array to the terminal.
+
+You can find the code for this exercise in the file [dynamic_memory_old.cpp](https://github.com/BenniWi/learn2code/blob/main/code/part_2/basics_in_Cpp/dynamic_memory_old.cpp)
+
+---
+
+## Dynamic Memory in *C++14* and later
+
+The **NEW** way of allocating memory in C++ is quite different to the old style.
+Instead of using ```new```, *C++14* and later provides [smart pointers](https://en.cppreference.com/book/intro/smart_pointers).
+
+---
+
+### *smart pointers*
+
+TODO
+
+---
+
+### Example for using *smart pointers*
+
+```Cpp
+int num_of_elements = 5;
+
+
+```
+
+---
+
+### Exercise for *smart pointers*
+
+Write a small *C++* program to 
+* read in a number as size of an array.
+* create an array by allocating the corresponding amount of memory using a *unique_ptr*.
+* initialize the elements of the array with numbers from 1 to *size*
+* print the elements of the array to the terminal.
+
+You can find the code for this exercise in the file [dynamic_memory_old.cpp](https://github.com/BenniWi/learn2code/blob/main/code/part_2/basics_in_Cpp/dynamic_memory_old.cpp)
+
 ---
 
 # Inheritance

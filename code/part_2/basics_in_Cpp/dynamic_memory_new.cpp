@@ -44,7 +44,7 @@ auto main() -> int
 
     // ATTENTION: no free-ing of memory necessary
 
-    // BAD EXAMPLE from bevor has no leak any more
+    // BAD EXAMPLE from befor has no leak any more
     for (int i = 0; i < noe; i++)
     {
         auto ptr2 = std::make_unique<int[]>(0);  // "make" syntax
