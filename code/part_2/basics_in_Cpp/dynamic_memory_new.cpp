@@ -8,10 +8,10 @@ auto main() -> int
     // some examples for unique_ptr
     {
         // creating a unique_ptr
-        std::unique_ptr<int> uni_ptr(new int); // single value
-        std::unique_ptr<int[]> array_uni_ptr(new int[5]); // array of size 5
-        std::unique_ptr<int> make_uni_ptr = std::make_unique<int>(); // single value
-        std::unique_ptr<int[]> make_array_uni_ptr = std::make_unique<int[]>(5); // array of size 5
+        std::unique_ptr<int> uni_ptr(new int);                                   // single value
+        std::unique_ptr<int[]> array_uni_ptr(new int[5]);                        // array of size 5
+        std::unique_ptr<int> make_uni_ptr = std::make_unique<int>();             // single value
+        std::unique_ptr<int[]> make_array_uni_ptr = std::make_unique<int[]>(5);  // array of size 5
         // we can also use "auto" here
         auto auto_uni_ptr = std::make_unique<int>();
         // accessing an element of an array inside a unique_ptr
@@ -21,10 +21,10 @@ auto main() -> int
     // some examples for shared_ptr
     {
         // creating a shared_ptr
-        std::shared_ptr<int> shr_ptr(new int); // single value
-        std::shared_ptr<int[]> array_shr_ptr(new int[5]); // array of size 5
-        std::shared_ptr<int> make_shr_ptr = std::make_shared<int>(); // single value
-        std::shared_ptr<int[]> make_array_shr_ptr = std::make_shared<int[]>(5); // array of size 5
+        std::shared_ptr<int> shr_ptr(new int);                                   // single value
+        std::shared_ptr<int[]> array_shr_ptr(new int[5]);                        // array of size 5
+        std::shared_ptr<int> make_shr_ptr = std::make_shared<int>();             // single value
+        std::shared_ptr<int[]> make_array_shr_ptr = std::make_shared<int[]>(5);  // array of size 5
         // we can also use "auto" here
         auto auto_shr_ptr = std::make_shared<int>();
         // accessing an element of an array inside a shared_ptr
