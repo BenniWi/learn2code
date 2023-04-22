@@ -1,6 +1,6 @@
 ---
 marp: true
-title: Programming 1 - Homework 7
+title: Programming 2 - Homework 1
 author: Benjamin Wilking
 theme: uncover
 style: |
@@ -11,21 +11,15 @@ class: invert
 paginate: false
 ---
 
-# Homework #7
+# Homework #1
 
-Requirements: *CMake*, *User Input*, *Basics in C #2*, *Functions*, *Libraries*
+Requirements: *TDD*
 
 ---
 
-## Student Struct as Library
-
-Modify the *student struct* from *homework 1-6* to create a **student struct library** and a **main** executable
-
-<!-- ---
-
 ## Testing the Student Struct
 
-Exend the *student struct* project by adding some tests using **gtest**
+Extend the *student struct* project from [homework 7 in part I](https://github.com/BenniWi/learn2code/blob/main/docs/Homework_1-7.md) by adding some tests using **gtest**
 
 - Add a ```<testfile>.cpp``` to the *test* subfolder.
 - Extend the *CMakeLists.txt* to deal with **gtest** and *C++*
@@ -33,4 +27,6 @@ Exend the *student struct* project by adding some tests using **gtest**
   - Create a [test fixture](https://developer.ibm.com/articles/au-googletestingframework/#understanding-test-fixtures)
   - Test the initialization of the student structure
   - Test adding some grades to the student structure
-  - Test adding more grades than theoretically possible -->
+  - Test adding more grades than theoretically possible
+
+(You can find the code for this solution in the [code for home homework 7 in part I](https://github.com/BenniWi/learn2code/tree/main/code/part_1/homework_1-7))

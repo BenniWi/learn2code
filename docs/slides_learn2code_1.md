@@ -359,10 +359,11 @@ git log --graph # show the commit graph on command line
 
 1. Drop a comment [here](https://github.com/BenniWi/learn-git/issues/1) and I'll add you as a *Collaborator*
 2. Add an SSH key for your machine (only if you don't use the codespace/gitpod)
-  - ![width:1000px](images/ssh-keygen.png "ssh-keygen")
-  - Print your public key to console: ```cat .ssh/id_rsa.pub```
-  - On GitHub: *profile* &rarr; *settings* &rarr; *SSH and GPG keys* &rarr; *New SSH key*
-    - paste and *add* your public key with a descriptive name
+
+- ![width:1000px](images/ssh-keygen.png "ssh-keygen")
+- Print your public key to console: ```cat .ssh/id_rsa.pub```
+- On GitHub: *profile* &rarr; *settings* &rarr; *SSH and GPG keys* &rarr; *New SSH key*
+  - paste and *add* your public key with a descriptive name
 
 ---
 
@@ -903,10 +904,12 @@ cmake -S . -B build #add all your options
 ## Debugging-Prerequisits
 
 - you have to tell the compiler to create *debug symbols*
-  - extend CMake build with: 
+  - extend CMake build with:
+
   ```sh
   cmake -S . -B build -DCMAKE_BUILD_TYPE=DEBUG
   ```
+
 - either use gdb or [lldb](https://lldb.llvm.org/use/map.html)
 
 ---
@@ -998,6 +1001,7 @@ Using a common coding format easens collaboration on code *a lot*.
 Common coding format contains rules about: braces, brackets, number of spaces (tab usage), spaces between operators, and many more.
 
 VS Code provides an easy way to format your files automatically.
+
 - install clang-tidy
 - install VS Code extension *xaver.clang-format*
 - copy the [.clang-format config file](https://github.com/BenniWi/learn-git/blob/main/.clang-format) to your main folder

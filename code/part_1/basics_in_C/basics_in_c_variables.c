@@ -1,6 +1,6 @@
 #include <stdio.h>  //specify where to look for the functions you need
 
-int main()
+int main(void)
 {
     int x;          // defines an integer variable named x
     float y = 1.0;  // defines a variable and assings a value

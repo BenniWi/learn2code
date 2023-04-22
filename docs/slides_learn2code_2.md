@@ -264,6 +264,7 @@ cout << "Hello World" << endl;
 ```
 
 :warning: But:
+
 - :zap: *NEVER* :zap: put ```using``` into a header file
 - you *MIGHT* put it into the source file carefully
 - prefer [namespace aliases](https://en.cppreference.com/w/cpp/language/namespace_alias) (only in source files)
@@ -360,6 +361,186 @@ run the created the test target ```./tests```
 # Dynamic Memory in *C* & *C++*
 
 <a id="dynamic-memory-in-c--c"></a>
+
+Every instantiated variable is allocated on the **stack**. The **stack** memory is very limited in size.
+If more memory is needed, the solution is to use the **heap** memory instead.
+
+---
+
+## Dynamic Memory in *C*
+
+1. [malloc](https://en.cppreference.com/w/c/memory/malloc)
+Allocates memory on the heap and returns a pointer to this memory
+2. [calloc](https://en.cppreference.com/w/c/memory/calloc)
+Allocates memory for an array of num objects of size and initializes all bytes in the allocated storage to zero.
+
+:warning: It is very important to free the memory if it is not needed anymore. Either use [free](https://en.cppreference.com/w/c/memory/free) or [realloc](https://en.cppreference.com/w/c/memory/realloc)
+
+---
+
+### Example for *malloc* & *calloc*
+
+```C
+int num_of_elements = 5;
+
+// Dynamically allocate memory using malloc()
+int* mal_ptr = (int*)malloc(num_of_elements * sizeof(int));
+// do some stuff
+// free the memory again
+free(mal_ptr);
+
+// Dynamically allocate memory using malloc()
+int* cal_ptr = (int*)calloc(num_of_elements, sizeof(int));
+// do some stuff
+// free the memory again
+free(cal_ptr);
+```
+
+----
+
+### Example for memory leak with malloc/calloc
+
+```C
+// BAD EXAMPLE -- MEMORY LEAK
+int* ptr2 = NULL;
+for (int i = 0; i < noe; i++)
+{
+    ptr2 = (int*)calloc(100000, sizeof(int));
+}
+free(ptr2);
+```
+
+---
+
+### Exercise for *malloc* & *calloc*
+
+Write a small *C* program to 
+* read in a number as size of an array.
+* create an array by allocating the corresponding amount of memory.
+* initialize the elements of the array with numbers from 1 to *size*
+* print the elements of the array to the terminal.
+
+You can find the code for this exercise in the file [dynamic_memory.c](https://github.com/BenniWi/learn2code/blob/main/code/part_2/basics_in_Cpp/dynamic_memory.c)
+
+---
+
+## Dynamic Memory in *C++03* and Earlier
+
+The **OLD** way of allocating memory in C++ is quite similar to *C*.
+Instead of using ```malloc``` and ```free```, *C++* provides the functions
+[new](https://en.cppreference.com/w/cpp/language/new) and [delete](https://en.cppreference.com/w/cpp/language/delete)
+
+---
+
+### Example for *new*
+
+```Cpp
+int num_of_elements = 5;
+
+// Allocate memory for a single value
+int* single_ptr = new int;
+// Allocate memory for an array
+int* arr_ptr = new int[num_of_elements];
+// do some stuff
+// free the memory again
+delete single_ptr; 
+delete[] arr_ptr; // Be aware of the [] in case of an array
+
+```
+
+---
+
+### Exercise for *new*
+
+Write a small *C++* program to
+
+- read in a number as size of an array.
+- create an array by allocating the corresponding amount of memory.
+- initialize the elements of the array with numbers from 1 to *size*
+- print the elements of the array to the terminal.
+
+You can find the code for this exercise in the file [dynamic_memory_old.cpp](https://github.com/BenniWi/learn2code/blob/main/code/part_2/basics_in_Cpp/dynamic_memory_old.cpp)
+
+---
+
+## Dynamic Memory in *C++14* and later
+
+The **NEW** way of allocating memory in C++ is quite different to the old style.
+Instead of using ```new```, *C++14* and later provides [smart pointers](https://en.cppreference.com/book/intro/smart_pointers).
+
+---
+
+### *smart pointers*
+
+Smart pointers are used to make sure that an object is deleted if it is no longer used (referenced).
+
+```cpp
+void my_func_w_leak()
+{
+    int* valuePtr = new int(15);
+    int x = 45;
+    if (x == 45)
+        return;   // here we have a memory leak, valuePtr is not deleted
+    delete valuePtr;
+}
+//---------------------
+void my_func_wo_leak()
+{
+    std::unique_ptr<int> valuePtr(new int(15));
+    int x = 45;
+    if (x == 45)
+        return;   // no memory leak anymore!
+}
+```
+
+---
+
+#### *unique_ptr*
+
+>std::unique_ptr is a smart pointer that owns and manages another object through a pointer and disposes of that object when the unique_ptr goes out of scope. [[unique_ptr](https://en.cppreference.com/w/cpp/memory/unique_ptr)]
+
+```cpp
+// creating a unique_ptr
+std::unique_ptr<int> uni_ptr(new int); // single value
+std::unique_ptr<int[]> array_uni_ptr(new int[5]); // array of size 5
+std::unique_ptr<int> make_uni_ptr = std::make_unique<int>(); // single value
+std::unique_ptr<int[]> make_array_uni_ptr = std::make_unique<int[]>(5); // array of size 5
+// we can also use "auto" here
+auto auto_uni_ptr = std::make_unique<int>();
+// accessing an element of an array inside a unique_ptr
+array_uni_ptr.get()[0] = 5;
+```
+
+---
+
+#### *shared_ptr*
+
+>std::shared_ptr is a smart pointer that retains shared ownership of an object through a pointer. Several shared_ptr objects may own the same object. [[shared_ptr](https://en.cppreference.com/w/cpp/memory/shared_ptr)]
+
+```cpp
+// creating a shared_ptr
+std::shared_ptr<int> shr_ptr(new int); // single value
+std::shared_ptr<int[]> array_shr_ptr(new int[5]); // array of size 5
+std::shared_ptr<int> make_shr_ptr = std::make_shared<int>(); // single value
+std::shared_ptr<int[]> make_array_shr_ptr = std::make_shared<int[]>(5); // array of size 5
+// we can also use "auto" here
+auto auto_shr_ptr = std::make_shared<int>();
+// accessing an element of an array inside a shared_ptr
+array_shr_ptr.get()[0] = 5;
+```
+
+---
+
+### Exercise for *smart pointers*
+
+Write a small *C++* program to
+
+- read in a number as size of an array.
+- create an array by allocating the corresponding amount of memory using a *unique_ptr*.
+- initialize the elements of the array with numbers from 1 to *size*
+- print the elements of the array to the terminal.
+
+You can find the code for this exercise in the file [dynamic_memory_new.cpp](https://github.com/BenniWi/learn2code/blob/main/code/part_2/basics_in_Cpp/dynamic_memory_new.cpp)
 
 ---
 

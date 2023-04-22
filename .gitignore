@@ -1,4 +1,3 @@
 *.out
-.vscode
 wget-log
 build

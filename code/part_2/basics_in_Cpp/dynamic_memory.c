@@ -47,6 +47,7 @@ int main()
     int* ptr2 = NULL;
     for (int i = 0; i < noe; i++)
     {
+        // calloc is the same like malloc but initializes the whole memory with zero
         ptr2 = (int*)calloc(100000, sizeof(int));
     }
     free(ptr2);

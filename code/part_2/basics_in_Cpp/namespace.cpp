@@ -28,7 +28,7 @@ class MoreAwesomeClass
         std::cout << "hello from a static class method in namespace" << std::endl;
     }
 };
-};  // namespace my_more_awesome_namespace
+}  // namespace my_more_awesome_namespace
 }  // namespace my_awesome_namespace
 
 auto main() -> int

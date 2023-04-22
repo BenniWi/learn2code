@@ -1,6 +1,6 @@
 #include <stdio.h>  //specify where to look for the functions you need
 
-int main()
+int main(void)
 {
     /*we can open a new "scope" everywhere in the code
       what happens in the scope, stays in the scope
