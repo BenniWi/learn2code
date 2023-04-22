@@ -264,6 +264,7 @@ cout << "Hello World" << endl;
 ```
 
 :warning: But:
+
 - :zap: *NEVER* :zap: put ```using``` into a header file
 - you *MIGHT* put it into the source file carefully
 - prefer [namespace aliases](https://en.cppreference.com/w/cpp/language/namespace_alias) (only in source files)
@@ -451,11 +452,12 @@ delete[] arr_ptr; // Be aware of the [] in case of an array
 
 ### Exercise for *new*
 
-Write a small *C++* program to 
-* read in a number as size of an array.
-* create an array by allocating the corresponding amount of memory.
-* initialize the elements of the array with numbers from 1 to *size*
-* print the elements of the array to the terminal.
+Write a small *C++* program to
+
+- read in a number as size of an array.
+- create an array by allocating the corresponding amount of memory.
+- initialize the elements of the array with numbers from 1 to *size*
+- print the elements of the array to the terminal.
 
 You can find the code for this exercise in the file [dynamic_memory_old.cpp](https://github.com/BenniWi/learn2code/blob/main/code/part_2/basics_in_Cpp/dynamic_memory_old.cpp)
 
@@ -470,29 +472,75 @@ Instead of using ```new```, *C++14* and later provides [smart pointers](https://
 
 ### *smart pointers*
 
-TODO
+Smart pointers are used to make sure that an object is deleted if it is no longer used (referenced).
+
+```cpp
+void my_func_w_leak()
+{
+    int* valuePtr = new int(15);
+    int x = 45;
+    if (x == 45)
+        return;   // here we have a memory leak, valuePtr is not deleted
+    delete valuePtr;
+}
+//---------------------
+void my_func_wo_leak()
+{
+    std::unique_ptr<int> valuePtr(new int(15));
+    int x = 45;
+    if (x == 45)
+        return;   // no memory leak anymore!
+}
+```
 
 ---
 
-### Example for using *smart pointers*
+#### *unique_ptr*
 
-```Cpp
-int num_of_elements = 5;
+>std::unique_ptr is a smart pointer that owns and manages another object through a pointer and disposes of that object when the unique_ptr goes out of scope. [[unique_ptr](https://en.cppreference.com/w/cpp/memory/unique_ptr)]
 
+```cpp
+// creating a unique_ptr
+std::unique_ptr<int> uni_ptr(new int); // single value
+std::unique_ptr<int[]> array_uni_ptr(new int[5]); // array of size 5
+std::unique_ptr<int> make_uni_ptr = std::make_unique<int>(); // single value
+std::unique_ptr<int[]> make_array_uni_ptr = std::make_unique<int[]>(5); // array of size 5
+// we can also use "auto" here
+auto auto_uni_ptr = std::make_unique<int>();
+// accessing an element of an array inside a unique_ptr
+array_uni_ptr.get()[0] = 5;
+```
 
+---
+
+#### *shared_ptr*
+
+>std::shared_ptr is a smart pointer that retains shared ownership of an object through a pointer. Several shared_ptr objects may own the same object. [[shared_ptr](https://en.cppreference.com/w/cpp/memory/shared_ptr)]
+
+```cpp
+// creating a shared_ptr
+std::shared_ptr<int> shr_ptr(new int); // single value
+std::shared_ptr<int[]> array_shr_ptr(new int[5]); // array of size 5
+std::shared_ptr<int> make_shr_ptr = std::make_shared<int>(); // single value
+std::shared_ptr<int[]> make_array_shr_ptr = std::make_shared<int[]>(5); // array of size 5
+// we can also use "auto" here
+auto auto_shr_ptr = std::make_shared<int>();
+// accessing an element of an array inside a shared_ptr
+array_shr_ptr.get()[0] = 5;
 ```
 
 ---
 
 ### Exercise for *smart pointers*
 
-Write a small *C++* program to 
-* read in a number as size of an array.
-* create an array by allocating the corresponding amount of memory using a *unique_ptr*.
-* initialize the elements of the array with numbers from 1 to *size*
-* print the elements of the array to the terminal.
+Write a small *C++* program to
 
-You can find the code for this exercise in the file [dynamic_memory_old.cpp](https://github.com/BenniWi/learn2code/blob/main/code/part_2/basics_in_Cpp/dynamic_memory_old.cpp)
+- read in a number as size of an array.
+- create an array by allocating the corresponding amount of memory using a *unique_ptr*.
+- initialize the elements of the array with numbers from 1 to *size*
+- print the elements of the array to the terminal.
+
+You can find the code for this exercise in the file [dynamic_memory_new.cpp](https://github.com/BenniWi/learn2code/blob/main/code/part_2/basics_in_Cpp/dynamic_memory_new.cpp)
 
 ---
 
