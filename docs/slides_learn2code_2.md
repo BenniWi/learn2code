@@ -415,10 +415,10 @@ free(ptr2);
 ### Exercise for *malloc* & *calloc*
 
 Write a small *C* program to 
-* read in a number as size of an array.
-* create an array by allocating the corresponding amount of memory.
-* initialize the elements of the array with numbers from 1 to *size*
-* print the elements of the array to the terminal.
+- read in a number as size of an array.
+- create an array by allocating the corresponding amount of memory.
+- initialize the elements of the array with numbers from 1 to *size*
+- print the elements of the array to the terminal.
 
 You can find the code for this exercise in the file [dynamic_memory.c](https://github.com/BenniWi/learn2code/blob/main/code/part_2/basics_in_Cpp/dynamic_memory.c)
 
