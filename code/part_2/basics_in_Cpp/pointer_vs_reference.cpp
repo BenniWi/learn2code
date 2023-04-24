@@ -26,7 +26,7 @@ auto main() -> int
 
     // A reference (or alias) for i.
     int &ref = i;
-    
+
     // reassignment:
     ptr = &a;  // that's fine
     // &ref = a;  // It is incorrect as we should declare and initialize references at single step
