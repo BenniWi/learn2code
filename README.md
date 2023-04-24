@@ -36,12 +36,13 @@ This part is currently under construction. Expected content could be (incomplete
 - [x] from C to C++ (chapter)
   - [x] trailing return type
 - [x] dynamic memory in C, C++, and C++14 (and later) (code)
-- [ ] dynamic memory in C, C++, and C++14 (and later) (chapter)
+- [x] dynamic memory in C, C++, and C++14 (and later) (chapter)
 - [x] namespaces (code)
 - [x] namespaces (chapter)
   - [x] "using namespace" -> NO in headers, MAYBE in Sources
   - [x] "namespace abbreviations"
   - [x] https://en.cppreference.com/w/cpp/language/using_declaration
+- [ ] References vs Pointers 
 - [x] stl and some basic containers (like string, vector, array, queues, ...) (code)
 - [ ] stl and some basic containers (like string, vector, array, queues, ...) (chapter)
 - [x] inheritance + access specifiers + access specifiers in inheritance (code)

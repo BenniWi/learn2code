@@ -47,7 +47,7 @@ The goal of this course is to enable all participants to learn proper software e
 <a id="table-of-contents"></a>
 
 - [Literature](#literature)
-- [Excercises@Home \& Exam](#excerciseshome--exam)
+- [Exercises@Home \& Exam](#exerciseshome--exam)
 - [Some Linux Basics](#some-linux-basics)
 - [The Language **C**](#the-language-c)
 - [The *basics* Example](#the-basics-example)
@@ -83,9 +83,9 @@ The goal of this course is to enable all participants to learn proper software e
 
 ---
 
-# Excercises@Home & Exam  
+# Exercises@Home & Exam  
 
-<a id="excerciseshome--exam"></a>
+<a id="exerciseshome--exam"></a>
 
 ## Homework
 

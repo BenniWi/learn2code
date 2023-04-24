@@ -26,7 +26,7 @@ paginate: false
 <a id="table-of-contents"></a>
 
 - [Literature](#literature)
-- [Excercises@Home \& Exam](#excerciseshome--exam)
+- [Exercises@Home \& Exam](#exerciseshome--exam)
 - [Preparations for Every Lesson](#preparations-for-every-lesson)
 - [From *C* to *C++*](#from-c-to-c)
 - [Testing Code & Test Driven Development](#test-driven-development)
@@ -51,9 +51,9 @@ paginate: false
 
 ---
 
-# Excercises@Home & Exam  
+# Exercises@Home & Exam  
 
-<a id="excerciseshome--exam"></a>
+<a id="exerciseshome--exam"></a>
 
 ## Homework
 
@@ -194,6 +194,87 @@ auto main() -> int
 
 ---
 
+### Parts of a *C++* Class
+
+```cpp
+class MyCppClass
+{
+// publics are accessible from outside the class
+   public:  
+    float pub_member_var = 0.0F; // public member variable
+    void pub_member_func(){}     // public member function (method)
+    // Constructor: A constructor in C++ is a special method that is 
+    // automatically called when an object of a class is created.
+    MyCppClass();
+    // There is also a destructor, but we don't use it for now
+    ~ MyCppClass();
+// privates cannot be accessed (or viewed) from outside the class
+   private: 
+    float priv_member_var = 0.0F; // private member variable
+// protected elements cannot be accessed from outside the class, 
+// but can be accessed in inherited classes.
+   protected: 
+    void prot_member_func(){}     // protected member function (method)
+};
+```
+
+---
+
+### *C++* Class Declaration
+
+Class declaration :arrow_right: normally goes into the header file
+
+```cpp
+class Student
+{
+   public:
+    int16_t num_of_exams = 0;
+    int32_t id_number;
+    std::string name;
+    // define a constructor
+    Student(std::string par_name, int32_t par_id);
+    void print() const;
+};
+```
+
+---
+
+### *C++* Class Definition
+
+Class definition :arrow_right: normally goes into the cpp file
+
+```cpp
+Student::Student(std::string par_name, int32_t par_id) : name{par_name}
+{
+    /*
+        Initialization can be done
+        1. directly in the declaration
+        2. in the initializer list of the constructor definition
+        3. in the constructor itself
+    */
+    id_number = par_id;
+}
+void Student::print() const
+{
+    // print code goes here!
+}
+```
+
+---
+
+### *C++* Class Exercise
+
+Take the "student" example from above and ...
+
+1. add a **private** member for the *bank account number*
+2. extend the *constructor* to initialize the bank account number
+3. write an *update_bank_account* method to update the bank account number
+4. implement the *print* method
+
+You can find the code for this exercise in the file [struct_to_class.cpp](https://github.com/BenniWi/learn2code/blob/main/code/part_2/basics_in_Cpp/struct_to_class.cpp)
+
+---
+
 ## Namespaces
 
 ---
@@ -269,6 +350,61 @@ cout << "Hello World" << endl;
 - you *MIGHT* put it into the source file carefully
 - prefer [namespace aliases](https://en.cppreference.com/w/cpp/language/namespace_alias) (only in source files)
   ```namespace fbz = foo::bar::baz;```
+
+---
+
+## References in *C++*
+
+> A reference variable is an alias, that is, another name for an already existing variable. A reference, like a pointer, is also implemented by storing the address of an object. [[geeksforgeeks](https://www.geeksforgeeks.org/pointers-vs-references-cpp/)]
+
+```cpp
+int i = 3;
+int a = 10;
+// A pointer to variable i or "stores the address of i"
+int *ptr = &i;
+// A reference (or alias) for i.
+int &ref = i;
+// reassignment
+ptr = &a;  // that's fine
+&ref = a;  // ERROR as we should declare and initialize references at single step
+// this means: also re-initialization is not possible
+```
+
+---
+
+### References as Arguments in *C++*
+
+```cpp
+class MyTestClass
+{
+   public:
+    int test_member = 0;
+};
+
+void function_with_reference(MyTestClass &mtc)
+{
+    mtc.test_member = 1;
+}
+
+void function_with_pointer(MyTestClass *mtc)
+{
+    mtc->test_member = 2;
+}
+```
+
+---
+
+<style scoped>
+  section{
+  font-size: 25px;
+  }
+</style>
+
+### References vs. Pointers
+
+<table><thead><tr><th>&nbsp;</th><th>References</th><th>Pointers</th></tr></thead><tbody><tr><th>Reassignment</th><td>The variable cannot be reassigned in Reference.</td><td>The variable can be reassigned in Pointers.</td></tr><tr><th>Memory Address</th><td>It shares the same address as the original variable.</td><td>Pointers have their own memory address.</td></tr><tr><th>Work</th><td>It is referring to another variable.</td><td>It is storing the address of the variable.</td></tr><tr><th>Null Value</th><td>It does not have null value.</td><td>It can have value assigned as null.</td></tr><tr><th>Arguments</th><td>This variable is referenced by the method pass by value.</td><td>The pointer does it work by the method known as pass by reference.</td></tr></tbody></table>
+
+Refer to [geeks4geeks](https://www.geeksforgeeks.org/pointers-vs-references-cpp/) for more details
 
 ---
 
@@ -350,10 +486,10 @@ TEST (tdd_tests, add_standard_integers) {
 
 ### Run the Tests
 
-after compiling everything you have two possibilites:
+after compiling everything you have two possibilities:
 ```cd <build_folder>```
-run ```ctest``` 
-or 
+run ```ctest```
+or
 run the created the test target ```./tests```
 
 ---
@@ -414,7 +550,8 @@ free(ptr2);
 
 ### Exercise for *malloc* & *calloc*
 
-Write a small *C* program to 
+Write a small *C* program to
+
 - read in a number as size of an array.
 - create an array by allocating the corresponding amount of memory.
 - initialize the elements of the array with numbers from 1 to *size*

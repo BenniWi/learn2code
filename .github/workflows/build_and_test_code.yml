@@ -112,6 +112,7 @@ jobs:
            && ./multi_inheritance \
            && ./namespace \
            && ./struct_to_class \
+           && ./pointer_vs_reference \
            && ./polymorphism
            
     ## Test TDD
