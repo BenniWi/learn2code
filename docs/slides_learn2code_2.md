@@ -525,7 +525,7 @@ int* mal_ptr = (int*)malloc(num_of_elements * sizeof(int));
 // free the memory again
 free(mal_ptr);
 
-// Dynamically allocate memory using malloc()
+// Dynamically allocate memory using calloc()
 int* cal_ptr = (int*)calloc(num_of_elements, sizeof(int));
 // do some stuff
 // free the memory again
