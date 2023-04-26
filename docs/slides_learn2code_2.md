@@ -381,6 +381,11 @@ class MyTestClass
     int test_member = 0;
 };
 
+void function_with_copy(MyTestClass mtc)
+{
+    mtc.test_member = 1;
+}
+
 void function_with_reference(MyTestClass &mtc)
 {
     mtc.test_member = 1;
@@ -391,6 +396,15 @@ void function_with_pointer(MyTestClass *mtc)
     mtc->test_member = 2;
 }
 ```
+
+---
+
+![width:900px](images/copy_pointer_reference.svg "copy_pointer_reference")
+
+---
+
+![width:900px](images/reference_value_cups.gif "copy_pointer_reference")
+<font size="+1"><a href=https://dev.to/erraghavkhanna/pass-by-value-reference-explained-with-single-gif-believe-me-it-s-true-23ki>dev.to</a></font>
 
 ---
 
