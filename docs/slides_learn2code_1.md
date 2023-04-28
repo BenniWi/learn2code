@@ -1384,8 +1384,8 @@ int* return_ptr = my_const_correct_function(ptr, s_const_ptr);
 
 ## Github Actions
 
-**Github Actions** allow you to continuously integrate, deliver and even deploy your software.
-For now, we want to use **Github Actions** to *build* and *test* our software continuously.
+[**Github Actions**](https://github.com/features/actions) allow you to continuously integrate, deliver and even deploy your software.
+For now, we want to use [**Github Actions**](https://github.com/features/actions) to *build* and *test* our software continuously.
 <br>
 :point_up: There is way more we could do, but that's the absolute minimum
 

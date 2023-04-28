@@ -42,7 +42,7 @@ This part is currently under construction. Expected content could be (incomplete
   - [x] "using namespace" -> NO in headers, MAYBE in Sources
   - [x] "namespace abbreviations"
   - [x] https://en.cppreference.com/w/cpp/language/using_declaration
-- [ ] References vs Pointers 
+- [x] References vs Pointers
 - [x] stl and some basic containers (like string, vector, array, queues, ...) (code)
 - [ ] stl and some basic containers (like string, vector, array, queues, ...) (chapter)
 - [x] inheritance + access specifiers + access specifiers in inheritance (code)
