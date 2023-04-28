@@ -1223,6 +1223,12 @@ From now on, we will stick to the following folder structure
 
 ---
 
+## Pointers as Function Arguments
+
+![width:900px](images/copy_pointer.svg "copy_pointer_reference")
+
+---
+
 # Libraries
 
 <a id="libraries"></a>

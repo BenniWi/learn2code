@@ -2,13 +2,13 @@
 <!-- Created with Inkscape (http://www.inkscape.org/) -->
 
 <svg
-   width="126.40948mm"
-   height="83.26432mm"
-   viewBox="0 0 126.409 83.264006"
+   width="130.97551mm"
+   height="57.359303mm"
+   viewBox="0 0 130.97502 57.359086"
    version="1.1"
    id="svg5"
    inkscape:version="1.2.2 (732a01da63, 2022-12-09)"
-   sodipodi:docname="copy_pointer_reference.svg"
+   sodipodi:docname="copy_pointer.svg"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns="http://www.w3.org/2000/svg"
@@ -25,8 +25,8 @@
      inkscape:document-units="mm"
      showgrid="false"
      inkscape:zoom="2.587745"
-     inkscape:cx="63.955297"
-     inkscape:cy="153.41543"
+     inkscape:cx="73.616218"
+     inkscape:cy="159.79163"
      inkscape:window-width="3200"
      inkscape:window-height="1721"
      inkscape:window-x="1911"
@@ -73,36 +73,17 @@
          d="M 5.77,0 -2.88,5 V -5 Z"
          id="path10134" />
     </marker>
-    <marker
-       style="overflow:visible"
-       refX="0"
-       refY="0"
-       orient="auto-start-reverse"
-       inkscape:stockid="TriangleStart-3-3277"
-       markerWidth="7.2595553"
-       markerHeight="8.1669998"
-       viewBox="0 0 5.3244081 6.1553851"
-       inkscape:isstock="true"
-       inkscape:collect="always"
-       preserveAspectRatio="xMidYMid"
-       id="TriangleStart-3-3277">
-      <path
-         transform="scale(0.5)"
-         style="fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:#ffffff;stroke-width:1pt;stroke-opacity:1"
-         d="M 5.77,0 -2.88,5 V -5 Z"
-         id="path11090" />
-    </marker>
   </defs>
   <g
      inkscape:label="Ebene 1"
      inkscape:groupmode="layer"
      id="layer1"
-     transform="translate(-33.943585,-49.747909)">
+     transform="translate(-31.387476,-48.112)">
     <rect
-       style="fill:#161616;fill-opacity:1;stroke:none;stroke-width:0.264582;stroke-opacity:1"
+       style="fill:#161616;fill-opacity:1;stroke:none;stroke-width:0.213818;stroke-opacity:1"
        id="rect16769"
        width="130.97502"
-       height="87.827904"
+       height="57.359085"
        x="31.387476"
        y="48.112" />
     <rect
@@ -231,7 +212,7 @@
          x="87.286636"
          y="55.844616">MyTestStruct mts</tspan></text>
     <path
-       style="fill:#b84040;stroke:#ffffff;stroke-width:0.265;stroke-linecap:round;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#TriangleStart54319550);fill-opacity:1"
+       style="fill:#b84040;fill-opacity:1;stroke:#ffffff;stroke-width:0.265;stroke-linecap:round;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#TriangleStart54319550)"
        d="M 61.887049,55.235638 H 84.588606"
        id="path1797" />
     <rect
@@ -374,143 +355,6 @@
        x="85.991386"
        y="82.066795" />
     <rect
-       style="fill:none;stroke:#ffffff;stroke-width:0.0530812;stroke-opacity:1"
-       id="rect739-09-9"
-       width="25.949575"
-       height="4.2503381"
-       x="34.236259"
-       y="111.34109" />
-    <rect
-       style="fill:none;stroke:#ffffff;stroke-width:0.0530812;stroke-opacity:1"
-       id="rect739-5-98-6"
-       width="25.949575"
-       height="4.2503381"
-       x="34.236259"
-       y="115.65578" />
-    <rect
-       style="fill:none;stroke:#ffffff;stroke-width:0.0530812;stroke-opacity:1"
-       id="rect739-3-71-6"
-       width="25.949575"
-       height="4.2503381"
-       x="34.236259"
-       y="124.28516" />
-    <rect
-       style="fill:none;stroke:#ffffff;stroke-width:0.0530812;stroke-opacity:1"
-       id="rect739-9-0-5"
-       width="25.949575"
-       height="4.2503381"
-       x="34.236259"
-       y="128.59984" />
-    <rect
-       style="fill:none;stroke:#ffffff;stroke-width:0.0530812;stroke-opacity:1"
-       id="rect739-88-0-5"
-       width="25.949575"
-       height="4.2503381"
-       x="34.236259"
-       y="119.97047" />
-    <text
-       xml:space="preserve"
-       style="font-size:2.82222px;fill:none;stroke:#ffffff;stroke-width:0.264583;stroke-opacity:1"
-       x="42.208405"
-       y="109.88245"
-       id="text1477-8-3"><tspan
-         sodipodi:role="line"
-         id="tspan1475-6-0"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.82222px;font-family:'Courier New';-inkscape-font-specification:'Courier New';stroke:#ffffff;stroke-width:0.264583;stroke-opacity:1"
-         x="42.208405"
-         y="109.88245">main()</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-size:2.11667px;text-align:center;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:#59ca17;stroke-width:0.264583;stroke-opacity:1"
-       x="74.778885"
-       y="112.51727"
-       id="text1477-9-4-2"><tspan
-         sodipodi:role="line"
-         id="tspan1475-9-3-1"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.11667px;font-family:'Courier New';-inkscape-font-specification:'Courier New';text-align:center;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:#59ca17;stroke-width:0.264583;stroke-opacity:1"
-         x="74.778885"
-         y="112.51727">references</tspan><tspan
-         sodipodi:role="line"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.11667px;font-family:'Courier New';-inkscape-font-specification:'Courier New';text-align:center;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:#59ca17;stroke-width:0.264583;stroke-opacity:1"
-         x="74.778885"
-         y="115.20565"
-         id="tspan9320">(points to)</tspan></text>
-    <rect
-       style="fill:none;stroke:#ffffff;stroke-width:0.0530812;stroke-opacity:1"
-       id="rect739-1-6-8"
-       width="25.949575"
-       height="4.2503381"
-       x="86.079552"
-       y="111.47644" />
-    <rect
-       style="fill:none;stroke:#ffffff;stroke-width:0.0530812;stroke-opacity:1"
-       id="rect739-5-9-8-4"
-       width="25.949575"
-       height="4.2503381"
-       x="86.079552"
-       y="115.79113" />
-    <rect
-       style="fill:none;stroke:#ffffff;stroke-width:0.0530812;stroke-opacity:1"
-       id="rect739-3-7-0-3"
-       width="25.949575"
-       height="4.2503381"
-       x="86.079552"
-       y="124.42049" />
-    <rect
-       style="fill:none;stroke:#ffffff;stroke-width:0.0530812;stroke-opacity:1"
-       id="rect739-9-1-2-0"
-       width="25.949575"
-       height="4.2503381"
-       x="86.079552"
-       y="128.73518" />
-    <rect
-       style="fill:none;stroke:#ffffff;stroke-width:0.0530812;stroke-opacity:1"
-       id="rect739-88-2-4-9"
-       width="25.949575"
-       height="4.2503381"
-       x="86.079552"
-       y="120.10583" />
-    <text
-       xml:space="preserve"
-       style="font-size:2.82222px;letter-spacing:0.105833px;fill:none;stroke:#ffffff;stroke-width:0.264583;stroke-opacity:1"
-       x="85.562889"
-       y="109.88047"
-       id="text1477-3-4-7"><tspan
-         id="tspan1475-5-7-3"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.82222px;font-family:'Courier New';-inkscape-font-specification:'Courier New';stroke:#ffffff;stroke-width:0.264583;stroke-opacity:1"
-         x="85.562889"
-         y="109.88047"
-         sodipodi:role="line">function_with_reference(MyTestStruct &amp;mts)</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-size:2.11667px;letter-spacing:0.105833px;fill:none;stroke:#ffffff;stroke-width:0.264583;stroke-opacity:1"
-       x="86.858986"
-       y="114.05757"
-       id="text1477-2-0-8-7"><tspan
-         sodipodi:role="line"
-         id="tspan1475-3-1-6-0"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.11667px;font-family:'Courier New';-inkscape-font-specification:'Courier New';stroke:#ffffff;stroke-width:0.264583;stroke-opacity:1"
-         x="86.858986"
-         y="114.05757">MyTestStruct &amp;mts</tspan></text>
-    <path
-       style="fill:none;stroke:#ffffff;stroke-width:0.265;stroke-linecap:round;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#TriangleStart-3-3277)"
-       d="M 85.336955,113.4413 H 62.635395"
-       id="path1797-8-5" />
-    <rect
-       style="fill:none;fill-opacity:1;stroke:#bbc200;stroke-width:0.264999;stroke-linecap:round;stroke-dasharray:none;stroke-opacity:1"
-       id="rect7445-7-9"
-       width="25.954966"
-       height="12.869037"
-       x="34.204971"
-       y="111.42385" />
-    <rect
-       style="fill:none;fill-opacity:1;stroke:#59ca17;stroke-width:0.265;stroke-linecap:round;stroke-dasharray:none;stroke-opacity:1"
-       id="rect7445-7-1-0"
-       width="26.065298"
-       height="4.3652487"
-       x="86.120277"
-       y="111.37258" />
-    <rect
        style="fill:none;fill-opacity:1;stroke:#9b1d1d;stroke-width:0.264999;stroke-linecap:round;stroke-dasharray:none;stroke-opacity:1"
        id="rect7445-7-4"
        width="25.954966"
@@ -528,16 +372,5 @@
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.11667px;font-family:'Courier New';-inkscape-font-specification:'Courier New';stroke:#ffffff;stroke-width:0.264583;stroke-opacity:1"
          x="34.661049"
          y="84.738373">MyTestStruct mts_m</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-size:2.11667px;letter-spacing:0.105833px;fill:none;stroke:#ffffff;stroke-width:0.264583;stroke-opacity:1"
-       x="34.865536"
-       y="114.28709"
-       id="text1477-2-8"><tspan
-         sodipodi:role="line"
-         id="tspan1475-3-8"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.11667px;font-family:'Courier New';-inkscape-font-specification:'Courier New';stroke:#ffffff;stroke-width:0.264583;stroke-opacity:1"
-         x="34.865536"
-         y="114.28709">MyTestStruct mts_m</tspan></text>
   </g>
 </svg>

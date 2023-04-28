@@ -416,7 +416,7 @@ void function_with_pointer(MyTestClass *mtc)
 
 ### References vs. Pointers
 
-<table><thead><tr><th>&nbsp;</th><th>References</th><th>Pointers</th></tr></thead><tbody><tr><th>Reassignment</th><td>The variable cannot be reassigned in Reference.</td><td>The variable can be reassigned in Pointers.</td></tr><tr><th>Memory Address</th><td>It shares the same address as the original variable.</td><td>Pointers have their own memory address.</td></tr><tr><th>Work</th><td>It is referring to another variable.</td><td>It is storing the address of the variable.</td></tr><tr><th>Null Value</th><td>It does not have null value.</td><td>It can have value assigned as null.</td></tr><tr><th>Arguments</th><td>This variable is referenced by the method pass by value.</td><td>The pointer does it work by the method known as pass by reference.</td></tr></tbody></table>
+<table><thead><tr><th>&nbsp;</th><th>References</th><th>Pointers</th></tr></thead><tbody><tr><th>Reassignment</th><td>The variable cannot be reassigned in Reference.</td><td>The variable can be reassigned in Pointers.</td></tr><tr><th>Memory Address</th><td>It shares the same address as the original variable.</td><td>Pointers have their own memory address.</td></tr><tr><th>Work</th><td>It is referring to another variable.</td><td>It is storing the address of the variable.</td></tr><tr><th>Null Value</th><td>It does not have null value.</td><td>It can have value assigned as null.</td></tr><tr></tbody></table>
 
 Refer to [geeks4geeks](https://www.geeksforgeeks.org/pointers-vs-references-cpp/) for more details
 
@@ -505,6 +505,20 @@ after compiling everything you have two possibilities:
 run ```ctest```
 or
 run the created the test target ```./tests```
+
+Since you might have multiple test executables using the ```ctest``` command has significant advantages in [**continuous integration**](https://github.com/BenniWi/learn2code/blob/main/docs/slides_learn2code_1.md#continuous-integration-delivery--deployment).
+
+---
+
+### GTest in Action
+
+Let's take a look at *Gtest* in action by inspecting the [corresponding code of this chapter](https://github.com/BenniWi/learn2code/tree/main/code/part_2/tdd)
+
+---
+
+### Exercise TDD
+
+Start working on the [Homework 2-1](https://github.com/BenniWi/learn2code/blob/main/docs/Homework_2-1.md)
 
 ---
 
