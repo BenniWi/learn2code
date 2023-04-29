@@ -504,7 +504,7 @@ after compiling everything you have two possibilities:
 ```cd <build_folder>```
 run ```ctest```
 or
-run the created the test target ```./tests```
+run the created test target ```./tests```
 
 Since you might have multiple test executables using the ```ctest``` command has significant advantages in [**continuous integration**](https://github.com/BenniWi/learn2code/blob/main/docs/slides_learn2code_1.md#continuous-integration-delivery--deployment).
 
