@@ -39,7 +39,7 @@ paginate: false
 
 <!-- paginate: true -->
 
-<!-- header: Labor Softwareentwicklung 2, Q1 2023 -->
+<!-- header: Labor Softwareentwicklung 2, Q2 2023 -->
 
 <!-- footer: Benjamin Wilking © -->
 
