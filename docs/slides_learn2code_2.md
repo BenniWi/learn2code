@@ -642,19 +642,17 @@ Smart pointers are used to make sure that an object is deleted if it is no longe
 ```cpp
 void my_func_w_leak()
 {
-    int* valuePtr = new int(15);
+    int* valuePtr = new int(15);  // create a new int and initialize it with "15"
     int x = 45;
-    if (x == 45)
-        return;   // here we have a memory leak, valuePtr is not deleted
+    if (x == 45) return;  // here we have a memory leak, valuePtr is not deleted
     delete valuePtr;
 }
 //---------------------
 void my_func_wo_leak()
 {
-    std::unique_ptr<int> valuePtr(new int(15));
+    std::unique_ptr<int> valuePtr(new int(15));  // create a new int and initialize it with "15"
     int x = 45;
-    if (x == 45)
-        return;   // no memory leak anymore!
+    if (x == 45) return;  // no memory leak anymore!
 }
 ```
 

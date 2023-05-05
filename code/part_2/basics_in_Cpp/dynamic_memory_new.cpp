@@ -2,6 +2,21 @@
 #include <iostream>
 #include <memory>
 
+void my_func_w_leak()
+{
+    int* valuePtr = new int(15);  // create a new int and initialize it with "15"
+    int x = 45;
+    if (x == 45) return;  // here we have a memory leak, valuePtr is not deleted
+    delete valuePtr;
+}
+//---------------------
+void my_func_wo_leak()
+{
+    std::unique_ptr<int> valuePtr(new int(15));  // create a new int and initialize it with "15"
+    int x = 45;
+    if (x == 45) return;  // no memory leak anymore!
+}
+
 // smart-pointers: https://en.cppreference.com/book/intro/smart_pointers
 auto main() -> int
 {
@@ -32,11 +47,15 @@ auto main() -> int
         array_shr_ptr.get()[0] = 5;
     }
 
+    // testing the functions for introducing smart pointers
+    my_func_w_leak();
+    my_func_wo_leak();
+
     int noe = 0;
 
     // Get the number of elements for the array
     std::cout << "Enter number of elements:";
-    scanf("%d", &noe);
+    std::cin >> noe;
     std::cout << "Entered number of elements: " << noe << std::endl;
 
     // Dynamically allocate memory using smart pointers

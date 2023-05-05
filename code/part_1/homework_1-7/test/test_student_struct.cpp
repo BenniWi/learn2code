@@ -9,7 +9,7 @@ class StudentTest : public ::testing ::Test
 {
    protected:
     student max;
-    virtual void SetUp()
+    void SetUp() override
     {
         // set some values to check if the init method overwrites them correctly
         max.id = 0;
@@ -31,7 +31,7 @@ TEST_F(StudentTest, init)
     }
 }
 
-TEST_F(StudentTest, add_grades)
+TEST_F(StudentTest, AddGrades)
 {
     student_add_grade(&max, 1.0f);
     ASSERT_EQ(1, max.num_of_grades);
@@ -48,7 +48,7 @@ TEST_F(StudentTest, add_grades)
     ASSERT_FLOAT_EQ(4.5f, max.grades[3]);
 }
 
-TEST_F(StudentTest, add_grades_overflow)
+TEST_F(StudentTest, AddGradesOverflow)
 {
     student_add_grade(&max, 1.0f);
     student_add_grade(&max, 2.0f);

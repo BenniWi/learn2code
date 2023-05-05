@@ -8,7 +8,7 @@ auto main() -> int
 
     // Get the number of elements for the array
     std::cout << "Enter number of elements:";
-    scanf("%d", &noe);
+    std::cin >> noe;
     std::cout << "Entered number of elements: " << noe << std::endl;
 
     // Dynamically allocate memory using new()
@@ -26,7 +26,7 @@ auto main() -> int
         // Memory has been successfully allocated
         std::cout << "Memory successfully allocated." << std::endl;
 
-        // Get the elements of the array
+        // Set the elements of the array
         for (int i = 0; i < noe; ++i)
         {
             ptr[i] = i + 1;
