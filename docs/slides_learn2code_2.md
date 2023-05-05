@@ -711,6 +711,134 @@ You can find the code for this exercise in the file [dynamic_memory_new.cpp](htt
 
 <a id="inheritance"></a>
 
+> The capability of a class to derive properties and characteristics from another class is called Inheritance. Inheritance is one of the most important features of Object-Oriented Programming. [[geeksforgeeks](https://www.geeksforgeeks.org/inheritance-in-c/)]
+
+---
+
+## Parent & Child
+
+>Inheritance is a feature or a process in which, new classes are created from the existing classes. The new class created is called “derived class” or “child class” and the existing class is known as the “base class” or “parent class”. [[geeksforgeeks](https://www.geeksforgeeks.org/inheritance-in-c/)]
+
+---
+
+## Shape Example
+
+```cpp
+// Base class
+class Shape
+{
+    [...]
+};
+
+// Derived class
+class Rectangle : public Shape
+{
+    [...]
+};
+```
+
+---
+
+### The Base Class
+
+```cpp
+class Shape
+{
+   public:  // C++ Access Specifiers
+    void set_width(int8_t width_in)
+    {
+        width_ = width_in;
+    }
+    void set_height(int8_t height_in)
+    {
+        height_ = height_in;
+    }
+
+   protected:  // C++ Access Specifiers
+    int8_t width_;
+    int8_t height_;
+};
+```
+
+---
+
+### The Child Class
+
+```cpp
+class Rectangle : public Shape
+{
+   public:
+    auto get_area() -> int32_t
+    {
+        return (width_ * height_);
+    }
+};
+```
+
+---
+
+### Calling Parent & Child Methods
+
+```cpp
+auto main() -> int
+{
+    Rectangle rect;
+
+    rect.set_width(5);
+    rect.set_height(7);
+
+    // Print the area of the object.
+    std::cout << "Total area: " << rect.get_area() << std::endl;
+
+    return 0;
+}
+```
+
+---
+
+## Exercise for Inheritance
+
+Extend the above *Shape* example by:
+
+- add a child class for the shape **triangle**
+- implement the *get_area* method corresponding to the rectangle shape
+
+You can find the code for this exercise in the file [inheritance.cpp](https://github.com/BenniWi/learn2code/blob/main/code/part_2/basics_in_Cpp/inheritance.cpp)
+
+---
+
+## Multi-Inheritance
+
+```cpp
+// Base class 1
+class Shape
+{
+    [...]
+};
+// Base class 2
+class PaintCost
+{
+    [...]
+};
+// Derived class
+class Rectangle : public Shape, public PaintCost
+{
+    [...]
+};
+```
+
+---
+
+## Exercise for Multi-Inheritance
+
+Extend the above *Shape* example by:
+
+- Implement the *PaintCost* base class by writing a method ```get_cost(double area)```. The cost ist 70 times the area.
+- Derive the triangle shape also from *PaintCost*
+- Calculate the painting costs and write it to the terminal
+  
+You can find the code for this exercise in the file [multi_inheritance.cpp](https://github.com/BenniWi/learn2code/blob/main/code/part_2/basics_in_Cpp/multi_inheritance.cpp)
+
 ---
 
 # Polymorphism
