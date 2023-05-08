@@ -32,6 +32,7 @@ paginate: false
 - [Testing Code & Test Driven Development](#test-driven-development)
 - [Dynamic Memory in *C* \& *C++*](#dynamic-memory-in-c--c)
 - [Inheritance](#inheritance)
+- [*clang-tidy* Coding Support](#clangtidy_coding_support)
 - [Polymorphism](#polymorphism)
 - [STL](#stl)
 
@@ -842,6 +843,8 @@ You can find the code for this exercise in the file [multi_inheritance.cpp](http
 ---
 
 # clang-tidy Coding Support
+
+<a id="clangtidy_coding_support"></a>
 
 > **clang-tidy** is a clang-based C++ “linter” tool. Its purpose is to provide an extensible framework for diagnosing and fixing typical programming errors, like style violations, interface misuse, or bugs that can be deduced via static analysis.
 > [[clang-tidy](https://clang.llvm.org/extra/clang-tidy/)]
