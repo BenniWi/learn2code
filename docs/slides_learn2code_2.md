@@ -841,6 +841,60 @@ You can find the code for this exercise in the file [multi_inheritance.cpp](http
 
 ---
 
+# clang-tidy Coding Support
+
+> **clang-tidy** is a clang-based C++ “linter” tool. Its purpose is to provide an extensible framework for diagnosing and fixing typical programming errors, like style violations, interface misuse, or bugs that can be deduced via static analysis.
+> [[clang-tidy](https://clang.llvm.org/extra/clang-tidy/)]
+
+---
+
+## *clang-tidy* Example Configuration
+
+The configuration is normally located in a [*.clang-tidy*](https://github.com/BenniWi/learn2code/blob/main/.clang-tidy) file.
+In this file we can configure which checks to perform.
+E.g. we want to enable all ```modernize-*``` rules or we want to enforce *CamelCase*  names for class names with
+```readability-identifier-naming.ClassCase: CamelCase```
+<br>
+More details about the available rules can be found [here](https://clang.llvm.org/extra/clang-tidy/)
+
+---
+
+## Enable *clang-tidy* in Your Codespace
+
+---
+
+### Install *clang-tidy*
+
+If not already done, install the clang tools to your codespace by editing your [*Dockerfile*](https://github.com/BenniWi/learn2code/blob/main/.devcontainer/Dockerfile):
+
+```dockerfile
+ RUN \
+ # bring in latest clang toolchain
+ wget https://apt.llvm.org/llvm.sh  \
+ && sudo chmod +x llvm.sh \
+ && sudo ./llvm.sh 16 all \
+ && sudo rm llvm.sh
+```
+
+---
+
+### Install the *clang-tidy* VS Code extension
+
+Install the VS Code extension [cs128.cs128-clang-tidy](https://github.com/cs128uiuc-dev/vscode-clang-tidy).
+Ideally by adding it to your [devcontainer.json](https://github.com/BenniWi/learn2code/blob/main/.devcontainer/devcontainer.json)
+Set the options for the extension in your [.vscode/settings.json](https://github.com/BenniWi/learn2code/blob/main/.vscode/settings.json#L16-L21)
+
+```json
+    "clang-tidy.executable": "clang-tidy-16",
+    "clang-tidy.fixOnSave": true,
+    "clang-tidy.lintOnSave": true,
+    "clang-tidy.compilerArgs": ["--config-file=.clang-tidy"]
+```
+
+Now, you are good to go :thumbsup:
+
+---
+
 # Polymorphism
 
 <a id="polymorphism"></a>
