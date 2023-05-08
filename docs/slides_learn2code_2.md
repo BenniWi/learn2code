@@ -711,6 +711,188 @@ You can find the code for this exercise in the file [dynamic_memory_new.cpp](htt
 
 <a id="inheritance"></a>
 
+> The capability of a class to derive properties and characteristics from another class is called Inheritance. Inheritance is one of the most important features of Object-Oriented Programming. [[geeksforgeeks](https://www.geeksforgeeks.org/inheritance-in-c/)]
+
+---
+
+## Parent & Child
+
+>Inheritance is a feature or a process in which, new classes are created from the existing classes. The new class created is called “derived class” or “child class” and the existing class is known as the “base class” or “parent class”. [[geeksforgeeks](https://www.geeksforgeeks.org/inheritance-in-c/)]
+
+---
+
+## Shape Example
+
+```cpp
+// Base class
+class Shape
+{
+    [...]
+};
+
+// Derived class
+class Rectangle : public Shape
+{
+    [...]
+};
+```
+
+---
+
+### The Base Class
+
+```cpp
+class Shape
+{
+   public:  // C++ Access Specifiers
+    void set_width(int8_t width_in)
+    {
+        width_ = width_in;
+    }
+    void set_height(int8_t height_in)
+    {
+        height_ = height_in;
+    }
+
+   protected:  // C++ Access Specifiers
+    int8_t width_;
+    int8_t height_;
+};
+```
+
+---
+
+### The Child Class
+
+```cpp
+class Rectangle : public Shape
+{
+   public:
+    auto get_area() -> int32_t
+    {
+        return (width_ * height_);
+    }
+};
+```
+
+---
+
+### Calling Parent & Child Methods
+
+```cpp
+auto main() -> int
+{
+    Rectangle rect;
+
+    rect.set_width(5);
+    rect.set_height(7);
+
+    // Print the area of the object.
+    std::cout << "Total area: " << rect.get_area() << std::endl;
+
+    return 0;
+}
+```
+
+---
+
+## Exercise for Inheritance
+
+Extend the above *Shape* example by:
+
+- add a child class for the shape **triangle**
+- implement the *get_area* method corresponding to the rectangle shape
+
+You can find the code for this exercise in the file [inheritance.cpp](https://github.com/BenniWi/learn2code/blob/main/code/part_2/basics_in_Cpp/inheritance.cpp)
+
+---
+
+## Multi-Inheritance
+
+```cpp
+// Base class 1
+class Shape
+{
+    [...]
+};
+// Base class 2
+class PaintCost
+{
+    [...]
+};
+// Derived class
+class Rectangle : public Shape, public PaintCost
+{
+    [...]
+};
+```
+
+---
+
+## Exercise for Multi-Inheritance
+
+Extend the above *Shape* example by:
+
+- Implement the *PaintCost* base class by writing a method ```get_cost(double area)```. The cost ist 70 times the area.
+- Derive the triangle shape also from *PaintCost*
+- Calculate the painting costs and write it to the terminal
+  
+You can find the code for this exercise in the file [multi_inheritance.cpp](https://github.com/BenniWi/learn2code/blob/main/code/part_2/basics_in_Cpp/multi_inheritance.cpp)
+
+---
+
+# clang-tidy Coding Support
+
+> **clang-tidy** is a clang-based C++ “linter” tool. Its purpose is to provide an extensible framework for diagnosing and fixing typical programming errors, like style violations, interface misuse, or bugs that can be deduced via static analysis.
+> [[clang-tidy](https://clang.llvm.org/extra/clang-tidy/)]
+
+---
+
+## *clang-tidy* Example Configuration
+
+The configuration is normally located in a [*.clang-tidy*](https://github.com/BenniWi/learn2code/blob/main/.clang-tidy) file.
+In this file we can configure which checks to perform.
+E.g. we want to enable all ```modernize-*``` rules or we want to enforce *CamelCase*  names for class names with
+```readability-identifier-naming.ClassCase: CamelCase```
+<br>
+More details about the available rules can be found [here](https://clang.llvm.org/extra/clang-tidy/)
+
+---
+
+## Enable *clang-tidy* in Your Codespace
+
+---
+
+### Install *clang-tidy*
+
+If not already done, install the clang tools to your codespace by editing your [*Dockerfile*](https://github.com/BenniWi/learn2code/blob/main/.devcontainer/Dockerfile):
+
+```dockerfile
+ RUN \
+ # bring in latest clang toolchain
+ wget https://apt.llvm.org/llvm.sh  \
+ && sudo chmod +x llvm.sh \
+ && sudo ./llvm.sh 16 all \
+ && sudo rm llvm.sh
+```
+
+---
+
+### Install the *clang-tidy* VS Code extension
+
+Install the VS Code extension [cs128.cs128-clang-tidy](https://github.com/cs128uiuc-dev/vscode-clang-tidy).
+Ideally by adding it to your [devcontainer.json](https://github.com/BenniWi/learn2code/blob/main/.devcontainer/devcontainer.json)
+Set the options for the extension in your [.vscode/settings.json](https://github.com/BenniWi/learn2code/blob/main/.vscode/settings.json#L16-L21)
+
+```json
+    "clang-tidy.executable": "clang-tidy-16",
+    "clang-tidy.fixOnSave": true,
+    "clang-tidy.lintOnSave": true,
+    "clang-tidy.compilerArgs": ["--config-file=.clang-tidy"]
+```
+
+Now, you are good to go :thumbsup:
+
 ---
 
 # Polymorphism
