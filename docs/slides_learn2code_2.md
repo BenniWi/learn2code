@@ -29,12 +29,14 @@ paginate: false
 - [Exercises@Home \& Exam](#exerciseshome--exam)
 - [Preparations for Every Lesson](#preparations-for-every-lesson)
 - [From *C* to *C++*](#from-c-to-c)
-- [Testing Code & Test Driven Development](#test-driven-development)
+- [Testing Code \& Test Driven Development](#testing-code--test-driven-development)
 - [Dynamic Memory in *C* \& *C++*](#dynamic-memory-in-c--c)
 - [Inheritance](#inheritance)
-- [*clang-tidy* Coding Support](#clangtidy_coding_support)
+- [clang-tidy Coding Support](#clang-tidy-coding-support)
 - [Polymorphism](#polymorphism)
 - [STL](#stl)
+- [*doxygen* Code Documentation](#doxygen-code-documentation)
+
 
 ---
 
@@ -844,7 +846,7 @@ You can find the code for this exercise in the file [multi_inheritance.cpp](http
 
 # clang-tidy Coding Support
 
-<a id="clangtidy_coding_support"></a>
+<a id="clang-tidy-coding-support"></a>
 
 > **clang-tidy** is a clang-based C++ “linter” tool. Its purpose is to provide an extensible framework for diagnosing and fixing typical programming errors, like style violations, interface misuse, or bugs that can be deduced via static analysis.
 > [[clang-tidy](https://clang.llvm.org/extra/clang-tidy/)]
@@ -909,3 +911,54 @@ Now, you are good to go :thumbsup:
 <a id="stl"></a>
 
 ---
+
+# *doxygen* Code Documentation
+
+<a id="doxygen-code-documentation"></a>
+
+> **Generate documentation from source code**. Doxygen is the de facto standard tool for generating documentation from annotated C++ sources [[doxygen](https://www.doxygen.nl/)]
+</br>
+Check out the example from our [learn2cod 1 demo project](https://benniwi.github.io/learn2code_1_demo_project/html/index.html)
+
+---
+
+## *doxygen* Example Configuration
+
+The configuration is normally located in a [*Doxyfile*](https://github.com/BenniWi/learn2code_1_demo_project/blob/main/Doxyfile) file. Ideally it should be on top-level of your project
+In this file we can configure the documentation details. Among others, this is the output directory, the graphs to generate , the files to include, and much more.
+<br>
+More details about the available rules can be found [here](https://www.doxygen.nl/manual/config.html).
+To start a new configuration from scratch, the [doxywizard](https://www.doxygen.nl/manual/doxywizard_usage.html) is a great help.
+
+---
+
+## Enable *doxygen* in Your Codespace
+
+Install doxygen to your codespace by editing your [*Dockerfile*](https://github.com/BenniWi/learn2code_1_demo_project/blob/main/.devcontainer/Dockerfile):
+
+```dockerfile
+ RUN \
+ sudo apt-get install -y doxygen graphviz
+```
+
+---
+
+## Running *doxygen*
+
+Running doxygen is quite easy. Go to the location of your [*Doxyfile*](https://github.com/BenniWi/learn2code_1_demo_project/blob/main/Doxyfile) file and run:
+
+```sh
+doxygen Doxyfile
+```
+
+If you've done everything right, you should be able to open the file ```html/index.html``` with your browser :sparkler:.
+
+---
+
+## Automatic Doxygen Generation 
+
+If you want to automatically generate the documentation and publish it to your [GitHub Pages](https://pages.github.com/) you have to enable them:
+
+  1. go to your repository :arrow_right: *settings* :arrow_right: *Pages*
+  2. enable *GitHub Actions* to deploy the page </br> ![width:400px](images/enable_github_pages.PNG "enable github pages")
+  3. create a [workflow to deploy](https://github.com/BenniWi/learn2code_1_demo_project/blob/main/.github/workflows/publish_doxygen.yml) the documentation

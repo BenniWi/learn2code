@@ -9,7 +9,7 @@ vscode:
     - twxs.cmake
     - mhutchie.git-graph
     - ms-vscode.cpptools-themes
-    - notskm.clang-tidy
+    - cs128.cs128-clang-tidy
     - xaver.clang-format
     - marp-team.marp-vscode
     - zaaack.markdown-editor
@@ -17,6 +17,9 @@ vscode:
     - ms-azuretools.vscode-docker
     - yzhang.markdown-all-in-one
     - franneck94.c-cpp-runner
+    - DavidAnson.vscode-markdownlint
+		- mdickin.markdown-shortcuts
+		- ElecTreeFrying.insert-random-text
 
 # List the start up tasks. Learn more https://www.gitpod.io/docs/config-start-tasks/
 tasks:

@@ -30,8 +30,8 @@ Further, there are some homeworks. The homeworks for part I are named *Homework_
 In the second part of the lecture, the programming language **C++** is introduced.
 This part is currently under construction. Expected content could be (incomplete):
 
-- [ ] doxygen
-- [ ] clang-tidy
+- [x] doxygen
+- [x] clang-tidy
 - [x] from C to C++ (code)
 - [x] from C to C++ (chapter)
   - [x] trailing return type
@@ -46,9 +46,9 @@ This part is currently under construction. Expected content could be (incomplete
 - [x] stl and some basic containers (like string, vector, array, queues, ...) (code)
 - [ ] stl and some basic containers (like string, vector, array, queues, ...) (chapter)
 - [x] inheritance + access specifiers + access specifiers in inheritance (code)
-- [ ] inheritance + access specifiers + access specifiers in inheritance (chapter) https://www.programiz.com/cpp-programming/public-protected-private-inheritance
+- [x] inheritance + access specifiers + access specifiers in inheritance (chapter) https://www.programiz.com/cpp-programming/public-protected-private-inheritance
 - [x] multi-inheritance (code)
-- [ ] multi-inheritance (chapter)
+- [x] multi-inheritance (chapter)
 - [x] polymorphism (code)
 - [ ] polymorphism (chapter)
   - https://www.mygreatlearning.com/blog/polymorphism-in-cpp/#:~:text=Polymorphism%20in%20C%2B%2B%20means%2C%20the,in%20numbers%2C%20it%20performs%20addition.
@@ -59,6 +59,7 @@ This part is currently under construction. Expected content could be (incomplete
 - open topics
   - static_asserts??
   - opencv examples??
+  - basic uml drawings??
   - Qt examples??
   - writing templates??
 
