@@ -955,7 +955,24 @@ If you've done everything right, you should be able to open the file ```html/ind
 
 ---
 
-## Automatic Doxygen Generation 
+## Document Your Code for *doxygen*
+
+To allow doxygen to collect all the documentation of your code, you have to use [doxygen-style commenting](https://www.doxygen.nl/manual/docblocks.html#cppblock). You can use this for all kinds of code like: classes, functions, variables, and many more.
+
+```cpp
+/**
+ * @brief add a book to the library database
+ *
+ * @param lib library
+ * @param title title of the book
+ * @return book const* pointer to the added book, NULL if invalid
+ */
+book const *library_add_book(library *lib, const char title[]);
+```
+
+---
+
+## Automatic Doxygen Generation
 
 If you want to automatically generate the documentation and publish it to your [GitHub Pages](https://pages.github.com/) you have to enable them:
 
