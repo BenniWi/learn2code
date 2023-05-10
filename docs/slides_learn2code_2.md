@@ -32,6 +32,7 @@ paginate: false
 - [Testing Code \& Test Driven Development](#testing-code--test-driven-development)
 - [Dynamic Memory in *C* \& *C++*](#dynamic-memory-in-c--c)
 - [Inheritance](#inheritance)
+- [The *static* Keyword](#the-static-keyword)
 - [clang-tidy Coding Support](#clang-tidy-coding-support)
 - [Polymorphism](#polymorphism)
 - [STL](#stl)
@@ -841,6 +842,113 @@ Extend the above *Shape* example by:
 - Calculate the painting costs and write it to the terminal
   
 You can find the code for this exercise in the file [multi_inheritance.cpp](https://github.com/BenniWi/learn2code/blob/main/code/part_2/basics_in_Cpp/multi_inheritance.cpp)
+
+---
+
+# The *static* Keyword
+
+<a id="the-static-keyword"></a>
+
+>Static is a keyword in C++ used to give special characteristics to an element. Static elements are allocated storage only once in a program lifetime in static storage area. And they have a scope till the program lifetime. [[studytonight](https://www.studytonight.com/cpp/static-keyword.php#:~:text=Static%20is%20a%20keyword%20in,scope%20till%20the%20program%20lifetime.)]
+
+---
+
+## Static Variables In Block Scope
+
+```cpp
+auto main() -> int
+{
+    for (int i = 0; i < 5; ++i)
+    {
+        int non_static_var = 0;
+        static int static_var_ = 0;
+        ++non_static_var;
+        ++static_var_;
+        std::cout << "non_static_var: " << non_static_var << " static_var_: " << static_var_ << std::endl;
+    }
+    return 0;
+}
+```
+
+Output:
+
+```sh
+non_static_var: 1 static_var_: 1
+non_static_var: 1 static_var_: 2
+non_static_var: 1 static_var_: 3
+non_static_var: 1 static_var_: 4
+non_static_var: 1 static_var_: 5
+```
+
+---
+
+## Static Variables In Function Scope
+
+```cpp
+void function_with_static()
+{
+    static int call_count_ = 0;
+    ++call_count_;
+    std::cout << "call_count in function: " << call_count_ << std::endl;
+}
+
+auto main() -> int
+{
+    function_with_static(); // --> output: call_count in function: 1
+    function_with_static(); // --> output: call_count in function: 2
+    return 0;
+}
+```
+
+---
+
+## Static Data Member in Class
+
+```cpp
+class ClassWithStatics
+{
+   public:
+    static int instance_counter_;
+    ClassWithStatics()
+    {
+        ++instance_counter_;
+        std::cout << "Instance count is: " << instance_counter_ << std::endl;
+    }
+};
+int ClassWithStatics::instance_counter_ = 0;
+
+auto main() -> int
+{
+    ClassWithStatics cws1; // --> output: Instance count is: 1
+    ClassWithStatics cws2; // --> output: Instance count is: 2
+    return 0;
+}
+```
+
+---
+
+## Static Member Functions
+
+```cpp
+class ClassWithStatics
+{
+   public:
+    static void say_hello()
+    {
+        std::cout << "Hello World! from static method" << std::endl;
+    }
+};
+
+auto main() -> int
+{
+    // call function without object
+    ClassWithStatics::say_hello(); // --> output: Hello World! from static method
+    // also possible, but unusual
+    cws1.say_hello();              // --> output: Hello World! from static method
+
+    return 0;
+}
+```
 
 ---
 
