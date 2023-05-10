@@ -113,9 +113,19 @@ jobs:
            && ./namespace \
            && ./struct_to_class \
            && ./pointer_vs_reference \
-           && ./polymorphism
+           && ./polymorphism \
+           && ./static_keyword
            
     ## Test TDD
     - name: Test "tdd"
       working-directory: ${{github.workspace}}/build/code/part_2/tdd
+      run: ctest -C ${{env.BUILD_TYPE}}
+      
+    ## run & test homework 2-3
+    - name: run "homework_2-3 - spiders & mammals"
+      working-directory: ${{github.workspace}}/build/code/part_2/homework_2-3
+      run: ./animals_exec 
+      
+    - name: test "homework_2-3 - spiders & mammals"
+      working-directory: ${{github.workspace}}/build/code/part_2/homework_2-3
       run: ctest -C ${{env.BUILD_TYPE}}
