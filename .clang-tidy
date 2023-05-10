@@ -266,7 +266,7 @@ CheckOptions:
   readability-identifier-naming.ParameterCase             : lower_case
   readability-identifier-naming.ParameterPackCase         : lower_case
   readability-identifier-naming.PrivateMemberSuffix       : '_'       
-  readability-identifier-naming.PrivateMemberCase         : 'lower_case'
+  readability-identifier-naming.PrivateMemberCase         : lower_case
   readability-identifier-naming.ProtectedMemberSuffix     : '_'       
   readability-identifier-naming.ProtectedMemberCase       : lower_case
   readability-identifier-naming.StructCase                : CamelCase 
@@ -275,5 +275,7 @@ CheckOptions:
   readability-identifier-naming.UnionCase                 : CamelCase 
   readability-identifier-naming.ValueTemplateParameterCase: UPPER_CASE
   readability-identifier-naming.VariableCase              : lower_case
+  readability-identifier-naming.StaticVariableCase        : lower_case
+  readability-identifier-naming.StaticVariableSuffix      : '_'
 ...
 

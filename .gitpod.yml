@@ -18,8 +18,8 @@ vscode:
     - yzhang.markdown-all-in-one
     - franneck94.c-cpp-runner
     - DavidAnson.vscode-markdownlint
-		- mdickin.markdown-shortcuts
-		- ElecTreeFrying.insert-random-text
+    - mdickin.markdown-shortcuts
+    - ElecTreeFrying.insert-random-text
 
 # List the start up tasks. Learn more https://www.gitpod.io/docs/config-start-tasks/
 tasks:
