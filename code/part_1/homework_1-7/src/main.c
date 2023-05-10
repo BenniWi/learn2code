@@ -15,4 +15,6 @@ int main(void)
 
     student_print(&max);
     student_print(&maria);
+
+    return 0;
 }
