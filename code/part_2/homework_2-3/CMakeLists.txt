@@ -24,20 +24,18 @@ target_include_directories(animals_exec PRIVATE include)
 # link your libraries
 target_link_libraries(animals_exec PRIVATE animals)
 
+enable_testing()
 # check if we have gtest
-find_package(GTest)
-if(GTEST_LIBRARY)
-    enable_testing()
-    # include the gtest CMake stuff
-    include(GoogleTest)
-    # create a test executable
-    add_executable(animals_tests test/test_animals.cpp)
-    # link the gtest libraries
-    target_link_libraries(animals_tests PRIVATE GTest::GTest GTest::Main)
-    # link the library we want to test
-    target_link_libraries(animals_tests PRIVATE animals)
-    # add the include directories
-    target_include_directories(animals_tests PUBLIC include)
-    # discover and add tests to the test list
-    gtest_discover_tests(animals_tests)
-endif()
+find_package(GTest REQUIRED)
+# include the gtest CMake stuff
+include(GoogleTest)
+# create a test executable
+add_executable(animals_tests test/test_animals.cpp)
+# link the gtest libraries
+target_link_libraries(animals_tests PRIVATE GTest::GTest GTest::Main)
+# link the library we want to test
+target_link_libraries(animals_tests PRIVATE animals)
+# add the include directories
+target_include_directories(animals_tests PUBLIC include)
+# discover and add tests to the test list
+gtest_discover_tests(animals_tests)
