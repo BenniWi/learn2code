@@ -1012,8 +1012,147 @@ Now, you are good to go :thumbsup:
 
 <a id="polymorphism"></a>
 
+>When the same entity (function or object) behaves differently in different scenarios, it is known as Polymorphism in *C++*. [[mygreatlearning](https://www.mygreatlearning.com/blog/polymorphism-in-cpp/#:~:text=Polymorphism%20in%20C%2B%2B%20means%2C%20the,in%20numbers%2C%20it%20performs%20addition)]
+
 ---
 
+## Compile Time Polymorphism
+
+>In compile-time polymorphism, a function is called at the time of program compilation. We call this type of polymorphism as early binding or Static binding.[[mygreatlearning](https://www.mygreatlearning.com/blog/polymorphism-in-cpp/#:~:text=Polymorphism%20in%20C%2B%2B%20means%2C%20the,in%20numbers%2C%20it%20performs%20addition)]
+
+---
+
+### Function Overloading
+
+```cpp
+class Addition
+{
+   public:
+    static auto add(const int8_t num_x, const int8_t num_y) -> int32_t
+    {
+        return num_x + num_y;  // this function is performing addition of two integer value
+    }
+    static auto add(const string &str1, const string &str2) -> string
+    {
+        return str1 + str2;  // this function concatenates two strings
+    }
+};
+auto main() -> int
+{
+    cout << Addition::add(3, 9) << endl;             // first method is called -> output: 12
+    cout << Addition::add("Hallo", " Welt") << endl;  // second method is called -> output: Hallo Welt
+    return 0;
+}
+```
+
+---
+
+### Operator Overloading
+
+```cpp
+class A
+{
+    string str_x_;
+   public:
+    explicit A(const string &str_i) : str_x_{str_i}{} //What is explicit? -> https://stackoverflow.com/a/121163
+    void operator+(const A &class_a)
+    {
+        string str_m = str_x_ + class_a.str_x_;
+        cout << "The result of the addition of two objects is : " << str_m << endl;
+    }
+};
+auto main() -> int
+{
+    A ca1("Welcome");
+    A ca2(" Back");
+    ca1 + ca2; // overloaded operator is called -> output: Welcome Back
+    return 0;
+}
+```
+
+---
+
+## Runtime Polymorphism
+
+>In a Runtime polymorphism, functions are called at the time of the program execution. Hence, it is known as late binding or dynamic binding.[[mygreatlearning](https://www.mygreatlearning.com/blog/polymorphism-in-cpp/#:~:text=Polymorphism%20in%20C%2B%2B%20means%2C%20the,in%20numbers%2C%20it%20performs%20addition)]
+
+---
+
+### Function Overriding
+
+```cpp
+class Animal {
+   public:
+    void function() const {
+        cout << "Eating..." << endl;
+    }
+};
+class Man : public Animal {
+   public:
+    void function() const {
+        cout << "Walking ..." << endl;
+    }
+};
+auto main() -> int {
+    Animal animal = Animal();
+    animal.function();  // parent class object -> output: Eating...
+    Man man = Man();
+    man.function();  // child class object -> output: Walking...
+    return 0;
+}
+```
+
+---
+
+### Virtual Function
+
+<table >
+<tr>
+<td style="width:600px">
+  
+```cpp
+class ParentWVirtual
+{
+   public:
+    void non_virtual_display() const
+    {
+        cout << "Parent non_virutal speaking !!" << endl;
+    }
+
+    virtual void virtual_display() const
+    {
+        cout << "Parent virtual speaking !!" << endl;
+    }
+};
+```
+</td>
+<td style="width:600px">
+
+```cpp
+class DerivedWVirtual : public ParentWVirtual
+{
+   public:
+    void non_virtual_display() const  // overridden function
+    {
+        cout << "Derived non_virtual speaking !!" << endl;
+    }
+
+    void virtual_display() const override
+    {
+        cout << "Derived virtual speaking !!" << endl;
+    }
+};
+```
+</td>
+</tr>
+</table>
+
+---
+
+Pure Virtual
+static_casts (auch von Klassen in den Parent)
+
+---
 # STL
 
 <a id="stl"></a>
