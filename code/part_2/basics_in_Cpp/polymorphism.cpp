@@ -111,7 +111,7 @@ class ParentWPureVirtual
 
 class ChildWPureVirtual
 {
-    public:
+   public:
     void do_something() const
     {
         cout << "ChildWPureVirtual is doing something!" << endl;
