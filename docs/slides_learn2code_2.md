@@ -1202,9 +1202,35 @@ auto main() -> int
 ```
 
 ---
+
+# Templates
+
+<a id="templates"></a>
+
+>A template is a simple yet very powerful tool in C++. The simple idea is to pass the data type as a parameter so that we don’t need to write the same code for different data types. [[geeksforgeeks](https://www.geeksforgeeks.org/templates-cpp/)]
+
+```cpp
+template <typename T>
+auto my_max(T par_x, T par_y) -> T
+{
+    return (par_x > par_y) ? par_x : par_y;
+}
+
+auto main() -> int
+{
+    std::cout << my_max<int>(3, 7) << std::endl;
+    std::cout << my_max<double>(3.0, 7.0) << std::endl;
+    std::cout << my_max<char>('g', 'e') << std::endl;
+    return 0;
+}
+```
+
+---
 # STL
 
 <a id="stl"></a>
+
+
 
 ---
 
@@ -1302,7 +1328,7 @@ auto derived = static_cast<CDerived*>(base);
 
 > **Generate documentation from source code**. Doxygen is the de facto standard tool for generating documentation from annotated C++ sources [[doxygen](https://www.doxygen.nl/)]
 </br>
-Check out the example from our [learn2cod 1 demo project](https://benniwi.github.io/learn2code_1_demo_project/html/index.html)
+Check out the example from our [learn2code 1 demo project](https://benniwi.github.io/learn2code_1_demo_project/html/index.html)
 
 ---
 

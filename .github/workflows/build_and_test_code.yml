@@ -118,7 +118,8 @@ jobs:
            && ./pointer_vs_reference \
            && ./polymorphism \
            && ./static_keyword \
-           && ./type_casting
+           && ./type_casting \
+           && ./templates
            
     ## Test TDD
     - name: Test "tdd"
