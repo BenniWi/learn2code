@@ -12,9 +12,9 @@ Example for function / method overloading -> compile time polymorphism
 class Addition
 {
    public:
-    static auto add(int8_t num_x, int8_t num_y) -> int16_t
+    static auto add(const int8_t num_x, const int8_t num_y) -> int32_t
     {
-        return num_x + num_y;  // this function is performing addition of two Integer value
+        return num_x + num_y;  // this function is performing addition of two integer value
     }
 
     static auto add(const string &str1, const string &str2) -> string
@@ -35,7 +35,9 @@ class A
     // What is explicit?? -> https://stackoverflow.com/a/121163
     // Why prefer std::move?? over explicit A(const string &str_i) : str_x_{str_i}
     // -> https://clang.llvm.org/extra/clang-tidy/checks/modernize/pass-by-value.html
-    explicit A(string str_i) : str_x_{std::move(str_i)}
+    // https://stackoverflow.com/questions/3413470/what-is-stdmove-and-when-should-it-be-used-and-does-it-actually-move-anythi
+    // explicit A(string str_i) : str_x_{std::move(str_i)}
+    explicit A(const string &str_i) : str_x_{str_i}
     {
     }
     void operator+(const A &class_a)
@@ -95,9 +97,24 @@ class DerivedWVirtual : public ParentWVirtual
         cout << "Derived non_virtual speaking !!" << endl;
     }
 
-    void virtual_display() const
+    void virtual_display() const override
     {
         cout << "Derived virtual speaking !!" << endl;
+    }
+};
+
+class ParentWPureVirtual
+{
+   public:
+    virtual void do_something() const = 0;  // making the method pure virtual
+};
+
+class ChildWPureVirtual
+{
+   public:
+    void do_something() const
+    {
+        cout << "ChildWPureVirtual is doing something!" << endl;
     }
 };
 
@@ -105,14 +122,14 @@ auto main() -> int
 {
     // Example for function / method overloading
     cout << "------ Function Overloading: ------" << endl;
-    cout << +Addition::add(3, 9) << endl;             // first method is called
+    cout << Addition::add(3, 9) << endl;              // first method is called
     cout << Addition::add("Hallo", " Welt") << endl;  // second method is called
 
     // Example for operator overloading
     cout << "------ Operator Overloading: ------" << endl;
     A ca1("Welcome");
     A ca2(" Back");
-    ca1 + ca2;
+    ca1 + ca2;  // overloaded operator is called
 
     // Example for function overriding
     cout << "------ Function Overriding: ------" << endl;
@@ -124,11 +141,17 @@ auto main() -> int
     // Example for virtual function
     cout << "------ Virtual Overriding: ------" << endl;
     DerivedWVirtual dwv;         // making object of derived class
-    ParentWVirtual *pwv = &dwv;  // base class pointer .it can only access the base class members
+    ParentWVirtual *pwv = &dwv;  // base class pointer. it can only access the base class members
     pwv->non_virtual_display();  // call the parent class method
     dwv.non_virtual_display();   // call the overriden derived class method
     pwv->virtual_display();      // call the overriden virtual derived class method via parent class pointer,
     dwv.virtual_display();       // call the overriden virtual derived class method via derived class
+
+    // Example for pure virtual function
+    cout << "------ Pure Virtual: ------" << endl;
+    // ParentWPureVirtual ppv; // -> pure virtual, instantiation not possible
+    ChildWPureVirtual cpv;
+    cpv.do_something();
 
     return 0;
 }

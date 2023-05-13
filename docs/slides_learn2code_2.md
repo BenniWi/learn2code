@@ -9,6 +9,7 @@ style: |
   }
 class: invert
 paginate: false
+math: mathjax
 ---
 
 ![width:800px](images/welcome2.jpg "welcome")
@@ -35,9 +36,10 @@ paginate: false
 - [The *static* Keyword](#the-static-keyword)
 - [clang-tidy Coding Support](#clang-tidy-coding-support)
 - [Polymorphism](#polymorphism)
+- [Templates](#templates)
 - [STL](#stl)
+- [Type Casting](#type-casting)
 - [*doxygen* Code Documentation](#doxygen-code-documentation)
-
 
 ---
 
@@ -1012,11 +1014,361 @@ Now, you are good to go :thumbsup:
 
 <a id="polymorphism"></a>
 
+>When the same entity (function or object) behaves differently in different scenarios, it is known as Polymorphism in *C++*. [[mygreatlearning](https://www.mygreatlearning.com/blog/polymorphism-in-cpp/#:~:text=Polymorphism%20in%20C%2B%2B%20means%2C%20the,in%20numbers%2C%20it%20performs%20addition)]
+
+---
+
+## Compile Time Polymorphism
+
+>In compile-time polymorphism, a function is called at the time of program compilation. We call this type of polymorphism as early binding or Static binding.[[mygreatlearning](https://www.mygreatlearning.com/blog/polymorphism-in-cpp/#:~:text=Polymorphism%20in%20C%2B%2B%20means%2C%20the,in%20numbers%2C%20it%20performs%20addition)]
+
+---
+
+### Function Overloading
+
+```cpp
+class Addition
+{
+   public:
+    static auto add(const int8_t num_x, const int8_t num_y) -> int32_t
+    {
+        return num_x + num_y;  // this function is performing addition of two integer value
+    }
+    static auto add(const string &str1, const string &str2) -> string
+    {
+        return str1 + str2;  // this function concatenates two strings
+    }
+};
+auto main() -> int
+{
+    cout << Addition::add(3, 9) << endl;             // first method is called -> output: 12
+    cout << Addition::add("Hallo", " Welt") << endl;  // second method is called -> output: Hallo Welt
+    return 0;
+}
+```
+
+---
+
+### Operator Overloading
+
+```cpp
+class A
+{
+    string str_x_;
+   public:
+    explicit A(const string &str_i) : str_x_{str_i}{} //What is explicit? -> https://stackoverflow.com/a/121163
+    void operator+(const A &class_a)
+    {
+        string str_m = str_x_ + class_a.str_x_;
+        cout << "The result of the addition of two objects is : " << str_m << endl;
+    }
+};
+auto main() -> int
+{
+    A ca1("Welcome");
+    A ca2(" Back");
+    ca1 + ca2; // overloaded operator is called -> output: Welcome Back
+    return 0;
+}
+```
+
+---
+
+## Exercise Polymorphism I
+
+- Implement a base class *Animal* and two derived classes: one for *Cat* and one for *Bird*
+- Implement the necessary **+** operators for *Cat + Bird*, *Cat + Cat*, *Bird + Cat*, and *Cat + Bird*
+- Call all operators inside of a *main*
+
+You can find the code for this exercise in the file [polymorphism_exercise.cpp](https://github.com/BenniWi/learn2code/blob/main/code/part_2/basics_in_Cpp/polymorphism_exercised.cpp)
+
+---
+
+## Runtime Polymorphism
+
+>In a Runtime polymorphism, functions are called at the time of the program execution. Hence, it is known as late binding or dynamic binding.[[mygreatlearning](https://www.mygreatlearning.com/blog/polymorphism-in-cpp/#:~:text=Polymorphism%20in%20C%2B%2B%20means%2C%20the,in%20numbers%2C%20it%20performs%20addition)]
+
+---
+
+### Function Overriding
+
+```cpp
+class Animal {
+   public:
+    void function() const {
+        cout << "Eating..." << endl;
+    }
+};
+class Man : public Animal {
+   public:
+    void function() const {
+        cout << "Walking ..." << endl;
+    }
+};
+auto main() -> int {
+    Animal animal = Animal();
+    animal.function();  // parent class object -> output: Eating...
+    Man man = Man();
+    man.function();  // child class object -> output: Walking...
+    return 0;
+}
+```
+
+---
+
+### Virtual Function
+
+<table >
+<tr>
+<td style="width:600px">
+  
+```cpp
+class ParentWVirtual {
+   public:
+    void non_virtual_display() const {
+        cout << "Parent non_virutal speaking !!" << endl;
+    }
+
+    virtual void virtual_display() const {
+        cout << "Parent virtual speaking !!" << endl;
+    }
+}; 
+```
+
+</td>
+<td style="width:600px">
+
+```cpp
+class DerivedWVirtual : public ParentWVirtual  {
+   public:
+    void non_virtual_display() const { // overridden function
+        cout << "Derived non_virtual speaking !!" << endl;
+    }
+
+    void virtual_display() const override {
+        cout << "Derived virtual speaking !!" << endl;
+    }
+};
+```
+
+</td>
+</tr>
+</table>
+
+```cpp
+auto main() -> int {
+    DerivedWVirtual dwv;         // making object of derived class
+    ParentWVirtual *pwv = &dwv;  // base class pointer. it can only access the base class members
+    pwv->non_virtual_display();  // call the parent class method
+    dwv.non_virtual_display();   // call the overriden derived class method
+    pwv->virtual_display();      // call the overriden virtual derived class method via parent class pointer,
+    dwv.virtual_display();       // call the overriden virtual derived class method via derived class
+    return 0;
+}
+```
+
+---
+
+### Pure Virtual
+
+<table >
+<tr>
+<td style="width:500px">
+  
+```cpp
+class ParentWPureVirtual
+{
+   public:
+   // making the method pure virtual
+    virtual void do_something() const = 0;  
+}; 
+```
+
+</td>
+<td style="width:700px">
+
+```cpp
+class ChildWPureVirtual
+{
+    public:
+    void do_something() const
+    {
+        cout << "ChildWPureVirtual is doing something!" << endl;
+    }
+};
+```
+
+</td>
+</tr>
+</table>
+
+```cpp
+auto main() -> int
+{
+    // ParentWPureVirtual ppv; // -> pure virtual, instantiation not possible
+    ChildWPureVirtual cpv;
+    cpv.do_something();
+    return 0;
+}
+```
+
+---
+
+## Exercise Polymorphism II
+
+- Add a *pure virtual* method ```make_noise``` to the *Animal* class
+- Override the *make_noise* method in the classes *Cat* and *Bird*
+- Print out the corresponding noise for each class in the *make_noise* method
+
+You can find the code for this exercise in the file [polymorphism_exercise.cpp](https://github.com/BenniWi/learn2code/blob/main/code/part_2/basics_in_Cpp/polymorphism_exercised.cpp)
+
+---
+
+# Templates
+
+<a id="templates"></a>
+
+>A template is a simple yet very powerful tool in C++. The simple idea is to pass the data type as a parameter so that we don’t need to write the same code for different data types. [[geeksforgeeks](https://www.geeksforgeeks.org/templates-cpp/)]
+
+```cpp
+template <typename T>
+auto my_max(T par_x, T par_y) -> T
+{
+    // that's an one-liner for if-else
+    return (par_x > par_y) ? par_x : par_y;
+}
+
+auto main() -> int
+{
+    std::cout << my_max<int>(3, 7) << std::endl;
+    std::cout << my_max<double>(3.0, 7.0) << std::endl;
+    std::cout << my_max<char>('g', 'e') << std::endl;
+    return 0;
+}
+```
+
+---
+
+## Exercise Templates
+
+Implement a template function to check if two numbers are roughly the same: $|a - b| < eps$
+
+- Parameter 1 and 2 are of type *T*, parameter 3 is the precision epsilon
+- Return type is bool
+- Compare some numbers of different types using your template
+- optional: make sure that only arithmetic types are allowed in your template ([static_assert](https://en.cppreference.com/w/cpp/language/static_assert))
+
+You can find the code for this exercise in the file [templates.cpp](https://github.com/BenniWi/learn2code/blob/main/code/part_2/basics_in_Cpp/templates.cpp)
+
 ---
 
 # STL
 
 <a id="stl"></a>
+
+>The **Standard Template Library (STL)** is a software library originally designed by Alexander Stepanov for the C++ programming language [...]. It provides four components called *algorithms*, *containers*, *functions*, and *iterators*. [[wikipedia](https://en.wikipedia.org/wiki/Standard_Template_Library)]
+
+We do not go into details here, so just take a look at our [examples](https://github.com/BenniWi/learn2code/blob/main/code/part_2/basics_in_Cpp/stl.cpp)
+
+---
+
+# Type Casting
+
+<a id="type-casting"></a>
+
+>Converting an expression of a given type into another type is known as type-casting. [[cplusplus](https://cplusplus.com/doc/oldtutorial/typecasting/)]
+
+- [Implicit Conversion](#implicit-conversion)
+- [Explicit Conversion](#explicit-conversion)
+- [dynamic_cast](#dynamic_cast)
+- [static_cast](#static_cast)
+- reinterpret_cast
+- const_cast
+
+---
+
+## Implicit Conversion
+
+>Implicit conversions do not require any operator. They are automatically performed when a value is copied to a compatible type.
+
+```cpp
+int8_t int_short = 127;
+int32_t int_long = int_short;  // implicit conversion
+```
+
+---
+
+## Explicit Conversion
+
+>C++ is a strong-typed language. Many conversions, specially those that imply a different interpretation of the value, require an explicit conversion.
+
+```cpp
+int8_t int_short = 127;
+int32_t int_long;
+int_long = (int32_t)int_short;  // c-like cast notation
+int_long = int32_t(int_short);  // functional notation
+```
+
+---
+
+## *dynamic_cast*
+
+>*dynamic_cast* can be used only with pointers and references to objects. Its purpose is to ensure that the result of the type conversion is a valid complete object of the requested class.
+>
+>Therefore, *dynamic_cast* is always successful when we cast a class to one of its base classes:
+
+---
+
+```cpp
+class CBase
+{
+};
+class CDerived : public CBase
+{
+};
+
+CBase base;
+CBase* pbase;
+CDerived derived;
+CDerived* pderived;
+
+pbase = dynamic_cast<CBase*>(&derived);  // ok: derived-to-base
+// pderived = dynamic_cast<CDerived*>(&base);  // wrong: base-to-derived
+```
+
+---
+
+## *static_cast*
+
+>*static_cast* can perform conversions between pointers to related classes, not only from the derived class to its base, but also from a base class to its derived. [...] *static_cast* can also be used to perform any other non-pointer conversion that could also be performed implicitly.
+
+---
+
+```cpp
+double dpi=3.14159265;
+int ipi = static_cast<int>(dpi);
+
+class CBase
+{
+};
+class CDerived : public CBase
+{
+};
+CBase* base = new CBase;
+auto derived = static_cast<CDerived*>(base);
+```
+
+---
+
+## Exercise *STL* and *type_casting*
+
+Re-use the result of the [Animal-Cat-Bird](#exercise-polymorphism-ii) exercise. Extend this exercise with the following functionality:
+
+- Create a *std::vector* of type *shared_pointer of Animal*
+- randomly add 10 *Cat* and *Bird* objects to this vector
+- iterate over the *animals* vector and let them make a noise
+
+You can find the code for this exercise in the file [stl_and_casting_exercise.cpp](https://github.com/BenniWi/learn2code/blob/main/code/part_2/basics_in_Cpp/stl_and_casting_exercise.cpp)
 
 ---
 
@@ -1026,7 +1378,7 @@ Now, you are good to go :thumbsup:
 
 > **Generate documentation from source code**. Doxygen is the de facto standard tool for generating documentation from annotated C++ sources [[doxygen](https://www.doxygen.nl/)]
 </br>
-Check out the example from our [learn2cod 1 demo project](https://benniwi.github.io/learn2code_1_demo_project/html/index.html)
+Check out the example from our [learn2code 1 demo project](https://benniwi.github.io/learn2code_1_demo_project/html/index.html)
 
 ---
 
