@@ -9,6 +9,7 @@ style: |
   }
 class: invert
 paginate: false
+math: mathjax
 ---
 
 ![width:800px](images/welcome2.jpg "welcome")
@@ -39,8 +40,6 @@ paginate: false
 - [STL](#stl)
 - [Type Casting](#type-casting)
 - [*doxygen* Code Documentation](#doxygen-code-documentation)
-
-
 
 ---
 
@@ -1250,6 +1249,19 @@ auto main() -> int
 
 ---
 
+## Exercise Templates
+
+Implement a template function to check if two numbers are roughly the same: $|a - b| < eps$
+
+- Parameter 1 and 2 are of type *T*, parameter 3 is the precision epsilon
+- Return type is bool
+- Compare some numbers of different types using your template
+- optional: make sure that only arithmetic types are allowed in your template ([static_assert](https://en.cppreference.com/w/cpp/language/static_assert))
+
+You can find the code for this exercise in the file [templates.cpp](https://github.com/BenniWi/learn2code/blob/main/code/part_2/basics_in_Cpp/templates.cpp)
+
+---
+
 # STL
 
 <a id="stl"></a>
@@ -1345,6 +1357,18 @@ class CDerived : public CBase
 CBase* base = new CBase;
 auto derived = static_cast<CDerived*>(base);
 ```
+
+---
+
+## Exercise *STL* and *type_casting*
+
+Re-use the result of the [Animal-Cat-Bird](#exercise-polymorphism-ii) exercise. Extend this exercise with the following functionality:
+
+- Create a *std::vector* of type *shared_pointer of Animal*
+- randomly add 10 *Cat* and *Bird* objects to this vector
+- iterate over the *animals* vector and let them make a noise
+
+You can find the code for this exercise in the file [stl_and_casting_exercise.cpp](https://github.com/BenniWi/learn2code/blob/main/code/part_2/basics_in_Cpp/stl_and_casting_exercise.cpp)
 
 ---
 

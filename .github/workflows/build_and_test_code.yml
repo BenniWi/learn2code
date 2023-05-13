@@ -121,7 +121,8 @@ jobs:
            && ./static_keyword \
            && ./type_casting \
            && ./templates \
-           && ./stl
+           && ./stl \
+           && ./stl_and_casting_exercise
            
     ## Test TDD
     - name: Test "tdd"

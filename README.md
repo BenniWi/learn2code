@@ -47,8 +47,8 @@ This part is currently under construction. Expected content could be (incomplete
 - [x] multi-inheritance (chapter)
 - [x] polymorphism (code)
 - [x] polymorphism (chapter)
+- [x] static_assert
 - open topics
-  - static_asserts??
   - exceptions
   - opencv examples??
   - basic uml drawings??
