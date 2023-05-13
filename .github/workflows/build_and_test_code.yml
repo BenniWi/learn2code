@@ -117,6 +117,7 @@ jobs:
            && ./struct_to_class \
            && ./pointer_vs_reference \
            && ./polymorphism \
+           && ./polymorphism_exercise \
            && ./static_keyword \
            && ./type_casting \
            && ./templates \

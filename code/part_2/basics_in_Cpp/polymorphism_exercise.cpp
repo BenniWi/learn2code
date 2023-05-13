@@ -25,7 +25,7 @@ class Cat : public Animal
 
     void operator+(const Bird &par_bird)
     {
-        std::cout << "Cat and Bird does not work!" << std::endl;
+        std::cerr << "Cat and Bird don't like each other!" << std::endl;
     }
 };
 
@@ -36,6 +36,16 @@ class Bird : public Animal
     {
         std::cout << "tschirp" << std::endl;
     }
+
+    void operator+(const Cat &par_cat)
+    {
+        std::cerr << "Bird and Cat don't like each other!" << std::endl;
+    }
+
+    void operator+(const Bird &par_bird)
+    {
+        std::cout << "Birds like each other!" << std::endl;
+    }
 };
 
 auto main() -> int
@@ -45,10 +55,12 @@ auto main() -> int
     Bird tweetie;
     tweetie.make_noise();
 
-    Cat minka;
-    sylvester + minka;
+    Cat garfield;
+    Bird woodstock;
+    sylvester + garfield;
     sylvester + tweetie;
-
+    tweetie + sylvester;
+    tweetie + woodstock;
 
     return 0;
 }

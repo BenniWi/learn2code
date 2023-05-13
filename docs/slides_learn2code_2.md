@@ -1075,6 +1075,16 @@ auto main() -> int
 
 ---
 
+## Exercise Polymorphism I
+
+- Implement a base class *Animal* and two derived classes: one for *Cat* and one for *Bird*
+- Implement the necessary **+** operators for *Cat + Bird*, *Cat + Cat*, *Bird + Cat*, and *Cat + Bird*
+- Call all operators inside of a *main*
+
+You can find the code for this exercise in the file [polymorphism_exercise.cpp](https://github.com/BenniWi/learn2code/blob/main/code/part_2/basics_in_Cpp/polymorphism_exercised.cpp)
+
+---
+
 ## Runtime Polymorphism
 
 >In a Runtime polymorphism, functions are called at the time of the program execution. Hence, it is known as late binding or dynamic binding.[[mygreatlearning](https://www.mygreatlearning.com/blog/polymorphism-in-cpp/#:~:text=Polymorphism%20in%20C%2B%2B%20means%2C%20the,in%20numbers%2C%20it%20performs%20addition)]
@@ -1205,6 +1215,16 @@ auto main() -> int
 
 ---
 
+## Exercise Polymorphism II
+
+- Add a *pure virtual* method ```make_noise``` to the *Animal* class
+- Override the *make_noise* method in the classes *Cat* and *Bird*
+- Print out the corresponding noise for each class in the *make_noise* method
+
+You can find the code for this exercise in the file [polymorphism_exercise.cpp](https://github.com/BenniWi/learn2code/blob/main/code/part_2/basics_in_Cpp/polymorphism_exercised.cpp)
+
+---
+
 # Templates
 
 <a id="templates"></a>
@@ -1215,6 +1235,7 @@ auto main() -> int
 template <typename T>
 auto my_max(T par_x, T par_y) -> T
 {
+    // that's an one-liner for if-else
     return (par_x > par_y) ? par_x : par_y;
 }
 
@@ -1228,6 +1249,7 @@ auto main() -> int
 ```
 
 ---
+
 # STL
 
 <a id="stl"></a>
