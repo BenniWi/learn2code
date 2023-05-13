@@ -45,8 +45,7 @@ jobs:
            && ./macro \
            && ./pointers \
            && ./structures \
-           && ./variables \
-           && ./type_casting
+           && ./variables 
 
     ## run homework 1-2
     - name: run "homework 1-2"
@@ -118,7 +117,8 @@ jobs:
            && ./struct_to_class \
            && ./pointer_vs_reference \
            && ./polymorphism \
-           && ./static_keyword
+           && ./static_keyword \
+           && ./type_casting
            
     ## Test TDD
     - name: Test "tdd"
