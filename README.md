@@ -34,36 +34,25 @@ This part is currently under construction. Expected content could be (incomplete
 - [x] clang-tidy
 - [x] from C to C++ (code)
 - [x] from C to C++ (chapter)
-  - [x] trailing return type
 - [x] dynamic memory in C, C++, and C++14 (and later) (code)
 - [x] dynamic memory in C, C++, and C++14 (and later) (chapter)
 - [x] namespaces (code)
 - [x] namespaces (chapter)
-  - [x] "using namespace" -> NO in headers, MAYBE in Sources
-  - [x] "namespace abbreviations"
-  - [x] https://en.cppreference.com/w/cpp/language/using_declaration
 - [x] References vs Pointers
 - [x] stl and some basic containers (like string, vector, array, queues, ...) (code)
-- [ ] stl and some basic containers (like string, vector, array, queues, ...) (chapter)
+- [x] stl and some basic containers (like string, vector, array, queues, ...) (chapter)
 - [x] inheritance + access specifiers + access specifiers in inheritance (code)
-- [x] inheritance + access specifiers + access specifiers in inheritance (chapter) https://www.programiz.com/cpp-programming/public-protected-private-inheritance
+- [x] inheritance + access specifiers + access specifiers in inheritance (chapter)
 - [x] multi-inheritance (code)
 - [x] multi-inheritance (chapter)
 - [x] polymorphism (code)
-- [ x polymorphism (chapter)
-  - https://www.mygreatlearning.com/blog/polymorphism-in-cpp/#:~:text=Polymorphism%20in%20C%2B%2B%20means%2C%20the,in%20numbers%2C%20it%20performs%20addition.
-  - function
-  - operator
-  - virtual
-  - pure virtual
+- [x] polymorphism (chapter)
 - open topics
   - static_asserts??
-  - templates
   - exceptions
   - opencv examples??
   - basic uml drawings??
   - Qt examples??
-  - writing templates??
 
 ## Prepared Environments
 

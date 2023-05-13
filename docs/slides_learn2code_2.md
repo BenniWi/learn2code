@@ -1230,7 +1230,9 @@ auto main() -> int
 
 <a id="stl"></a>
 
+>The **Standard Template Library (STL)** is a software library originally designed by Alexander Stepanov for the C++ programming language [...]. It provides four components called *algorithms*, *containers*, *functions*, and *iterators*. [[wikipedia](https://en.wikipedia.org/wiki/Standard_Template_Library)]
 
+We do not go into details here, so just take a look at our [examples](https://github.com/BenniWi/learn2code/blob/main/code/part_2/basics_in_Cpp/stl.cpp)
 
 ---
 

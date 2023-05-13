@@ -119,7 +119,8 @@ jobs:
            && ./polymorphism \
            && ./static_keyword \
            && ./type_casting \
-           && ./templates
+           && ./templates \
+           && ./stl
            
     ## Test TDD
     - name: Test "tdd"
