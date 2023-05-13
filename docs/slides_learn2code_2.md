@@ -35,9 +35,11 @@ paginate: false
 - [The *static* Keyword](#the-static-keyword)
 - [clang-tidy Coding Support](#clang-tidy-coding-support)
 - [Polymorphism](#polymorphism)
+- [Templates](#templates)
 - [STL](#stl)
 - [Type Casting](#type-casting)
 - [*doxygen* Code Documentation](#doxygen-code-documentation)
+
 
 
 ---
