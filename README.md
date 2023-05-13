@@ -50,7 +50,7 @@ This part is currently under construction. Expected content could be (incomplete
 - [x] multi-inheritance (code)
 - [x] multi-inheritance (chapter)
 - [x] polymorphism (code)
-- [ ] polymorphism (chapter)
+- [ x polymorphism (chapter)
   - https://www.mygreatlearning.com/blog/polymorphism-in-cpp/#:~:text=Polymorphism%20in%20C%2B%2B%20means%2C%20the,in%20numbers%2C%20it%20performs%20addition.
   - function
   - operator
@@ -58,6 +58,8 @@ This part is currently under construction. Expected content could be (incomplete
   - pure virtual
 - open topics
   - static_asserts??
+  - templates
+  - exceptions
   - opencv examples??
   - basic uml drawings??
   - Qt examples??
