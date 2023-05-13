@@ -103,6 +103,21 @@ class DerivedWVirtual : public ParentWVirtual
     }
 };
 
+class ParentWPureVirtual
+{
+   public:
+    virtual void do_something() const = 0;  // making the method pure virtual
+};
+
+class ChildWPureVirtual
+{
+    public:
+    void do_something() const
+    {
+        cout << "ChildWPureVirtual is doing something!" << endl;
+    }
+};
+
 auto main() -> int
 {
     // Example for function / method overloading
@@ -131,6 +146,12 @@ auto main() -> int
     dwv.non_virtual_display();   // call the overriden derived class method
     pwv->virtual_display();      // call the overriden virtual derived class method via parent class pointer,
     dwv.virtual_display();       // call the overriden virtual derived class method via derived class
+
+    // Example for pure virtual function
+    cout << "------ Pure Virtual: ------" << endl;
+    // ParentWPureVirtual ppv; // -> pure virtual, instantiation not possible
+    ChildWPureVirtual cpv;
+    cpv.do_something();
 
     return 0;
 }

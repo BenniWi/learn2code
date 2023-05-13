@@ -36,6 +36,7 @@ paginate: false
 - [clang-tidy Coding Support](#clang-tidy-coding-support)
 - [Polymorphism](#polymorphism)
 - [STL](#stl)
+- [Type Casting](#type-casting)
 - [*doxygen* Code Documentation](#doxygen-code-documentation)
 
 
@@ -1111,51 +1112,187 @@ auto main() -> int {
 <td style="width:600px">
   
 ```cpp
-class ParentWVirtual
-{
+class ParentWVirtual {
    public:
-    void non_virtual_display() const
-    {
+    void non_virtual_display() const {
         cout << "Parent non_virutal speaking !!" << endl;
     }
 
-    virtual void virtual_display() const
-    {
+    virtual void virtual_display() const {
         cout << "Parent virtual speaking !!" << endl;
     }
-};
+}; 
 ```
+
 </td>
 <td style="width:600px">
 
 ```cpp
-class DerivedWVirtual : public ParentWVirtual
-{
+class DerivedWVirtual : public ParentWVirtual  {
    public:
-    void non_virtual_display() const  // overridden function
-    {
+    void non_virtual_display() const { // overridden function
         cout << "Derived non_virtual speaking !!" << endl;
     }
 
-    void virtual_display() const override
-    {
+    void virtual_display() const override {
         cout << "Derived virtual speaking !!" << endl;
     }
 };
 ```
+
 </td>
 </tr>
 </table>
 
+```cpp
+auto main() -> int {
+    DerivedWVirtual dwv;         // making object of derived class
+    ParentWVirtual *pwv = &dwv;  // base class pointer. it can only access the base class members
+    pwv->non_virtual_display();  // call the parent class method
+    dwv.non_virtual_display();   // call the overriden derived class method
+    pwv->virtual_display();      // call the overriden virtual derived class method via parent class pointer,
+    dwv.virtual_display();       // call the overriden virtual derived class method via derived class
+    return 0;
+}
+```
+
 ---
 
-Pure Virtual
-static_casts (auch von Klassen in den Parent)
+### Pure Virtual
+
+<table >
+<tr>
+<td style="width:500px">
+  
+```cpp
+class ParentWPureVirtual
+{
+   public:
+   // making the method pure virtual
+    virtual void do_something() const = 0;  
+}; 
+```
+
+</td>
+<td style="width:700px">
+
+```cpp
+class ChildWPureVirtual
+{
+    public:
+    void do_something() const
+    {
+        cout << "ChildWPureVirtual is doing something!" << endl;
+    }
+};
+```
+
+</td>
+</tr>
+</table>
+
+```cpp
+auto main() -> int
+{
+    // ParentWPureVirtual ppv; // -> pure virtual, instantiation not possible
+    ChildWPureVirtual cpv;
+    cpv.do_something();
+    return 0;
+}
+```
 
 ---
 # STL
 
 <a id="stl"></a>
+
+---
+
+# Type Casting
+
+<a id="type-casting"></a>
+
+>Converting an expression of a given type into another type is known as type-casting. [[cplusplus](https://cplusplus.com/doc/oldtutorial/typecasting/)]
+
+- [Implicit Conversion](#implicit-conversion)
+- [Explicit Conversion](#explicit-conversion)
+- [dynamic_cast](#dynamic_cast)
+- [static_cast](#static_cast)
+- reinterpret_cast
+- const_cast
+
+---
+
+## Implicit Conversion
+
+>Implicit conversions do not require any operator. They are automatically performed when a value is copied to a compatible type.
+
+```cpp
+int8_t int_short = 127;
+int32_t int_long = int_short;  // implicit conversion
+```
+
+---
+
+## Explicit Conversion
+
+>C++ is a strong-typed language. Many conversions, specially those that imply a different interpretation of the value, require an explicit conversion.
+
+```cpp
+int8_t int_short = 127;
+int32_t int_long;
+int_long = (int32_t)int_short;  // c-like cast notation
+int_long = int32_t(int_short);  // functional notation
+```
+
+---
+
+## *dynamic_cast*
+
+>*dynamic_cast* can be used only with pointers and references to objects. Its purpose is to ensure that the result of the type conversion is a valid complete object of the requested class.
+>
+>Therefore, *dynamic_cast* is always successful when we cast a class to one of its base classes:
+
+---
+
+```cpp
+class CBase
+{
+};
+class CDerived : public CBase
+{
+};
+
+CBase base;
+CBase* pbase;
+CDerived derived;
+CDerived* pderived;
+
+pbase = dynamic_cast<CBase*>(&derived);  // ok: derived-to-base
+// pderived = dynamic_cast<CDerived*>(&base);  // wrong: base-to-derived
+```
+
+---
+
+## *static_cast*
+
+>*static_cast* can perform conversions between pointers to related classes, not only from the derived class to its base, but also from a base class to its derived. [...] *static_cast* can also be used to perform any other non-pointer conversion that could also be performed implicitly.
+
+---
+
+```cpp
+double dpi=3.14159265;
+int ipi = static_cast<int>(dpi);
+
+class CBase
+{
+};
+class CDerived : public CBase
+{
+};
+CBase* base = new CBase;
+auto derived = static_cast<CDerived*>(base);
+```
 
 ---
 
