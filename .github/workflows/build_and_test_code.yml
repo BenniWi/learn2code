@@ -45,7 +45,8 @@ jobs:
            && ./macro \
            && ./pointers \
            && ./structures \
-           && ./variables
+           && ./variables \
+           && ./type_casting
 
     ## run homework 1-2
     - name: run "homework 1-2"
