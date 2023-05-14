@@ -31,4 +31,5 @@ if(BUILD_PART_2)
     add_subdirectory(./code/part_2/tdd)
     # add the C++ homeworks
     add_subdirectory(./code/part_2/homework_2-3)
+    add_subdirectory(./code/part_2/homework_2-4)
 endif()

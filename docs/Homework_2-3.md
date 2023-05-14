@@ -13,6 +13,8 @@ paginate: false
 
 # Homework #3
 
+Requirements: *TDD*, *Inheritance*
+
 ---
 
 ## Spiders & Mammals
