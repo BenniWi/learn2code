@@ -21,13 +21,16 @@ TEST(AnimalTest, initSpider)
     ASSERT_EQ(8, tarantula.get_num_of_feet());
 }
 
-TEST_F(AnimalTestFixture, movelMammal)
+TEST_F(AnimalTestFixture, moveMammal)
 {
     squirrel_.move(1.0);
     ASSERT_FLOAT_EQ(squirrel_.get_position(), 10.0);
     squirrel_.move(2.0);
     ASSERT_FLOAT_EQ(squirrel_.get_position(), 30.0);
+}
 
+TEST_F(AnimalTestFixture, moveSpider)
+{
     black_widow_.move(1.0);
     ASSERT_FLOAT_EQ(black_widow_.get_position(), 5.0);
     black_widow_.move(2.0);
