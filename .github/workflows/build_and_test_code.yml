@@ -132,8 +132,17 @@ jobs:
     ## run & test homework 2-3
     - name: run "homework_2-3 - spiders & mammals"
       working-directory: ${{github.workspace}}/build/code/part_2/homework_2-3
-      run: ./animals_exec 
+      run: ./hw23_animals_exec 
       
     - name: test "homework_2-3 - spiders & mammals"
       working-directory: ${{github.workspace}}/build/code/part_2/homework_2-3
+      run: ctest -C ${{env.BUILD_TYPE}}
+
+    ## run & test homework 2-4
+    - name: run "homework_2-4 - spiders & mammals II"
+      working-directory: ${{github.workspace}}/build/code/part_2/homework_2-4
+      run: ./hw24_animals_exec 
+      
+    - name: test "homework_2-4 - spiders & mammals II"
+      working-directory: ${{github.workspace}}/build/code/part_2/homework_2-4
       run: ctest -C ${{env.BUILD_TYPE}}
