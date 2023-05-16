@@ -1020,7 +1020,7 @@ Now, you are good to go :thumbsup:
 
 ## Compile Time Polymorphism
 
->In compile-time polymorphism, a function is called at the time of program compilation. We call this type of polymorphism as early binding or Static binding.[[mygreatlearning](https://www.mygreatlearning.com/blog/polymorphism-in-cpp/#:~:text=Polymorphism%20in%20C%2B%2B%20means%2C%20the,in%20numbers%2C%20it%20performs%20addition)]
+>In compile-time polymorphism, a function is called at the time of program compilation. We call this type of polymorphism as early binding or static binding.[[mygreatlearning](https://www.mygreatlearning.com/blog/polymorphism-in-cpp/#:~:text=Polymorphism%20in%20C%2B%2B%20means%2C%20the,in%20numbers%2C%20it%20performs%20addition)]
 
 ---
 
@@ -1080,7 +1080,7 @@ auto main() -> int
 - Implement the necessary **+** operators for *Cat + Bird*, *Cat + Cat*, *Bird + Cat*, and *Cat + Bird*
 - Call all operators inside of a *main*
 
-You can find the code for this exercise in the file [polymorphism_exercise.cpp](https://github.com/BenniWi/learn2code/blob/main/code/part_2/basics_in_Cpp/polymorphism_exercised.cpp)
+You can find the code for this exercise in the file [polymorphism_exercise.cpp](https://github.com/BenniWi/learn2code/blob/main/code/part_2/basics_in_Cpp/polymorphism_exercise.cpp)
 
 ---
 
@@ -1220,7 +1220,7 @@ auto main() -> int
 - Override the *make_noise* method in the classes *Cat* and *Bird*
 - Print out the corresponding noise for each class in the *make_noise* method
 
-You can find the code for this exercise in the file [polymorphism_exercise.cpp](https://github.com/BenniWi/learn2code/blob/main/code/part_2/basics_in_Cpp/polymorphism_exercised.cpp)
+You can find the code for this exercise in the file [polymorphism_exercise.cpp](https://github.com/BenniWi/learn2code/blob/main/code/part_2/basics_in_Cpp/polymorphism_exercise.cpp)
 
 ---
 
