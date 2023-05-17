@@ -946,6 +946,7 @@ auto main() -> int
     // call function without object
     ClassWithStatics::say_hello(); // --> output: Hello World! from static method
     // also possible, but unusual
+    ClassWithStatics cws1;
     cws1.say_hello();              // --> output: Hello World! from static method
 
     return 0;
@@ -1077,7 +1078,7 @@ auto main() -> int
 ## Exercise Polymorphism I
 
 - Implement a base class *Animal* and two derived classes: one for *Cat* and one for *Bird*
-- Implement the necessary **+** operators for *Cat + Bird*, *Cat + Cat*, *Bird + Cat*, and *Cat + Bird*
+- Implement the necessary **+** operators for *Cat + Bird*, *Cat + Cat*, *Bird + Cat*, and *Bird + Bird*
 - Call all operators inside of a *main*
 
 You can find the code for this exercise in the file [polymorphism_exercise.cpp](https://github.com/BenniWi/learn2code/blob/main/code/part_2/basics_in_Cpp/polymorphism_exercise.cpp)
