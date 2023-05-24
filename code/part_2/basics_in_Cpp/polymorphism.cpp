@@ -112,7 +112,7 @@ class ParentWPureVirtual
 class ChildWPureVirtual
 {
    public:
-    void do_something() const override
+    void do_something() const
     {
         cout << "ChildWPureVirtual is doing something!" << endl;
     }
