@@ -1189,7 +1189,7 @@ class ParentWPureVirtual
 <td style="width:700px">
 
 ```cpp
-class ChildWPureVirtual
+class ChildWPureVirtual : public ParentWPureVirtual
 {
     public:
     void do_something() const override
