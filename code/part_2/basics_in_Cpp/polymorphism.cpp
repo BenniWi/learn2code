@@ -109,10 +109,10 @@ class ParentWPureVirtual
     virtual void do_something() const = 0;  // making the method pure virtual
 };
 
-class ChildWPureVirtual
+class ChildWPureVirtual : public ParentWPureVirtual
 {
    public:
-    void do_something() const
+    void do_something() const override
     {
         cout << "ChildWPureVirtual is doing something!" << endl;
     }
