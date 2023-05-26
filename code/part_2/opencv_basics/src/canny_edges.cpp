@@ -7,7 +7,7 @@ auto main() -> int
     cv::Mat image = cv::imread(LENAPATH, 0);
 
     // calculate the edge image
-    cv::Mat edges; // = cv::Mat(image.size(), CV_8UC1);
+    cv::Mat edges;  // = cv::Mat(image.size(), CV_8UC1);
     cv::Canny(image, edges, 100, 255);
 
     // write text on the matrix:
