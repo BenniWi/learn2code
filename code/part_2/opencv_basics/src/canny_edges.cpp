@@ -4,7 +4,7 @@
 auto main() -> int
 {
     // load an image using the compiler definition for the image path:
-    cv::Mat image = cv::imread(std::string(IMGPATH) + "/lena.png", 0);
+    cv::Mat image = cv::imread(std::string(IMGPATH) + "/desk_contours.jpg", 0);
 
     // calculate the edge image
     cv::Mat edges;  // = cv::Mat(image.size(), CV_8UC1);
