@@ -9,7 +9,7 @@ auto main() -> int
     // write text on the matrix:
     cv::putText(output, "Hello World :)", cv::Point(15, 70), cv::FONT_HERSHEY_PLAIN, 3, cv::Scalar(0, 255, 0), 4);
 
-    cv::imwrite("opencv_hello.jpg", output);
+    cv::imwrite(std::string(OUTPATH) + "/opencv_hello.jpg", output);
 
     return 0;
 }
