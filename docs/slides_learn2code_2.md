@@ -1380,6 +1380,8 @@ You can find the code for this exercise in the file [stl_and_casting_exercise.cp
 
 <a id="doxygen-code-documentation"></a>
 
+![width:600px](images/doxygen.png "doxygen")
+
 > **Generate documentation from source code**. Doxygen is the de facto standard tool for generating documentation from annotated C++ sources [[doxygen](https://www.doxygen.nl/)]
 </br>
 Check out the example from our [learn2code 1 demo project](https://benniwi.github.io/learn2code_1_demo_project/html/index.html)
@@ -1446,15 +1448,25 @@ If you want to automatically generate the documentation and publish it to your [
 
 ---
 
-# OpenCV
+# *C++* Library Example - *OpenCV*
 
 <a id="opencv"></a>
+
+![width:250px](images/opencv.png "opencv")
+
+https://docs.opencv.org/4.2.0/index.html
+
+---
 
 ## OpenCV - Hello World
 
 Compiler Definitions
 
+---
+
 ## OpenCV - Edge Detection
+
+---
 
 ## OpenCV - Contours
 
@@ -1466,9 +1478,15 @@ Compiler Definitions
 
 Error vs Exception
 
+---
+
 ## Throwing Exceptions
 
+---
+
 ## Catching Exceptions
+
+---
 
 ## Defining New Exceptions
 
