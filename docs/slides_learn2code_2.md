@@ -1390,8 +1390,8 @@ Check out the example from our [learn2code 1 demo project](https://benniwi.githu
 
 ## *doxygen* Example Configuration
 
-The configuration is normally located in a [*Doxyfile*](https://github.com/BenniWi/learn2code_1_demo_project/blob/main/Doxyfile) file. Ideally it should be on top-level of your project
-In this file we can configure the documentation details. Among others, this is the output directory, the graphs to generate , the files to include, and much more.
+- The configuration is normally located in a [*Doxyfile*](https://github.com/BenniWi/learn2code_1_demo_project/blob/main/Doxyfile) file. Ideally it should be on top-level of your project
+- Among others, the configuration contains the output directory, the graphs to generate , the files to include, and much more.
 <br>
 More details about the available rules can be found [here](https://www.doxygen.nl/manual/config.html).
 To start a new configuration from scratch, the [doxywizard](https://www.doxygen.nl/manual/doxywizard_usage.html) is a great help.
@@ -1400,12 +1400,13 @@ To start a new configuration from scratch, the [doxywizard](https://www.doxygen.
 
 ## Enable *doxygen* in Your Codespace
 
-Install doxygen to your codespace by editing your [*Dockerfile*](https://github.com/BenniWi/learn2code_1_demo_project/blob/main/.devcontainer/Dockerfile):
+Install *doxygen* to your codespace by editing your [*Dockerfile*](https://github.com/BenniWi/learn2code_1_demo_project/blob/main/.devcontainer/Dockerfile):
 
-```dockerfile
- RUN \
- sudo apt-get install -y doxygen graphviz
+```sh
+sudo apt-get install -y doxygen graphviz
 ```
+
+(Check this link for [installation on Mac](https://macappstore.org/doxygen/#:~:text=Install%20the%20App%20Press%20Command%2BSpace%20and%20type%20Terminal,enter%2Freturn%20key.%20Wait%20for%20the%20command%20to%20finish.) :arrow_right: ```brew install doxygen```)
 
 ---
 
@@ -1455,6 +1456,22 @@ If you want to automatically generate the documentation and publish it to your [
 ![width:250px](images/opencv.png "opencv")
 
 https://docs.opencv.org/4.2.0/index.html
+
+---
+
+## Enable *OpenCV* in Your Codespace
+
+Install *OpenCV* to your codespace by editing your [*Dockerfile*](https://github.com/BenniWi/learn2code_1_demo_project/blob/main/.devcontainer/Dockerfile):
+
+```sh
+sudo apt-get install -y libopencv-dev
+```
+
+(Check this link for [installation on Mac](https://www.geeksforgeeks.org/how-to-install-opencv-for-c-on-macos/)  :arrow_right: ```brew install opencv```)
+
+---
+
+## Add *OpenCV* to Your CMakeLists.txt
 
 ---
 
