@@ -50,11 +50,8 @@ This part is currently under construction. Expected content could be (incomplete
 - [x] static_assert
 - [x] opencv (code)
 - [ ] opencv (chapter)
-- [ ] exceptions (code)
+- [x] exceptions (code)
 - [ ] exceptions (chapter)
-- open topics
-  - basic uml drawings??
-  - Qt examples??
 
 ## Prepared Environments
 

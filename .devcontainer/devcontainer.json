@@ -24,7 +24,10 @@
 				"franneck94.c-cpp-runner",
 				"DavidAnson.vscode-markdownlint",
 				"mdickin.markdown-shortcuts",
-				"ElecTreeFrying.insert-random-text"
+				"ElecTreeFrying.insert-random-text",
+				"streetsidesoftware.code-spell-checker-british-english",
+				"streetsidesoftware.code-spell-checker-german",
+				"simpletoolsdev.opencv-image"
 			]
 		}
 	}

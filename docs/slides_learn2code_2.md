@@ -40,6 +40,9 @@ math: mathjax
 - [STL](#stl)
 - [Type Casting](#type-casting)
 - [*doxygen* Code Documentation](#doxygen-code-documentation)
+- [OpenCV](#opencv)
+- [Exceptions](#exceptions)
+
 
 ---
 
@@ -1440,3 +1443,33 @@ If you want to automatically generate the documentation and publish it to your [
   1. go to your repository :arrow_right: *settings* :arrow_right: *Pages*
   2. enable *GitHub Actions* to deploy the page </br> ![width:400px](images/enable_github_pages.PNG "enable github pages")
   3. create a [workflow to deploy](https://github.com/BenniWi/learn2code_1_demo_project/blob/main/.github/workflows/publish_doxygen.yml) the documentation
+
+---
+
+# OpenCV
+
+<a id="opencv"></a>
+
+## OpenCV - Hello World
+
+Compiler Definitions
+
+## OpenCV - Edge Detection
+
+## OpenCV - Contours
+
+---
+
+# Exceptions
+
+<a id="exceptions"></a>
+
+Error vs Exception
+
+## Throwing Exceptions
+
+## Catching Exceptions
+
+## Defining New Exceptions
+
+https://www.tutorialspoint.com/cplusplus/cpp_exceptions_handling.htm
