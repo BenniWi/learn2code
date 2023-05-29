@@ -43,7 +43,6 @@ math: mathjax
 - [OpenCV](#opencv)
 - [Exceptions](#exceptions)
 
-
 ---
 
 <!-- paginate: true -->
@@ -1453,9 +1452,22 @@ If you want to automatically generate the documentation and publish it to your [
 
 <a id="opencv"></a>
 
-![width:250px](images/opencv.png "opencv")
+<table >
+<tr>
+<td>
 
-https://docs.opencv.org/4.2.0/index.html
+![width:200px](images/opencv.png "opencv")  
+
+</td>
+<td>
+
+> OpenCV (Open Source Computer Vision Library) is an open source computer vision and machine learning software library.([OpenCV](https://opencv.org/about/))
+
+</td>
+</tr>
+</table>
+
+Read the [docs](https://docs.opencv.org/4.2.0/index.html)
 
 ---
 
@@ -1473,19 +1485,66 @@ sudo apt-get install -y libopencv-dev
 
 ## Add *OpenCV* to Your CMakeLists.txt
 
+```cmake
+# search for module opencv
+find_package( OpenCV ) # alternative: find_package( OpenCV REQUIRED )
+# continue only if opencv is found
+if(OpenCV_FOUND)
+    # add executable for opencv hello world
+    add_executable(opencv_hello src/hello_world.cpp)
+    # include and link all opencv stuff
+    target_include_directories(opencv_hello PUBLIC ${OpenCV_INCLUDE_DIRS} )
+    target_link_libraries( opencv_hello ${OpenCV_LIBRARIES})
+endif()
+```
+
 ---
 
 ## OpenCV - Hello World
 
-Compiler Definitions
+```cpp
+#include "opencv2/highgui/highgui.hpp"
+#include "opencv2/opencv.hpp"
+auto main() -> int
+{
+    // initialize a 120X350 matrix with 3 channels of black pixels:
+    cv::Mat output = cv::Mat::zeros(120, 350, CV_8UC3);
+    // write text on the matrix:
+    cv::putText(output, "Hello World :)", cv::Point(15, 70), cv::FONT_HERSHEY_PLAIN, 3, cv::Scalar(0, 255, 0), 4);
+    // write the resulting image to file
+    cv::imwrite(std::string(OUTPATH) + "/opencv_hello.jpg", output);
+    return 0;
+}
+```
+
+:grey_question: Where is *OUTPATH* coming from:grey_question:
+:arrow_right: It is a **Compiler Definition** from *CMake*
+
+```cmake
+target_compile_definitions(opencv_hello PRIVATE OUTPATH="${CMAKE_CURRENT_BINARY_DIR}")
+```
 
 ---
 
-## OpenCV - Edge Detection
+## OpenCV Exercise - Edge Detection
+
+Write a small opencv application to calculate the [*canny edges*](https://docs.opencv.org/3.4/da/d22/tutorial_py_canny.html)
+
+1. Read in an image as *grayscale* from the hard drive.
+   1. use *cv::imread*
+   2. use a *compiler definition* to define the path to the image folder
+2. Create a new *Mat* for the *edges* image
+3. Calculate the *canny edges* using *cv::Canny*
+4. Put the text *Canny Edges* into the edge image
+5. Write the edge image to a file into the *build* folder
+
+You can find the code for this exercise in the file [canny_edges.cpp](https://github.com/BenniWi/learn2code/blob/main/code/part_2/opencv_basics/src/canny_edges.cpp)
 
 ---
 
 ## OpenCV - Contours
+
+If you want to get closed contours from a *binary* or *edge* image corresponding to the [official tutorial](https://docs.opencv.org/3.4/df/d0d/tutorial_find_contours.html?loclr=blogmap), you can take a look at the [contours example](https://github.com/BenniWi/learn2code/blob/main/code/part_2/opencv_basics/src/contours.cpp)
 
 ---
 
@@ -1493,18 +1552,69 @@ Compiler Definitions
 
 <a id="exceptions"></a>
 
-Error vs Exception
+> An exception is a problem that arises during the execution of a program. A C++ exception is a response to an exceptional circumstance that arises while a program is running, such as an attempt to divide by zero ([tutorialspoint](https://www.tutorialspoint.com/cplusplus/cpp_exceptions_handling.htm))
+
+---
+
+## Error vs Exception
+
+Always differentiate between *Errors (assert)* and *Exceptions*
+Take a look at [this really good article](https://learn.microsoft.com/en-us/cpp/cpp/errors-and-exception-handling-modern-cpp?view=msvc-170#exceptions_versus_assertions) about that topic!
+
+> Use asserts to check for errors that should never occur. Use exceptions to check for errors that might occur [...]. ([microsoft](https://learn.microsoft.com/en-us/cpp/cpp/errors-and-exception-handling-modern-cpp?view=msvc-170#basic-guidelines))
 
 ---
 
 ## Throwing Exceptions
 
+Throwing an exception is quite easy:
+
+```cpp
+throw std::logic_error("Test throwing an exception");
+// compare to assertion
+assert(my_variable==5);
+```
+
+To get a nice overview about *exceptions*, take a look at [tutorialspoint](https://www.tutorialspoint.com/cplusplus/cpp_exceptions_handling.htm)
+
+[![width:200px](images/cpp_exceptions.jpg "exceptions")](https://www.tutorialspoint.com/cplusplus/images/cpp_exceptions.jpg)
+
 ---
 
 ## Catching Exceptions
 
+```cpp
+auto division(const int par_a, const int par_b) -> double {
+    if (par_b == 0) {
+        throw std::invalid_argument("Division by zero!");
+    }
+    return (static_cast<double>(par_a) / static_cast<double>(par_b));
+}
+auto main() -> int {
+    int var_x = 50;
+    int var_y = 0;
+    double var_z = 0.0;
+    try {
+        var_z = division(var_x, var_y);
+        std::cout << var_z << std::endl;
+    }
+    catch (std::invalid_argument& invalid_exception) {
+        // in case of an "invalid_exception", we'll end up here
+        std::cerr << invalid_exception.what() << std::endl;
+    }
+    return 0;
+}
+```
+
 ---
 
-## Defining New Exceptions
+## Defining New Exceptions - Exercise
 
-https://www.tutorialspoint.com/cplusplus/cpp_exceptions_handling.htm
+Implement your own exception and write a small application to throw and catch this exception.
+
+1. Implement your own exception by defining the *struct* **MyException**.
+2. Derive **MyException** from *std::exception*.
+3. Override the ```const char* what() const``` method to return your own exception message.
+4. Throw your new exception in a short main and catch it.
+
+You can find the code for this exercise in the file [exceptions.cpp](https://github.com/BenniWi/learn2code/blob/main/code/part_2/basics_in_Cpp/exceptions.cpp)
