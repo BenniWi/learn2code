@@ -47,7 +47,7 @@ math: mathjax
 
 <!-- paginate: true -->
 
-<!-- header: Labor Softwareentwicklung 2, Q2 2023 -->
+<!-- header: Learn2code Part II -->
 
 <!-- footer: Benjamin Wilking © -->
 
@@ -1618,3 +1618,15 @@ Implement your own exception and write a small application to throw and catch th
 4. Throw your new exception in a short main and catch it.
 
 You can find the code for this exercise in the file [exceptions.cpp](https://github.com/BenniWi/learn2code/blob/main/code/part_2/basics_in_Cpp/exceptions.cpp)
+
+---
+
+<!-- paginate: false -->
+
+<!-- header: "" -->
+
+<!-- footer: "" -->
+
+#  
+
+![width:800px](images/goodbye.jpg "goodbye")

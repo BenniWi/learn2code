@@ -69,7 +69,7 @@ The goal of this course is to enable all participants to learn proper software e
 
 <!-- paginate: true -->
 
-<!-- header: Labor Softwareentwicklung 1, Q1 2023 -->
+<!-- header: Learn2code Part I -->
 
 <!-- footer: Benjamin Wilking © -->
 
