@@ -28,5 +28,7 @@ RUN \
  && sudo apt-get update \
  && sudo apt-get install -y nodejs \
  && sudo npm install -g @marp-team/marp-cli \
+# install opencv
+ && sudo apt-get install -y libopencv-dev \
 # clean up
  && sudo rm -rf /var/lib/apt/lists/*

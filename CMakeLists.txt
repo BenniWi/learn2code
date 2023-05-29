@@ -29,6 +29,7 @@ if(BUILD_PART_2)
     # add the C++ projects
     add_subdirectory(./code/part_2/basics_in_Cpp)
     add_subdirectory(./code/part_2/tdd)
+    add_subdirectory(./code/part_2/opencv_basics)
     # add the C++ homeworks
     add_subdirectory(./code/part_2/homework_2-3)
     add_subdirectory(./code/part_2/homework_2-4)

@@ -122,7 +122,8 @@ jobs:
            && ./type_casting \
            && ./templates \
            && ./stl \
-           && ./stl_and_casting_exercise
+           && ./stl_and_casting_exercise \
+           && ./exceptions
            
     ## Test TDD
     - name: Test "tdd"

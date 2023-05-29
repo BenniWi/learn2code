@@ -48,11 +48,10 @@ This part is currently under construction. Expected content could be (incomplete
 - [x] polymorphism (code)
 - [x] polymorphism (chapter)
 - [x] static_assert
-- open topics
-  - exceptions
-  - opencv examples??
-  - basic uml drawings??
-  - Qt examples??
+- [x] opencv (code)
+- [ ] opencv (chapter)
+- [x] exceptions (code)
+- [ ] exceptions (chapter)
 
 ## Prepared Environments
 

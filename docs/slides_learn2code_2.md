@@ -40,12 +40,14 @@ math: mathjax
 - [STL](#stl)
 - [Type Casting](#type-casting)
 - [*doxygen* Code Documentation](#doxygen-code-documentation)
+- [OpenCV](#opencv)
+- [Exceptions](#exceptions)
 
 ---
 
 <!-- paginate: true -->
 
-<!-- header: Labor Softwareentwicklung 2, Q2 2023 -->
+<!-- header: Learn2code Part II -->
 
 <!-- footer: Benjamin Wilking © -->
 
@@ -1377,6 +1379,8 @@ You can find the code for this exercise in the file [stl_and_casting_exercise.cp
 
 <a id="doxygen-code-documentation"></a>
 
+![width:600px](images/doxygen.png "doxygen")
+
 > **Generate documentation from source code**. Doxygen is the de facto standard tool for generating documentation from annotated C++ sources [[doxygen](https://www.doxygen.nl/)]
 </br>
 Check out the example from our [learn2code 1 demo project](https://benniwi.github.io/learn2code_1_demo_project/html/index.html)
@@ -1385,8 +1389,8 @@ Check out the example from our [learn2code 1 demo project](https://benniwi.githu
 
 ## *doxygen* Example Configuration
 
-The configuration is normally located in a [*Doxyfile*](https://github.com/BenniWi/learn2code_1_demo_project/blob/main/Doxyfile) file. Ideally it should be on top-level of your project
-In this file we can configure the documentation details. Among others, this is the output directory, the graphs to generate , the files to include, and much more.
+- The configuration is normally located in a [*Doxyfile*](https://github.com/BenniWi/learn2code_1_demo_project/blob/main/Doxyfile) file. Ideally it should be on top-level of your project
+- Among others, the configuration contains the output directory, the graphs to generate , the files to include, and much more.
 <br>
 More details about the available rules can be found [here](https://www.doxygen.nl/manual/config.html).
 To start a new configuration from scratch, the [doxywizard](https://www.doxygen.nl/manual/doxywizard_usage.html) is a great help.
@@ -1395,12 +1399,13 @@ To start a new configuration from scratch, the [doxywizard](https://www.doxygen.
 
 ## Enable *doxygen* in Your Codespace
 
-Install doxygen to your codespace by editing your [*Dockerfile*](https://github.com/BenniWi/learn2code_1_demo_project/blob/main/.devcontainer/Dockerfile):
+Install *doxygen* to your codespace by editing your [*Dockerfile*](https://github.com/BenniWi/learn2code_1_demo_project/blob/main/.devcontainer/Dockerfile):
 
-```dockerfile
- RUN \
- sudo apt-get install -y doxygen graphviz
+```sh
+sudo apt-get install -y doxygen graphviz
 ```
+
+(Check this link for [installation on Mac](https://macappstore.org/doxygen/#:~:text=Install%20the%20App%20Press%20Command%2BSpace%20and%20type%20Terminal,enter%2Freturn%20key.%20Wait%20for%20the%20command%20to%20finish.) :arrow_right: ```brew install doxygen```)
 
 ---
 
@@ -1440,3 +1445,188 @@ If you want to automatically generate the documentation and publish it to your [
   1. go to your repository :arrow_right: *settings* :arrow_right: *Pages*
   2. enable *GitHub Actions* to deploy the page </br> ![width:400px](images/enable_github_pages.PNG "enable github pages")
   3. create a [workflow to deploy](https://github.com/BenniWi/learn2code_1_demo_project/blob/main/.github/workflows/publish_doxygen.yml) the documentation
+
+---
+
+# *C++* Library Example - *OpenCV*
+
+<a id="opencv"></a>
+
+<table >
+<tr>
+<td>
+
+![width:200px](images/opencv.png "opencv")  
+
+</td>
+<td>
+
+> OpenCV (Open Source Computer Vision Library) is an open source computer vision and machine learning software library.([OpenCV](https://opencv.org/about/))
+
+</td>
+</tr>
+</table>
+
+Read the [docs](https://docs.opencv.org/4.2.0/index.html)
+
+---
+
+## Enable *OpenCV* in Your Codespace
+
+Install *OpenCV* to your codespace by editing your [*Dockerfile*](https://github.com/BenniWi/learn2code_1_demo_project/blob/main/.devcontainer/Dockerfile):
+
+```sh
+sudo apt-get install -y libopencv-dev
+```
+
+(Check this link for [installation on Mac](https://www.geeksforgeeks.org/how-to-install-opencv-for-c-on-macos/)  :arrow_right: ```brew install opencv```)
+
+---
+
+## Add *OpenCV* to Your CMakeLists.txt
+
+```cmake
+# search for module opencv
+find_package( OpenCV ) # alternative: find_package( OpenCV REQUIRED )
+# continue only if opencv is found
+if(OpenCV_FOUND)
+    # add executable for opencv hello world
+    add_executable(opencv_hello src/hello_world.cpp)
+    # include and link all opencv stuff
+    target_include_directories(opencv_hello PUBLIC ${OpenCV_INCLUDE_DIRS} )
+    target_link_libraries( opencv_hello ${OpenCV_LIBRARIES})
+endif()
+```
+
+---
+
+## OpenCV - Hello World
+
+```cpp
+#include "opencv2/highgui/highgui.hpp"
+#include "opencv2/opencv.hpp"
+auto main() -> int
+{
+    // initialize a 120X350 matrix with 3 channels of black pixels:
+    cv::Mat output = cv::Mat::zeros(120, 350, CV_8UC3);
+    // write text on the matrix:
+    cv::putText(output, "Hello World :)", cv::Point(15, 70), cv::FONT_HERSHEY_PLAIN, 3, cv::Scalar(0, 255, 0), 4);
+    // write the resulting image to file
+    cv::imwrite(std::string(OUTPATH) + "/opencv_hello.jpg", output);
+    return 0;
+}
+```
+
+:grey_question: Where is *OUTPATH* coming from:grey_question:
+:arrow_right: It is a **Compiler Definition** from *CMake*
+
+```cmake
+target_compile_definitions(opencv_hello PRIVATE OUTPATH="${CMAKE_CURRENT_BINARY_DIR}")
+```
+
+---
+
+## OpenCV Exercise - Edge Detection
+
+Write a small opencv application to calculate the [*canny edges*](https://docs.opencv.org/3.4/da/d22/tutorial_py_canny.html)
+
+1. Read in an image as *grayscale* from the hard drive.
+   1. use *cv::imread*
+   2. use a *compiler definition* to define the path to the image folder
+2. Create a new *Mat* for the *edges* image
+3. Calculate the *canny edges* using *cv::Canny*
+4. Put the text *Canny Edges* into the edge image
+5. Write the edge image to a file into the *build* folder
+
+You can find the code for this exercise in the file [canny_edges.cpp](https://github.com/BenniWi/learn2code/blob/main/code/part_2/opencv_basics/src/canny_edges.cpp)
+
+---
+
+## OpenCV - Contours
+
+If you want to get closed contours from a *binary* or *edge* image corresponding to the [official tutorial](https://docs.opencv.org/3.4/df/d0d/tutorial_find_contours.html?loclr=blogmap), you can take a look at the [contours example](https://github.com/BenniWi/learn2code/blob/main/code/part_2/opencv_basics/src/contours.cpp)
+
+---
+
+# Exceptions
+
+<a id="exceptions"></a>
+
+> An exception is a problem that arises during the execution of a program. A C++ exception is a response to an exceptional circumstance that arises while a program is running, such as an attempt to divide by zero ([tutorialspoint](https://www.tutorialspoint.com/cplusplus/cpp_exceptions_handling.htm))
+
+---
+
+## Error vs Exception
+
+Always differentiate between *Errors (assert)* and *Exceptions*
+Take a look at [this really good article](https://learn.microsoft.com/en-us/cpp/cpp/errors-and-exception-handling-modern-cpp?view=msvc-170#exceptions_versus_assertions)!
+
+> Use asserts to check for errors that should never occur. Use exceptions to check for errors that might occur [...]. ([microsoft](https://learn.microsoft.com/en-us/cpp/cpp/errors-and-exception-handling-modern-cpp?view=msvc-170#basic-guidelines))
+
+---
+
+## Throwing Exceptions
+
+Throwing an exception is quite easy:
+
+```cpp
+throw std::logic_error("Test throwing an exception");
+// compare to assertion
+assert(my_variable==5);
+```
+
+To get a nice overview about *exceptions*, take a look at [tutorialspoint](https://www.tutorialspoint.com/cplusplus/cpp_exceptions_handling.htm)
+
+[![width:200px](images/cpp_exceptions.jpg "exceptions")](https://www.tutorialspoint.com/cplusplus/images/cpp_exceptions.jpg)
+
+---
+
+## Catching Exceptions
+
+```cpp
+auto division(const int par_a, const int par_b) -> double {
+    if (par_b == 0) {
+        throw std::invalid_argument("Division by zero!");
+    }
+    return (static_cast<double>(par_a) / static_cast<double>(par_b));
+}
+auto main() -> int {
+    int var_x = 50;
+    int var_y = 0;
+    double var_z = 0.0;
+    try {
+        var_z = division(var_x, var_y);
+        std::cout << var_z << std::endl;
+    }
+    catch (std::invalid_argument& invalid_exception) {
+        // in case of an "invalid_exception", we'll end up here
+        std::cerr << invalid_exception.what() << std::endl;
+    }
+    return 0;
+}
+```
+
+---
+
+## Defining New Exceptions - Exercise
+
+Implement your own exception and write a small application to throw and catch this exception.
+
+1. Implement your own exception by defining the *struct* **MyException**.
+2. Derive **MyException** from *std::exception*.
+3. Override the ```const char* what() const``` method to return your own exception message.
+4. Throw your new exception in a short main and catch it.
+
+You can find the code for this exercise in the file [exceptions.cpp](https://github.com/BenniWi/learn2code/blob/main/code/part_2/basics_in_Cpp/exceptions.cpp)
+
+---
+
+<!-- paginate: false -->
+
+<!-- header: "" -->
+
+<!-- footer: "" -->
+
+#  
+
+![width:800px](images/goodbye.jpg "goodbye")
