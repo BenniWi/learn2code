@@ -1559,7 +1559,7 @@ If you want to get closed contours from a *binary* or *edge* image corresponding
 ## Error vs Exception
 
 Always differentiate between *Errors (assert)* and *Exceptions*
-Take a look at [this really good article](https://learn.microsoft.com/en-us/cpp/cpp/errors-and-exception-handling-modern-cpp?view=msvc-170#exceptions_versus_assertions) about that topic!
+Take a look at [this really good article](https://learn.microsoft.com/en-us/cpp/cpp/errors-and-exception-handling-modern-cpp?view=msvc-170#exceptions_versus_assertions)!
 
 > Use asserts to check for errors that should never occur. Use exceptions to check for errors that might occur [...]. ([microsoft](https://learn.microsoft.com/en-us/cpp/cpp/errors-and-exception-handling-modern-cpp?view=msvc-170#basic-guidelines))
 
