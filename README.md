@@ -28,30 +28,12 @@ Further, there are some homeworks. The homeworks for part I are named *Homework_
 ### Part II
 
 In the second part of the lecture, the programming language **C++** is introduced.
-This part is currently under construction. Expected content could be (incomplete):
+The lecture deals mainly with the basics of **C++** like namespaces, references, inheritance, polymorphism and more. Further, basic software engineering tools like *doxygen* and *clang-tidy* and the very basics of [OpenCV](https://github.com/opencv/opencv) are introduced.
 
-- [x] doxygen
-- [x] clang-tidy
-- [x] from C to C++ (code)
-- [x] from C to C++ (chapter)
-- [x] dynamic memory in C, C++, and C++14 (and later) (code)
-- [x] dynamic memory in C, C++, and C++14 (and later) (chapter)
-- [x] namespaces (code)
-- [x] namespaces (chapter)
-- [x] References vs Pointers
-- [x] stl and some basic containers (like string, vector, array, queues, ...) (code)
-- [x] stl and some basic containers (like string, vector, array, queues, ...) (chapter)
-- [x] inheritance + access specifiers + access specifiers in inheritance (code)
-- [x] inheritance + access specifiers + access specifiers in inheritance (chapter)
-- [x] multi-inheritance (code)
-- [x] multi-inheritance (chapter)
-- [x] polymorphism (code)
-- [x] polymorphism (chapter)
-- [x] static_assert
-- [x] opencv (code)
-- [ ] opencv (chapter)
-- [x] exceptions (code)
-- [ ] exceptions (chapter)
+The slides of the secont part of the lecture can be found in [slides_learn2code_2.md](docs/slides_learn2code_2.md). Respectively, the content of the first part is given in the [Table of Contents](docs/slides_learn2code_2.md#table-of-contents).
+
+For each part of the lecture, the corresponding [code](code) can be found.
+Further, there are some homeworks. The homeworks for part II are named *Homework_2-\*.md* and can be found in de folder [docs](docs). The solutions to the homeworks are again to be found in the [code](code) folder.
 
 ## Prepared Environments
 
