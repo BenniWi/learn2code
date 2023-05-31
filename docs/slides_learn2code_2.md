@@ -39,9 +39,9 @@ math: mathjax
 - [Templates](#templates)
 - [STL](#stl)
 - [Type Casting](#type-casting)
-- [*doxygen* Code Documentation](#doxygen-code-documentation)
-- [OpenCV](#opencv)
 - [Exceptions](#exceptions)
+- [*doxygen* Code Documentation](#doxygen-code-documentation)
+- [*C++* Library Example - *OpenCV*](#c-library-example---opencv)
 
 ---
 
@@ -1375,6 +1375,79 @@ You can find the code for this exercise in the file [stl_and_casting_exercise.cp
 
 ---
 
+# Exceptions
+
+<a id="exceptions"></a>
+
+> An exception is a problem that arises during the execution of a program. A C++ exception is a response to an exceptional circumstance that arises while a program is running, such as an attempt to divide by zero ([tutorialspoint](https://www.tutorialspoint.com/cplusplus/cpp_exceptions_handling.htm))
+
+---
+
+## Error vs Exception
+
+Always differentiate between *Errors (assert)* and *Exceptions*
+Take a look at [this really good article](https://learn.microsoft.com/en-us/cpp/cpp/errors-and-exception-handling-modern-cpp?view=msvc-170#exceptions_versus_assertions)!
+
+> Use asserts to check for errors that should never occur. Use exceptions to check for errors that might occur [...]. ([microsoft](https://learn.microsoft.com/en-us/cpp/cpp/errors-and-exception-handling-modern-cpp?view=msvc-170#basic-guidelines))
+
+---
+
+## Throwing Exceptions
+
+Throwing an exception is quite easy:
+
+```cpp
+throw std::logic_error("Test throwing an exception");
+// compare to assertion
+assert(my_variable==5);
+```
+
+To get a nice overview about *exceptions*, take a look at [tutorialspoint](https://www.tutorialspoint.com/cplusplus/cpp_exceptions_handling.htm)
+
+[![width:200px](images/cpp_exceptions.jpg "exceptions")](https://www.tutorialspoint.com/cplusplus/images/cpp_exceptions.jpg)
+
+---
+
+## Catching Exceptions
+
+```cpp
+auto division(const int par_a, const int par_b) -> double {
+    if (par_b == 0) {
+        throw std::invalid_argument("Division by zero!");
+    }
+    return (static_cast<double>(par_a) / static_cast<double>(par_b));
+}
+auto main() -> int {
+    int var_x = 50;
+    int var_y = 0;
+    double var_z = 0.0;
+    try {
+        var_z = division(var_x, var_y);
+        std::cout << var_z << std::endl;
+    }
+    catch (std::invalid_argument& invalid_exception) {
+        // in case of an "invalid_exception", we'll end up here
+        std::cerr << invalid_exception.what() << std::endl;
+    }
+    return 0;
+}
+```
+
+---
+
+## Defining New Exceptions - Exercise
+
+Implement your own exception and write a small application to throw and catch this exception.
+
+1. Implement your own exception by defining the *struct* **MyException**.
+2. Derive **MyException** from *std::exception*.
+3. Override the ```const char* what() const``` method to return your own exception message.
+4. Throw your new exception in a short main and catch it.
+
+You can find the code for this exercise in the file [exceptions.cpp](https://github.com/BenniWi/learn2code/blob/main/code/part_2/basics_in_Cpp/exceptions.cpp)
+
+---
+
 # *doxygen* Code Documentation
 
 <a id="doxygen-code-documentation"></a>
@@ -1450,7 +1523,7 @@ If you want to automatically generate the documentation and publish it to your [
 
 # *C++* Library Example - *OpenCV*
 
-<a id="opencv"></a>
+<a id="c-library-example---opencv"></a>
 
 <table >
 <tr>
@@ -1545,79 +1618,6 @@ You can find the code for this exercise in the file [canny_edges.cpp](https://gi
 ## OpenCV - Contours
 
 If you want to get closed contours from a *binary* or *edge* image corresponding to the [official tutorial](https://docs.opencv.org/3.4/df/d0d/tutorial_find_contours.html?loclr=blogmap), you can take a look at the [contours example](https://github.com/BenniWi/learn2code/blob/main/code/part_2/opencv_basics/src/contours.cpp)
-
----
-
-# Exceptions
-
-<a id="exceptions"></a>
-
-> An exception is a problem that arises during the execution of a program. A C++ exception is a response to an exceptional circumstance that arises while a program is running, such as an attempt to divide by zero ([tutorialspoint](https://www.tutorialspoint.com/cplusplus/cpp_exceptions_handling.htm))
-
----
-
-## Error vs Exception
-
-Always differentiate between *Errors (assert)* and *Exceptions*
-Take a look at [this really good article](https://learn.microsoft.com/en-us/cpp/cpp/errors-and-exception-handling-modern-cpp?view=msvc-170#exceptions_versus_assertions)!
-
-> Use asserts to check for errors that should never occur. Use exceptions to check for errors that might occur [...]. ([microsoft](https://learn.microsoft.com/en-us/cpp/cpp/errors-and-exception-handling-modern-cpp?view=msvc-170#basic-guidelines))
-
----
-
-## Throwing Exceptions
-
-Throwing an exception is quite easy:
-
-```cpp
-throw std::logic_error("Test throwing an exception");
-// compare to assertion
-assert(my_variable==5);
-```
-
-To get a nice overview about *exceptions*, take a look at [tutorialspoint](https://www.tutorialspoint.com/cplusplus/cpp_exceptions_handling.htm)
-
-[![width:200px](images/cpp_exceptions.jpg "exceptions")](https://www.tutorialspoint.com/cplusplus/images/cpp_exceptions.jpg)
-
----
-
-## Catching Exceptions
-
-```cpp
-auto division(const int par_a, const int par_b) -> double {
-    if (par_b == 0) {
-        throw std::invalid_argument("Division by zero!");
-    }
-    return (static_cast<double>(par_a) / static_cast<double>(par_b));
-}
-auto main() -> int {
-    int var_x = 50;
-    int var_y = 0;
-    double var_z = 0.0;
-    try {
-        var_z = division(var_x, var_y);
-        std::cout << var_z << std::endl;
-    }
-    catch (std::invalid_argument& invalid_exception) {
-        // in case of an "invalid_exception", we'll end up here
-        std::cerr << invalid_exception.what() << std::endl;
-    }
-    return 0;
-}
-```
-
----
-
-## Defining New Exceptions - Exercise
-
-Implement your own exception and write a small application to throw and catch this exception.
-
-1. Implement your own exception by defining the *struct* **MyException**.
-2. Derive **MyException** from *std::exception*.
-3. Override the ```const char* what() const``` method to return your own exception message.
-4. Throw your new exception in a short main and catch it.
-
-You can find the code for this exercise in the file [exceptions.cpp](https://github.com/BenniWi/learn2code/blob/main/code/part_2/basics_in_Cpp/exceptions.cpp)
 
 ---
 
