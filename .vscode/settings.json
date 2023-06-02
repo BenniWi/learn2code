@@ -11,14 +11,15 @@
         "editor.defaultFormatter": "xaver.clang-format"
     },
 
+    "cmake.configureArgs": ["-DCMAKE_EXPORT_COMPILE_COMMANDS=ON"],
+    "cmake.buildDirectory": "${workspaceFolder}/build",
+
     "clang-format.executable": "clang-format-16",
 
     "clang-tidy.executable": "clang-tidy-16",
     "clang-tidy.fixOnSave": true,
     "clang-tidy.lintOnSave": true,
-    "clang-tidy.compilerArgs": [
-        "--config-file=.clang-tidy"
-    ],
+    "clang-tidy.buildPath": "build",
     
     "files.associations": {
         "iostream": "cpp",
@@ -94,7 +95,11 @@
         "__verbose_abort": "cpp",
         "ios": "cpp",
         "locale": "cpp",
-        "queue": "cpp"
+        "queue": "cpp",
+        "regex": "cpp",
+        "list": "cpp",
+        "stack": "cpp",
+        "unordered_set": "cpp"
     },
     "cSpell.language": "en,en-GB",
 }
