@@ -1,10 +1,10 @@
-#define CVPLOT_HEADER_ONLY 
+#define CVPLOT_HEADER_ONLY
 
 #include <CvPlot/cvplot.h>
 
 auto main() -> int
 {
-    auto axes = CvPlot::plot(std::vector<double>{ 3, 3, 4, 6, 4, 3 }, "-o");
+    auto axes = CvPlot::plot(std::vector<double>{3, 3, 4, 6, 4, 3}, "-o");
     axes.title("my first cvplot");
     axes.xLabel("x");
     axes.yLabel("y");
