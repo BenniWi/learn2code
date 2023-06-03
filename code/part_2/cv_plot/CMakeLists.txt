@@ -9,7 +9,8 @@ set(CMAKE_CXX_STANDARD 14)
 set(CMAKE_CXX_STANDARD_REQUIRED True)
 
 # add some compile options
-add_compile_options(-Wall -Wextra -pedantic -O0)
+#add_compile_options(-Wall -Wextra -pedantic -O0)
+add_compile_options(-Wall)
 
 # search for module opencv
 find_package( OpenCV ) # alternative: find_package( OpenCV REQUIRED )
@@ -37,14 +38,19 @@ if(OpenCV_FOUND)
 
     # add executable for cvplot hello world
     add_executable(cvplot_hello src/hello_world.cpp)
-    target_include_directories(cvplot_hello PUBLIC ${OpenCV_INCLUDE_DIRS} )
+    target_include_directories(cvplot_hello PUBLIC ${OpenCV_INCLUDE_DIRS} ${cvplot_SOURCE_DIR}/CvPlot/inc)
     target_link_libraries( cvplot_hello ${OpenCV_LIBRARIES})
-    target_include_directories(cvplot_hello PUBLIC ${cvplot_SOURCE_DIR}/CvPlot/inc)
 
     # add executable for csv reader 
     add_executable(read_csv src/read_csv.cpp)
     target_compile_definitions(read_csv PRIVATE RESOURCEPATH="${CMAKE_CURRENT_LIST_DIR}/resources")
     target_link_libraries(read_csv PUBLIC rapidcsv)
+
+    # add executable for weather analysis
+    add_executable(weather_analysis src/weather_analysis.cpp)
+    target_compile_definitions(weather_analysis PRIVATE RESOURCEPATH="${CMAKE_CURRENT_LIST_DIR}/resources")
+    target_include_directories(weather_analysis PUBLIC ${OpenCV_INCLUDE_DIRS} ${cvplot_SOURCE_DIR}/CvPlot/inc)
+    target_link_libraries(weather_analysis rapidcsv ${OpenCV_LIBRARIES} )
 
 endif()
 
