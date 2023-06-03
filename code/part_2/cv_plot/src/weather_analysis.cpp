@@ -8,6 +8,9 @@
 
 auto main() -> int
 {
+    // Dataset from: https://www.ncei.noaa.gov/metadata/geoportal/rest/metadata/item/gov.noaa.ncdc:C00947/html
+    // Dataset documentation: https://www.ncei.noaa.gov/data/global-summary-of-the-year/doc/GSOM_GSOY_Description_Document_v1.0.2_20200219.pdf
+    // available stations: https://www.ncei.noaa.gov/pub/data/ghcn/daily/ghcnd-stations.txt
     rapidcsv::Document doc(std::string(RESOURCEPATH) + "/GME00102404.csv", rapidcsv::LabelParams(0, 0),
                            rapidcsv::SeparatorParams(), rapidcsv::ConverterParams(true));
 
