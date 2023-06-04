@@ -10,6 +10,6 @@ auto main() -> int
     axes.yLabel("y");
     cv::Mat mat = axes.render(300, 400);
 
-    cv::imwrite("cvplot.jpg", mat);
+    cv::imwrite("cvplot.png", mat);
     return 0;
 }

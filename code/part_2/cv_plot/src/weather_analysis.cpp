@@ -144,7 +144,7 @@ auto main() -> int
     legend.add_legend_entry("emnt", cv::Scalar(0, 0, 255));
 
     // add legend to axes
-    legend.set_width(10);
+    legend.set_width(15);
     axes.create<LegendCustom>(&legend);
 
     // some settings for the plot
@@ -153,9 +153,9 @@ auto main() -> int
     axes.xLabel("Year");
 
     // render the axes into a cv Mat
-    cv::Mat mat = axes.render(800, 1200);
+    cv::Mat mat = axes.render(600, 800);
     // write the plot to file
-    cv::imwrite("weather_over_years_konstanz.jpg", mat);
+    cv::imwrite("weather_over_years_konstanz.png", mat);
 
     return 0;
 }

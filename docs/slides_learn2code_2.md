@@ -42,6 +42,7 @@ math: mathjax
 - [Exceptions](#exceptions)
 - [*doxygen* Code Documentation](#doxygen-code-documentation)
 - [*C++* Library Example - *OpenCV*](#c-library-example---opencv)
+- [Programming Task - Weather in Konstanz](#programming-task---weather-in-konstanz)
 
 ---
 
@@ -1618,6 +1619,53 @@ You can find the code for this exercise in the file [canny_edges.cpp](https://gi
 ## OpenCV - Contours
 
 If you want to get closed contours from a *binary* or *edge* image corresponding to the [official tutorial](https://docs.opencv.org/3.4/df/d0d/tutorial_find_contours.html?loclr=blogmap), you can take a look at the [contours example](https://github.com/BenniWi/learn2code/blob/main/code/part_2/opencv_basics/src/contours.cpp)
+
+---
+
+# Programming Task - Weather in Konstanz
+
+<a id="programming-task---weather-in-konstanz"></a>
+
+---
+
+## Plotting Diagrams with *CvPlot*
+
+Using the [CvPlot](https://github.com/Profactor/cv-plot) library, create a simple plot like:
+
+![width:500px](images/cvplot_hello.png "cvplot")
+
+---
+
+- Add the *CvPlot* library to the *CMakeLists.txt* using the [FetchContent](https://cmake.org/cmake/help/latest/module/FetchContent.html) module
+  - you can copy the solution from [here](https://github.com/BenniWi/learn2code/blob/main/code/part_2/cv_plot/CMakeLists.txt#L23-L31)
+  - also remember to link the correct libraries (*CvPlot* is based on *OpenCV*) and to add the include folders
+- Also add the title and the axis labels
+
+:point_up: The [documentation](https://github.com/Profactor/cv-plot) and the [tutorial](https://github.com/Profactor/cv-plot/blob/master/doc/tutorial.md) will help you
+You can find the code for this exercise in the file [hello_world.cpp](https://github.com/BenniWi/learn2code/blob/main/code/part_2/cv_plot/src/hello_world.cpp)
+
+---
+
+## Reading in *csv* Files with *Rapidcsv*
+
+Using the [Rapidcsv](https://github.com/d99kris/rapidcsv) library to read in this *csv* ([Comma Separeted Values](https://en.wikipedia.org/wiki/Comma-separated_values)) [file](https://github.com/BenniWi/learn2code/blob/main/code/part_2/cv_plot/resources/colrowhdr.csv).
+
+- Add the *Rapidcsv* library to the *CMakeLists.txt* using the [FetchContent](https://cmake.org/cmake/help/latest/module/FetchContent.html) module
+  - you can copy the solution from [here](https://github.com/BenniWi/learn2code/blob/main/code/part_2/cv_plot/CMakeLists.txt#L34-L37)
+  - also remember to link the correct libraries and to add the include folders
+- Print out the number of elements in the column *Close*.
+- Print out the value of the *volume* on *2017-02-22*
+
+:point_up: The [documentation](https://github.com/d99kris/rapidcsv) and the [examples](https://github.com/d99kris/rapidcsv/tree/master/examples) will help you
+You can find the code for this exercise in the file [read_csv.cpp](https://github.com/BenniWi/learn2code/blob/main/code/part_2/cv_plot/src/read_csv.cpp)
+
+---
+
+## The Weather in Konstanz
+
+![width:600px](images/weather_over_years_konstanz.png "weather_konstanz")
+
+You can find the code for this exercise in the file [weather_analysis.cpp](https://github.com/BenniWi/learn2code/blob/main/code/part_2/cv_plot/src/weather_analysis.cpp)
 
 ---
 
