@@ -19,8 +19,8 @@ struct LegendCustom : public CvPlot::Drawable
         int it_i = 1;
         for (auto itr = legend_entries_.begin(); itr < legend_entries_.end(); ++itr, ++it_i)
         {
-            auto tmp_p3 = render_target.project({legend_rect_.x + dist_b_entries_,
-                                                 legend_rect_.y - it_i * (font_size + dist_b_entries_)});
+            auto tmp_p3 = render_target.project(
+                {legend_rect_.x + dist_b_entries_, legend_rect_.y - it_i * (font_size + dist_b_entries_)});
             cv::putText(render_target.innerMat(), itr->first, tmp_p3, cv::FONT_HERSHEY_PLAIN, font_size, itr->second);
         }
     }
