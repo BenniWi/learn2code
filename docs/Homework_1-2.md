@@ -10,6 +10,7 @@ style: |
 class: invert
 paginate: false
 ---
+<!-- markdownlint-disable MD033 MD025 -->
 
 # Homework #2
 

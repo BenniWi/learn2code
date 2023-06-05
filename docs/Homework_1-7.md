@@ -10,6 +10,7 @@ style: |
 class: invert
 paginate: false
 ---
+<!-- markdownlint-disable MD033 MD025 -->
 
 # Homework #7
 
@@ -25,7 +26,7 @@ Modify the *student struct* from *homework 1-6* to create a **student struct lib
 
 ## Testing the Student Struct
 
-Exend the *student struct* project by adding some tests using **gtest**
+Extend the *student struct* project by adding some tests using **gtest**
 
 - Add a ```<testfile>.cpp``` to the *test* subfolder.
 - Extend the *CMakeLists.txt* to deal with **gtest** and *C++*

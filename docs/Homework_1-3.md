@@ -10,6 +10,7 @@ style: |
 class: invert
 paginate: false
 ---
+<!-- markdownlint-disable MD033 MD025 -->
 
 # Homework #3
 
@@ -23,9 +24,9 @@ Requirements: *Basics in C #1*
    1. matriculation number
    2. name
    3. list of grades (array)
-   4. Use *defines* to specify the maximum name lenght and the maximum mount of grades
+   4. Use *defines* to specify the maximum name length and the maximum mount of grades
 2. Instantiate a new student
-3. Create an output to the commandline to print the student name and matriculation number.
+3. Create an output to the command line to print the student name and matriculation number.
 
 ---
 
@@ -42,6 +43,6 @@ Example:
 ```C
 int x = 5; int y = 4;
 printf(“x: %d, y: %d“, x, y); // x: 5, y: 4
-// pointers are swaped 
+// pointers are swapped 
 printf(“x: %d, y: %d“, x, y); // x: 4, y: 5 
 ```

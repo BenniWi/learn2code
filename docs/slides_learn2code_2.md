@@ -11,6 +11,7 @@ class: invert
 paginate: false
 math: mathjax
 ---
+<!-- markdownlint-disable MD033 MD025 -->
 
 ![width:800px](images/welcome2.jpg "welcome")
 
@@ -345,7 +346,7 @@ auto main() -> int
 
 ### **"using"** Namespaces
 
-The [keyword](https://en.cppreference.com/w/cpp/language/using_declaration) ```using``` simplyfies things a lot.
+The [keyword](https://en.cppreference.com/w/cpp/language/using_declaration) ```using``` simplifies things a lot.
 
 ```cpp
 using namespace std
@@ -569,7 +570,7 @@ int* cal_ptr = (int*)calloc(num_of_elements, sizeof(int));
 free(cal_ptr);
 ```
 
-----
+---
 
 ### Example for memory leak with malloc/calloc
 
@@ -971,7 +972,7 @@ auto main() -> int
 
 The configuration is normally located in a [*.clang-tidy*](https://github.com/BenniWi/learn2code/blob/main/.clang-tidy) file.
 In this file we can configure which checks to perform.
-E.g. we want to enable all ```modernize-*``` rules or we want to enforce *CamelCase*  names for class names with
+E.g. we want to enable all ```modernize-[*]``` rules or we want to enforce *CamelCase*  names for class names with
 ```readability-identifier-naming.ClassCase: CamelCase```
 <br>
 More details about the available rules can be found [here](https://clang.llvm.org/extra/clang-tidy/)
@@ -1130,7 +1131,7 @@ auto main() -> int {
 class ParentWVirtual {
    public:
     void non_virtual_display() const {
-        cout << "Parent non_virutal speaking !!" << endl;
+        cout << "Parent non_virtual speaking !!" << endl;
     }
 
     virtual void virtual_display() const {
@@ -1604,7 +1605,7 @@ target_compile_definitions(opencv_hello PRIVATE OUTPATH="${CMAKE_CURRENT_BINARY_
 
 Write a small opencv application to calculate the [*canny edges*](https://docs.opencv.org/3.4/da/d22/tutorial_py_canny.html)
 
-1. Read in an image as *grayscale* from the hard drive.
+1. Read in an image as *greyscale* from the hard drive.
    1. use *cv::imread*
    2. use a *compiler definition* to define the path to the image folder
 2. Create a new *Mat* for the *edges* image
@@ -1649,7 +1650,7 @@ You can find the code for this exercise in the file [hello_world.cpp](https://gi
 
 ## Reading in *csv* Files with *Rapidcsv*
 
-Using the [Rapidcsv](https://github.com/d99kris/rapidcsv) library to read in this *csv* ([Comma Separeted Values](https://en.wikipedia.org/wiki/Comma-separated_values)) [file](https://github.com/BenniWi/learn2code/blob/main/code/part_2/cv_plot/resources/colrowhdr.csv).
+Using the [Rapidcsv](https://github.com/d99kris/rapidcsv) library to read in this *csv* ([Comma Separated Values](https://en.wikipedia.org/wiki/Comma-separated_values)) [file](https://github.com/BenniWi/learn2code/blob/main/code/part_2/cv_plot/resources/colrowhdr.csv).
 
 - Add the *Rapidcsv* library to the *CMakeLists.txt* using the [FetchContent](https://cmake.org/cmake/help/latest/module/FetchContent.html) module
   - you can copy the solution from [here](https://github.com/BenniWi/learn2code/blob/main/code/part_2/cv_plot/CMakeLists.txt#L34-L37)

@@ -1,3 +1,4 @@
+<!-- markdownlint-disable MD033 -->
 # learn2code
 
 This repository contains slides, exercise examples and more for my lecture "Software Development".
@@ -30,7 +31,7 @@ Further, there are some homeworks. The homeworks for part I are named *Homework_
 In the second part of the lecture, the programming language **C++** is introduced.
 The lecture deals mainly with the basics of **C++** like namespaces, references, inheritance, polymorphism and more. Further, basic software engineering tools like *doxygen* and *clang-tidy* and the very basics of [OpenCV](https://github.com/opencv/opencv) are introduced. At the end a comprehensive exercise using [CvPlot](https://github.com/Profactor/cv-plot) and [Rapidcsv](https://github.com/d99kris/rapidcsv) is given.
 
-The slides of the secont part of the lecture can be found in [slides_learn2code_2.md](docs/slides_learn2code_2.md). Respectively, the content of the first part is given in the [Table of Contents](docs/slides_learn2code_2.md#table-of-contents).
+The slides of the second part of the lecture can be found in [slides_learn2code_2.md](docs/slides_learn2code_2.md). Respectively, the content of the first part is given in the [Table of Contents](docs/slides_learn2code_2.md#table-of-contents).
 
 For each part of the lecture, the corresponding [code](code) can be found.
 Further, there are some homeworks. The homeworks for part II are named *Homework_2-\*.md* and can be found in de folder [docs](docs). The solutions to the homeworks are again to be found in the [code](code) folder.
@@ -54,6 +55,7 @@ If you want to run the PDF export on the command line you will need the followin
 
 ### Install Latest nodejs
 
+<!-- markdownlint-disable-next-line -->
 https://tecadmin.net/install-latest-nodejs-npm-on-ubuntu/
 
 ```sh
@@ -87,4 +89,4 @@ Most of the code samples are supporting [CMake](https://cmake.org/).
 All *CMake* capable samples are collected in the top-level [CMakeLists.txt](CMakeLists.txt).
 Configure this top level project and you are good to go.
 
-For all non CMake samples you should use the compiler of your joice (mostly [gcc](https://gcc.gnu.org/) or [clang](https://clang.llvm.org/) and build it manually.
+For all non CMake samples you should use the compiler of your joyce (mostly [gcc](https://gcc.gnu.org/) or [clang](https://clang.llvm.org/) and build it manually.

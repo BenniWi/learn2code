@@ -104,4 +104,13 @@
         "complex": "cpp"
     },
     "cSpell.language": "en,en-GB",
+    "cSpell.words": [
+        "codespace",
+        "Codespaces",
+        "googletest",
+        "gtest",
+        "mathjax",
+        "Struct",
+        "Wilking"
+    ],
 }

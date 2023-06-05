@@ -11,6 +11,8 @@ class: invert
 paginate: false
 ---
 
+<!-- markdownlint-disable MD033 MD025 -->
+
 ![width:800px](images/welcome.jpg "welcome")
 
 ---
@@ -19,6 +21,7 @@ paginate: false
 
 <a id="experience-survey"></a>
 
+<!-- markdownlint-disable-next-line -->
 https://form.jotform.com/223513864665058; Password: *dhbw2022*
 ![width:500px](images/qr-code_TFE22.png "survey qr")
 
@@ -27,7 +30,6 @@ https://form.jotform.com/223513864665058; Password: *dhbw2022*
 # Goal of this Course
 
 <a id="goal-of-this-course"></a>
-
 
 The goal of this course is to enable all participants to learn proper software engineering. Being a good software engineer takes **time**, **will** to improve yourself and **commitment**.
 
@@ -142,7 +144,7 @@ The goal of this course is to enable all participants to learn proper software e
 7. delete the second file
 8. delete the created folder
 
-(in between, alwas check the current status with *ls*)
+(in between, always check the current status with *ls*)
 
 ---
 
@@ -355,7 +357,7 @@ git log --graph # show the commit graph on command line
   {font-size: 25px}
 </style>
 
-### Prerequisits
+### Prerequisites
 
 1. Drop a comment [here](https://github.com/BenniWi/learn-git/issues/1) and I'll add you as a *Collaborator*
 2. Add an SSH key for your machine (only if you don't use the codespace/gitpod)
@@ -402,11 +404,6 @@ git pull --merge
 # Basics in **C** #1
 
 <a id="basics-in-c-1"></a>
-
-<!-- 
-13.01.   Einführung Variablen und Datentypen Zeiger Datenstrukturen (struct, enum, Listen…)
-03.02.   Kontrollstrukturen (if, switch case, for, while, do while) Funktionen
--->
 
 ---
 
@@ -824,7 +821,7 @@ set(CMAKE_C_STANDARD_REQUIRED True)
 # add some compile options
 add_compile_options(-Wall -Wextra -pedantic -O0)
 
-# add an executabel and assign files to it
+# add an executable and assign files to it
 add_executable(cmake_example_exec cmake.c)
 ```
 
@@ -887,7 +884,7 @@ cmake -S . -B build #add all your options
 
 ## CMake Misc
 
-1. You probably recognized, that you have to go to the *build* folder bevor calling ```make``` :wink:
+1. You probably recognized, that you have to go to the *build* folder before calling ```make``` :wink:
 2. Can you run your script *run_cmake.sh*? Probably not! Try ```chmod +x run_cmake.sh```! - What does this?
 
 ---
@@ -901,7 +898,7 @@ cmake -S . -B build #add all your options
 
 ---
 
-## Debugging-Prerequisits
+## Debugging-Prerequisites
 
 - you have to tell the compiler to create *debug symbols*
   - extend CMake build with:
@@ -997,7 +994,7 @@ Even if is absolutely **mandatory** to know the git command line, VS Code gives 
 
 ## Code Formatting with VS Code
 
-Using a common coding format easens collaboration on code *a lot*.
+Using a common coding format eases collaboration on code *a lot*.
 Common coding format contains rules about: braces, brackets, number of spaces (tab usage), spaces between operators, and many more.
 
 VS Code provides an easy way to format your files automatically.
@@ -1178,7 +1175,7 @@ Even with the prototype, the overview is not perfect. Putting code in separate f
 1. Create a header file for the prototype (e.g. *include/functions.h*). Always use [include guards](#include-guards)
 2. Create a source file for the definition (e.g. *src/functions.c*)
 3. Include the header in your main file
-4. Tell the compiler where to find everything (*CMakeLists.txt* ➡️ [target_inlude_directories](https://cmake.org/cmake/help/latest/command/target_include_directories.html))
+4. Tell the compiler where to find everything (*CMakeLists.txt* ➡️ [target_include_directories](https://cmake.org/cmake/help/latest/command/target_include_directories.html))
 
 ---
 
@@ -1300,10 +1297,10 @@ value_c = 0; // assign a new value -> ERROR
 
 ---
 
-## Differnt Types of *const* Pointers
+## Different Types of *const* Pointers
 
 ```C
-/* declare a normale pointer */
+/* declare a normal pointer */
 int* ptr = &value_a;
 ptr = &value_b; // assign a new memory address
 *ptr = 33; // assign a new value
@@ -1419,21 +1416,3 @@ In this file you need to make sure, that
 2. all your build steps are executed
 3. all your paths are correct
    ![width:1000px](images/github_actions_cmake_config.png "github cmake config")
-
-<!--
----
-
-# Commandline Arguments
-
-<a id="further-stuff"></a>
-
----
-
-# Further stuff
-
-<a id="further-stuff"></a>
-
-- strings?
-- advanced pointers
-
--->
