@@ -11,6 +11,7 @@ class: invert
 paginate: false
 math: mathjax
 ---
+<!-- markdownlint-disable MD033 MD025 -->
 
 ![width:800px](images/welcome2.jpg "welcome")
 
@@ -42,6 +43,7 @@ math: mathjax
 - [Exceptions](#exceptions)
 - [*doxygen* Code Documentation](#doxygen-code-documentation)
 - [*C++* Library Example - *OpenCV*](#c-library-example---opencv)
+- [Programming Task - Weather in Konstanz](#programming-task---weather-in-konstanz)
 
 ---
 
@@ -344,7 +346,7 @@ auto main() -> int
 
 ### **"using"** Namespaces
 
-The [keyword](https://en.cppreference.com/w/cpp/language/using_declaration) ```using``` simplyfies things a lot.
+The [keyword](https://en.cppreference.com/w/cpp/language/using_declaration) ```using``` simplifies things a lot.
 
 ```cpp
 using namespace std
@@ -568,7 +570,7 @@ int* cal_ptr = (int*)calloc(num_of_elements, sizeof(int));
 free(cal_ptr);
 ```
 
-----
+---
 
 ### Example for memory leak with malloc/calloc
 
@@ -970,7 +972,7 @@ auto main() -> int
 
 The configuration is normally located in a [*.clang-tidy*](https://github.com/BenniWi/learn2code/blob/main/.clang-tidy) file.
 In this file we can configure which checks to perform.
-E.g. we want to enable all ```modernize-*``` rules or we want to enforce *CamelCase*  names for class names with
+E.g. we want to enable all ```modernize-[*]``` rules or we want to enforce *CamelCase*  names for class names with
 ```readability-identifier-naming.ClassCase: CamelCase```
 <br>
 More details about the available rules can be found [here](https://clang.llvm.org/extra/clang-tidy/)
@@ -1129,7 +1131,7 @@ auto main() -> int {
 class ParentWVirtual {
    public:
     void non_virtual_display() const {
-        cout << "Parent non_virutal speaking !!" << endl;
+        cout << "Parent non_virtual speaking !!" << endl;
     }
 
     virtual void virtual_display() const {
@@ -1603,7 +1605,7 @@ target_compile_definitions(opencv_hello PRIVATE OUTPATH="${CMAKE_CURRENT_BINARY_
 
 Write a small opencv application to calculate the [*canny edges*](https://docs.opencv.org/3.4/da/d22/tutorial_py_canny.html)
 
-1. Read in an image as *grayscale* from the hard drive.
+1. Read in an image as *greyscale* from the hard drive.
    1. use *cv::imread*
    2. use a *compiler definition* to define the path to the image folder
 2. Create a new *Mat* for the *edges* image
@@ -1618,6 +1620,80 @@ You can find the code for this exercise in the file [canny_edges.cpp](https://gi
 ## OpenCV - Contours
 
 If you want to get closed contours from a *binary* or *edge* image corresponding to the [official tutorial](https://docs.opencv.org/3.4/df/d0d/tutorial_find_contours.html?loclr=blogmap), you can take a look at the [contours example](https://github.com/BenniWi/learn2code/blob/main/code/part_2/opencv_basics/src/contours.cpp)
+
+---
+
+# Programming Task - Weather in Konstanz
+
+<a id="programming-task---weather-in-konstanz"></a>
+
+---
+
+## Plotting Diagrams with *CvPlot*
+
+Using the [CvPlot](https://github.com/Profactor/cv-plot) library, create a simple plot like:
+
+![width:500px](images/cvplot_hello.png "cvplot")
+
+---
+
+- Add the *CvPlot* library to the *CMakeLists.txt* using the [FetchContent](https://cmake.org/cmake/help/latest/module/FetchContent.html) module
+  - you can copy the solution from [here](https://github.com/BenniWi/learn2code/blob/main/code/part_2/cv_plot/CMakeLists.txt#L23-L31)
+  - also remember to link the correct libraries (*CvPlot* is based on *OpenCV*) and to add the include folders
+- Also add the title and the axis labels
+- When including the *CvPlot* headers take into account the [hint](https://github.com/Profactor/cv-plot/blob/master/doc/integration.md#header-only) for using *CvPlot* as **header only** library
+
+:point_up: The [documentation](https://github.com/Profactor/cv-plot) and the [tutorial](https://github.com/Profactor/cv-plot/blob/master/doc/tutorial.md) will help you.
+You can find the code for this exercise in the file [hello_world.cpp](https://github.com/BenniWi/learn2code/blob/main/code/part_2/cv_plot/src/hello_world.cpp).
+
+---
+
+## Reading in *csv* Files with *Rapidcsv*
+
+Using the [Rapidcsv](https://github.com/d99kris/rapidcsv) library to read in this *csv* ([Comma Separated Values](https://en.wikipedia.org/wiki/Comma-separated_values)) [file](https://github.com/BenniWi/learn2code/blob/main/code/part_2/cv_plot/resources/colrowhdr.csv).
+
+- Add the *Rapidcsv* library to the *CMakeLists.txt* using the [FetchContent](https://cmake.org/cmake/help/latest/module/FetchContent.html) module
+  - you can copy the solution from [here](https://github.com/BenniWi/learn2code/blob/main/code/part_2/cv_plot/CMakeLists.txt#L34-L37)
+  - also remember to link the correct libraries and to add the include folders
+- Print out the number of elements in the column *Close*.
+- Print out the value of the *volume* on *2017-02-22*
+
+:point_up: The [documentation](https://github.com/d99kris/rapidcsv) and the [examples](https://github.com/d99kris/rapidcsv/tree/master/examples) will help you.
+You can find the code for this exercise in the file [read_csv.cpp](https://github.com/BenniWi/learn2code/blob/main/code/part_2/cv_plot/src/read_csv.cpp).
+
+---
+
+## The Weather in Konstanz
+
+The [National Oceanic And Atmospheric Administration](https://www.noaa.gov/) (NOAA) provides extensive weather statistics from all over the world.
+We want to use the [Global Summary of the Year](https://www.ncei.noaa.gov/metadata/geoportal/rest/metadata/item/gov.noaa.ncdc:C00947/html) dataset for the weather station in Konstanz.
+Using the dataset, we want to create a diagram for the *average*, the *maximum* and the *minimum* temperature of the year in Konstanz as shown on the next slide.
+
+---
+
+### Weather Analysis Diagram Example
+
+![width:700px](images/weather_over_years_konstanz.png "weather_konstanz")
+
+---
+
+<style scoped>
+  section{
+  font-size: 28px;
+  }
+</style>
+
+### Weather Analysis - Task
+
+- Download the [dataset](https://github.com/BenniWi/learn2code/blob/main/code/part_2/cv_plot/resources/GME00102404.csv) and the corresponding [documentation](https://github.com/BenniWi/learn2code/blob/main/code/part_2/cv_plot/resources/GSOM_GSOY_Description_Document_v1.0.2_20200219.pdf).
+- Use the *Rapidcsv* library to read in the [dataset](https://github.com/BenniWi/learn2code/blob/main/code/part_2/cv_plot/resources/GME00102404.csv)
+- Use the *CvPlot* library to draw the diagram from above. It should contain:
+  - Average, maximum, and minimum temperature over years in Konstanz
+  - Axis labels and title
+- :star: \[Advanced Level\]: add a legend to the plot using basic *OpenCV* functions. An example about how to convert the *diagram coordinates* into *image coordinates* is given in the [tutorial](https://github.com/Profactor/cv-plot/blob/master/doc/tutorial.md#custom-drawables) section.
+- :star::star:\[Pro Level\]: create a [custom drawable](https://github.com/Profactor/cv-plot/blob/master/doc/tutorial.md#custom-drawables) class which allows you to add a legend to the plot.
+
+You can find the code for this exercise in the file [weather_analysis.cpp](https://github.com/BenniWi/learn2code/blob/main/code/part_2/cv_plot/src/weather_analysis.cpp)
 
 ---
 

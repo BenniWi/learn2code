@@ -10,6 +10,7 @@ style: |
 class: invert
 paginate: false
 ---
+<!-- markdownlint-disable MD033 MD025 -->
 
 # Homework #5
 
@@ -22,7 +23,7 @@ Requirements: *CMake*, *User Input*, *Basics in C #2*
 Create an executable to convert a decimal number to a binary number
 
 - read in a decimal number from the user on the command prompt
-- convert the number into a binary number. 
+- convert the number into a binary number.
 - the binary number is represented as an *unsigned long long*
 - us a **while** loop for your calculation
 - print the binary number to the console

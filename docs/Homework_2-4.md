@@ -10,6 +10,7 @@ style: |
 class: invert
 paginate: false
 ---
+<!-- markdownlint-disable MD033 MD025 -->
 
 # Homework #4
 
@@ -29,6 +30,9 @@ Re-use the code from the [Homework_2-3](https://github.com/BenniWi/learn2code/bl
 
 ---
 
+<!-- markdownlint-disable-next-line MD029 -->
 4. Implement the virtual destructor of *Animal*. The destructor should call the *die* method;
+<!-- markdownlint-disable-next-line MD029 -->
 5. Create a small for loop in the main to move an instance of *Spider* and *Mammal* for several times
+<!-- markdownlint-disable-next-line MD029 -->
 6. Implement a test using a test-fixture to check if the *move* method is working as expected
