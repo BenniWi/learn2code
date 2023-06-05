@@ -21,11 +21,11 @@ jobs:
     - uses: actions/checkout@v3
     
     - name: Install gtest manually
-      run: sudo apt-get install libgtest-dev
+      run: sudo apt-get install libgtest-dev -y
 
     ## Configure and Build all projects
     - name: Configure CMake
-      run: cmake -B ${{github.workspace}}/build -S${{github.workspace}} -DCMAKE_BUILD_TYPE=${{env.BUILD_TYPE}} -DBUILD_PART_2=OFF
+      run: cmake -B ${{github.workspace}}/build -S${{github.workspace}} -DCMAKE_BUILD_TYPE=${{env.BUILD_TYPE}} -DBUILD_PART_2=OFF -DBUILD_PART_2_OPENCV=OFF
 
     - name: Build
       run: cmake --build ${{github.workspace}}/build --config ${{env.BUILD_TYPE}}
@@ -97,11 +97,11 @@ jobs:
     - uses: actions/checkout@v3
     
     - name: Install gtest manually
-      run: sudo apt-get install libgtest-dev
+      run: sudo apt-get install libgtest-dev -y
 
     ## Configure and Build all projects
     - name: Configure CMake
-      run: cmake -B ${{github.workspace}}/build -S${{github.workspace}} -DCMAKE_BUILD_TYPE=${{env.BUILD_TYPE}} -DBUILD_PART_1=OFF
+      run: cmake -B ${{github.workspace}}/build -S${{github.workspace}} -DCMAKE_BUILD_TYPE=${{env.BUILD_TYPE}} -DBUILD_PART_1=OFF -DBUILD_PART_2_OPENCV=OFF
 
     - name: Build
       run: cmake --build ${{github.workspace}}/build --config ${{env.BUILD_TYPE}}
@@ -147,3 +147,39 @@ jobs:
     - name: test "homework_2-4 - spiders & mammals II"
       working-directory: ${{github.workspace}}/build/code/part_2/homework_2-4
       run: ctest -C ${{env.BUILD_TYPE}}
+
+
+  build_Cpp_OpenCV_code:
+    # The CMake configure and build commands are platform agnostic and should work equally well on Windows or Mac.
+    # You can convert this to a matrix build if you need cross-platform coverage.
+    # See: https://docs.github.com/en/free-pro-team@latest/actions/learn-github-actions/managing-complex-workflows#using-a-build-matrix
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+    
+    - name: Install opencv manually
+      run: sudo apt-get install libopencv-dev -y
+
+    ## Configure and Build all projects
+    - name: Configure CMake
+      run: cmake -B ${{github.workspace}}/build -S${{github.workspace}} -DCMAKE_BUILD_TYPE=${{env.BUILD_TYPE}} -DBUILD_PART_1=OFF -DBUILD_PART_2=OFF
+
+    - name: Build
+      run: cmake --build ${{github.workspace}}/build --config ${{env.BUILD_TYPE}}
+      
+    ## run all opencv executables
+    - name: run all opencv executables
+      working-directory: ${{github.workspace}}/build/code/part_2/opencv_basics/
+      run: |
+           ./opencv_hello \
+           && ./opencv_canny \
+           && ./opencv_contours
+
+    - name: run all opencv executables
+      working-directory: ${{github.workspace}}/build/code/part_2/cv_plot/
+      run: |
+           ./cvplot_hello \
+           && ./read_csv \
+           && ./weather_analysis
+

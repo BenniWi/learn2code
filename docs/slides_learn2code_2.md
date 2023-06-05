@@ -1640,9 +1640,10 @@ Using the [CvPlot](https://github.com/Profactor/cv-plot) library, create a simpl
   - you can copy the solution from [here](https://github.com/BenniWi/learn2code/blob/main/code/part_2/cv_plot/CMakeLists.txt#L23-L31)
   - also remember to link the correct libraries (*CvPlot* is based on *OpenCV*) and to add the include folders
 - Also add the title and the axis labels
+- When including the *CvPlot* headers take into account the [hint](https://github.com/Profactor/cv-plot/blob/master/doc/integration.md#header-only) for using *CvPlot* as **header only** library
 
-:point_up: The [documentation](https://github.com/Profactor/cv-plot) and the [tutorial](https://github.com/Profactor/cv-plot/blob/master/doc/tutorial.md) will help you
-You can find the code for this exercise in the file [hello_world.cpp](https://github.com/BenniWi/learn2code/blob/main/code/part_2/cv_plot/src/hello_world.cpp)
+:point_up: The [documentation](https://github.com/Profactor/cv-plot) and the [tutorial](https://github.com/Profactor/cv-plot/blob/master/doc/tutorial.md) will help you.
+You can find the code for this exercise in the file [hello_world.cpp](https://github.com/BenniWi/learn2code/blob/main/code/part_2/cv_plot/src/hello_world.cpp).
 
 ---
 
@@ -1656,14 +1657,40 @@ Using the [Rapidcsv](https://github.com/d99kris/rapidcsv) library to read in thi
 - Print out the number of elements in the column *Close*.
 - Print out the value of the *volume* on *2017-02-22*
 
-:point_up: The [documentation](https://github.com/d99kris/rapidcsv) and the [examples](https://github.com/d99kris/rapidcsv/tree/master/examples) will help you
-You can find the code for this exercise in the file [read_csv.cpp](https://github.com/BenniWi/learn2code/blob/main/code/part_2/cv_plot/src/read_csv.cpp)
+:point_up: The [documentation](https://github.com/d99kris/rapidcsv) and the [examples](https://github.com/d99kris/rapidcsv/tree/master/examples) will help you.
+You can find the code for this exercise in the file [read_csv.cpp](https://github.com/BenniWi/learn2code/blob/main/code/part_2/cv_plot/src/read_csv.cpp).
 
 ---
 
 ## The Weather in Konstanz
 
-![width:600px](images/weather_over_years_konstanz.png "weather_konstanz")
+The [National Oceanic And Atmospheric Administration](https://www.noaa.gov/) (NOAA) provides extensive weather statistics from all over the world.
+We want to use the [Global Summary of the Year](https://www.ncei.noaa.gov/metadata/geoportal/rest/metadata/item/gov.noaa.ncdc:C00947/html) dataset for the weather station in Konstanz.
+Using the dataset, we want to create a diagram for the *average*, the *maximum* and the *minimum* temperature of the year in Konstanz as shown on the next slide.
+
+---
+
+### Weather Analysis Diagram Example
+
+![width:700px](images/weather_over_years_konstanz.png "weather_konstanz")
+
+---
+
+<style scoped>
+  section{
+  font-size: 28px;
+  }
+</style>
+
+### Weather Analysis - Task
+
+- Download the [dataset](https://github.com/BenniWi/learn2code/blob/main/code/part_2/cv_plot/resources/GME00102404.csv) and the corresponding [documentation](https://github.com/BenniWi/learn2code/blob/main/code/part_2/cv_plot/resources/GSOM_GSOY_Description_Document_v1.0.2_20200219.pdf).
+- Use the *Rapidcsv* library to read in the [dataset](https://github.com/BenniWi/learn2code/blob/main/code/part_2/cv_plot/resources/GME00102404.csv)
+- Use the *CvPlot* library to draw the diagram from above. It should contain:
+  - Average, maximum, and minimum temperature over years in Konstanz
+  - Axis labels and title
+- :star: \[Advanced Level\]: add a legend to the plot using basic *OpenCV* functions. An example about how to convert the *diagram coordinates* into *image coordinates* is given in the [tutorial](https://github.com/Profactor/cv-plot/blob/master/doc/tutorial.md#custom-drawables) section.
+- :star::star:\[Pro Level\]: create a [custom drawable](https://github.com/Profactor/cv-plot/blob/master/doc/tutorial.md#custom-drawables) class which allows you to add a legend to the plot.
 
 You can find the code for this exercise in the file [weather_analysis.cpp](https://github.com/BenniWi/learn2code/blob/main/code/part_2/cv_plot/src/weather_analysis.cpp)
 

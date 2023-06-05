@@ -133,18 +133,18 @@ auto main() -> int
 
     // plot the average temperature
     axes.create<CvPlot::Series>(dates, tavg, "-g");
-    legend.add_legend_entry("tavg", cv::Scalar(0, 255, 0));
+    legend.add_legend_entry("avg temp", cv::Scalar(0, 255, 0));
 
     // plot the extreme max temperature
     axes.create<CvPlot::Series>(dates, emxt, "-b");
-    legend.add_legend_entry("emxt", cv::Scalar(255, 0, 0));
+    legend.add_legend_entry("max temp", cv::Scalar(255, 0, 0));
 
     // plot the extreme max temperature
     axes.create<CvPlot::Series>(dates, emnt, "-r");
-    legend.add_legend_entry("emnt", cv::Scalar(0, 0, 255));
+    legend.add_legend_entry("min temp", cv::Scalar(0, 0, 255));
 
     // add legend to axes
-    legend.set_width(15);
+    legend.set_width(25);
     axes.create<LegendCustom>(&legend);
 
     // some settings for the plot
