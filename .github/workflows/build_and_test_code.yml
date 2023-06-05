@@ -176,7 +176,7 @@ jobs:
            && ./opencv_canny \
            && ./opencv_contours
 
-    - name: run all opencv executables
+    - name: run all cvplot executables
       working-directory: ${{github.workspace}}/build/code/part_2/cv_plot/
       run: |
            ./cvplot_hello \

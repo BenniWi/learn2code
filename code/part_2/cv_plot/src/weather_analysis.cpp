@@ -102,7 +102,7 @@ class LegendCustom : public CvPlot::Drawable
 auto main() -> int
 {
     /**
-     * The dataset for this evaluation was taken form
+     * The dataset for this evaluation was taken from
      * https://www.ncei.noaa.gov/metadata/geoportal/rest/metadata/item/gov.noaa.ncdc:C00947/html
      * The dataset for this documentation can be found at
      * https://www.ncei.noaa.gov/data/global-summary-of-the-year/doc/GSOM_GSOY_Description_Document_v1.0.2_20200219.pdf
@@ -112,7 +112,7 @@ auto main() -> int
 
     /**
      * read in the csv document
-     * ConverterParams need to take into account, that there are empty/invalid entries
+     * ConverterParams need to take into account, because there are empty/invalid entries
      */
     rapidcsv::Document doc(std::string(RESOURCEPATH) + "/GME00102404.csv", rapidcsv::LabelParams(0, 0),
                            rapidcsv::SeparatorParams(), rapidcsv::ConverterParams(true));

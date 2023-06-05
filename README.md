@@ -28,7 +28,7 @@ Further, there are some homeworks. The homeworks for part I are named *Homework_
 ### Part II
 
 In the second part of the lecture, the programming language **C++** is introduced.
-The lecture deals mainly with the basics of **C++** like namespaces, references, inheritance, polymorphism and more. Further, basic software engineering tools like *doxygen* and *clang-tidy* and the very basics of [OpenCV](https://github.com/opencv/opencv) are introduced.
+The lecture deals mainly with the basics of **C++** like namespaces, references, inheritance, polymorphism and more. Further, basic software engineering tools like *doxygen* and *clang-tidy* and the very basics of [OpenCV](https://github.com/opencv/opencv) are introduced. At the end a comprehensive exercise using [CvPlot](https://github.com/Profactor/cv-plot) and [Rapidcsv](https://github.com/d99kris/rapidcsv) is given.
 
 The slides of the secont part of the lecture can be found in [slides_learn2code_2.md](docs/slides_learn2code_2.md). Respectively, the content of the first part is given in the [Table of Contents](docs/slides_learn2code_2.md#table-of-contents).
 
