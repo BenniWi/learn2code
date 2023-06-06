@@ -23,15 +23,19 @@ class RotatedEllipse : public CvPlot::Drawable
      */
     void render(CvPlot::RenderTarget &render_target) override
     {
+        // for opencv rotated rectangle we need 3 consecutive points of the rectangle
         arma::mat pt1 = means_.t() + (0.5 * eigvals_(0) * eigvecs_.col(0)) + (0.5 * eigvals_(1) * eigvecs_.col(1));
         arma::mat pt2 = means_.t() - (0.5 * eigvals_(0) * eigvecs_.col(0)) + (0.5 * eigvals_(1) * eigvecs_.col(1));
         arma::mat pt3 = means_.t() - (0.5 * eigvals_(0) * eigvecs_.col(0)) - (0.5 * eigvals_(1) * eigvecs_.col(1));
 
+        // project all points into the image coordinates
         auto pro_pt1 = render_target.project(cv::Point2d(pt1(0), pt1(1)));
         auto pro_pt2 = render_target.project(cv::Point2d(pt2(0), pt2(1)));
         auto pro_pt3 = render_target.project(cv::Point2d(pt3(0), pt3(1)));
 
+        // create a rotated rectangle
         auto rot_rect = cv::RotatedRect(pro_pt1, pro_pt2, pro_pt3);
+        // render the rectangle to the image
         cv::ellipse(render_target.innerMat(), rot_rect, cv::Scalar(0, 0, 0), 1);
     }
 

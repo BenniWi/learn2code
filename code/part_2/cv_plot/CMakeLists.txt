@@ -38,7 +38,8 @@ if(OpenCV_FOUND)
 
     # download armadillo library and add it to the project
     FetchContent_Declare(armadillo
-        URL https://sourceforge.net/projects/arma/files/armadillo-12.4.0.tar.xz)
+        URL https://sourceforge.net/projects/arma/files/armadillo-12.4.0.tar.xz
+        DOWNLOAD_EXTRACT_TIMESTAMP true)
     FetchContent_MakeAvailable(armadillo)
 
     # add executable for cvplot hello world
