@@ -36,6 +36,11 @@ if(OpenCV_FOUND)
         GIT_TAG origin/master) # or whatever tag you want
     FetchContent_MakeAvailable(rapidcsv)
 
+    # download armadillo library and add it to the project
+    FetchContent_Declare(armadillo
+        URL https://sourceforge.net/projects/arma/files/armadillo-12.4.0.tar.xz)
+    FetchContent_MakeAvailable(armadillo)
+
     # add executable for cvplot hello world
     add_executable(cvplot_hello src/hello_world.cpp)
     target_include_directories(cvplot_hello PUBLIC ${OpenCV_INCLUDE_DIRS} ${cvplot_SOURCE_DIR}/CvPlot/inc)
@@ -51,6 +56,15 @@ if(OpenCV_FOUND)
     target_compile_definitions(weather_analysis PRIVATE RESOURCEPATH="${CMAKE_CURRENT_LIST_DIR}/resources")
     target_include_directories(weather_analysis PUBLIC ${OpenCV_INCLUDE_DIRS} ${cvplot_SOURCE_DIR}/CvPlot/inc)
     target_link_libraries(weather_analysis rapidcsv ${OpenCV_LIBRARIES} )
+
+    # add executable for uncertainty ellipse
+    add_executable(uncertainty_ellipse src/uncertainty_ellipse.cpp)
+    target_compile_definitions(uncertainty_ellipse PRIVATE RESOURCEPATH="${CMAKE_CURRENT_LIST_DIR}/resources")
+    target_include_directories(uncertainty_ellipse PUBLIC 
+        ${OpenCV_INCLUDE_DIRS} 
+        ${cvplot_SOURCE_DIR}/CvPlot/inc
+        ${armadillo_SOURCE_DIR}/include)
+    target_link_libraries(uncertainty_ellipse rapidcsv ${OpenCV_LIBRARIES} armadillo)
 
 endif()
 
