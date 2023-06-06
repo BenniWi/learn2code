@@ -102,7 +102,8 @@
         "unordered_set": "cpp",
         "*.ipp": "cpp",
         "complex": "cpp",
-        "armadillo": "cpp"
+        "armadillo": "cpp",
+        "shared_mutex": "cpp"
     },
     "cSpell.language": "en,en-GB",
     "cSpell.words": [
