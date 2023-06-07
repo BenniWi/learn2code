@@ -44,6 +44,7 @@ math: mathjax
 - [*doxygen* Code Documentation](#doxygen-code-documentation)
 - [*C++* Library Example - *OpenCV*](#c-library-example---opencv)
 - [Programming Task - Weather in Konstanz](#programming-task---weather-in-konstanz)
+- [Programming Task - Uncertainty Ellipse](#programming-task---uncertainty-ellipse)
 
 ---
 
@@ -1691,10 +1692,45 @@ Using the dataset, we want to create a diagram for the *average*, the *maximum* 
 - Use the *CvPlot* library to draw the diagram from above. It should contain:
   - Average, maximum, and minimum temperature over years in Konstanz
   - Axis labels and title
-- :star: \[Advanced Level\]: add a legend to the plot using basic *OpenCV* functions. An example about how to convert the *diagram coordinates* into *image coordinates* is given in the [tutorial](https://github.com/Profactor/cv-plot/blob/master/doc/tutorial.md#custom-drawables) section.
-- :star::star:\[Pro Level\]: create a [custom drawable](https://github.com/Profactor/cv-plot/blob/master/doc/tutorial.md#custom-drawables) class which allows you to add a legend to the plot.
+- :star: \[Advanced Level\]: create a [custom drawable](https://github.com/Profactor/cv-plot/blob/master/doc/tutorial.md#custom-drawables) to add a certain legend to the plot using basic *OpenCV* functions. An example is given in the [tutorial](https://github.com/Profactor/cv-plot/blob/master/doc/tutorial.md#custom-drawables) section.
+- :star::star:\[Pro Level\]: create a [custom drawable](https://github.com/Profactor/cv-plot/blob/master/doc/tutorial.md#custom-drawables) class which allows you to add a legend to the plot. Create the class in a generic manner which allows to add legend entries one after another.
 
 You can find the code for this exercise in the file [weather_analysis.cpp](https://github.com/BenniWi/learn2code/blob/main/code/part_2/cv_plot/src/weather_analysis.cpp)
+
+---
+
+# Programming Task - Uncertainty Ellipse
+
+<a id="programming-task---uncertainty-ellipse"></a>
+
+The nature of a measurement is it's uncertainty. We want to read in a point a list of measurements from a [csv file](https://github.com/BenniWi/learn2code/blob/main/code/part_2/cv_plot/resources/uncertain_point.csv) and calculate some statistics for it. We are interested in the *mean*, the *variance*, and the *covariances*. Finally we want to visualize the point cloud and it's *uncertainty ellipse*.
+How such a visualization looks like is depicted in the following diagram.
+
+---
+
+## Uncertainty Ellipse - Diagram Example
+
+![width:680px](images/uncertainty_ellipse.png "uncertainty ellipse")
+
+---
+
+<style scoped>
+  section{
+  font-size: 28px;
+  }
+</style>
+
+## Uncertainty Ellipse - Task
+
+- Use the *Rapidcsv* library to read in the measurements from the [csv file](https://github.com/BenniWi/learn2code/blob/main/code/part_2/cv_plot/resources/uncertain_point.csv)
+- Use the *CvPlot* library to draw the diagram
+- Use the [armadillo](https://arma.sourceforge.net/) ![width:30px](images/armadillo_logo2.png "armadillo") library for matrix operations (e.g. mean, covariance, ...)
+- Draw the main axis of the uncertainty ellipse of the covariance matrix
+  - The eigenvectors give the directions of the main axes
+  - The eigenvalues are the length of the main axes
+- create a [custom drawable](https://github.com/Profactor/cv-plot/blob/master/doc/tutorial.md#custom-drawables) to draw the ellipse itself.
+
+You can find the code for this exercise in the file [uncertainty_ellipse.cpp](https://github.com/BenniWi/learn2code/blob/main/code/part_2/cv_plot/src/uncertainty_ellipse.cpp)
 
 ---
 
