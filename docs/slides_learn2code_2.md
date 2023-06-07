@@ -1725,7 +1725,7 @@ How such a visualization looks like is depicted in the following diagram.
 - Use the *Rapidcsv* library to read in the measurements from the [csv file](https://github.com/BenniWi/learn2code/blob/main/code/part_2/cv_plot/resources/uncertain_point.csv)
 - Use the *CvPlot* library to draw the diagram
 - Use the [armadillo](https://arma.sourceforge.net/) ![width:30px](images/armadillo_logo2.png "armadillo") library for matrix operations (e.g. mean, covariance, ...)
-- Draw the main axis of the uncertainty ellipse of the covariance matrix
+- Draw the main axes of the uncertainty ellipse of the covariance matrix
   - The eigenvectors give the directions of the main axes
   - The eigenvalues are the length of the main axes
 - create a [custom drawable](https://github.com/Profactor/cv-plot/blob/master/doc/tutorial.md#custom-drawables) to draw the ellipse itself.
