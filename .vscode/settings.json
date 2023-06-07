@@ -18,7 +18,7 @@
 
     "clang-tidy.executable": "clang-tidy-16",
     "clang-tidy.fixOnSave": true,
-    "clang-tidy.lintOnSave": true,
+    "clang-tidy.lintOnSave": false,
     "clang-tidy.buildPath": "build",
     
     "files.associations": {
@@ -101,7 +101,9 @@
         "stack": "cpp",
         "unordered_set": "cpp",
         "*.ipp": "cpp",
-        "complex": "cpp"
+        "complex": "cpp",
+        "armadillo": "cpp",
+        "shared_mutex": "cpp"
     },
     "cSpell.language": "en,en-GB",
     "cSpell.words": [

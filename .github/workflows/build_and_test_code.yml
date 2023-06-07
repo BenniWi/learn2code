@@ -181,5 +181,6 @@ jobs:
       run: |
            ./cvplot_hello \
            && ./read_csv \
-           && ./weather_analysis
+           && ./weather_analysis \
+           && ./uncertainty_ellipse 
 
