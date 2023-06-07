@@ -1640,6 +1640,7 @@ Using the [CvPlot](https://github.com/Profactor/cv-plot) library, create a simpl
 - Add the *CvPlot* library to the *CMakeLists.txt* using the [FetchContent](https://cmake.org/cmake/help/latest/module/FetchContent.html) module
   - you can copy the solution from [here](https://github.com/BenniWi/learn2code/blob/main/code/part_2/cv_plot/CMakeLists.txt#L23-L31)
   - also remember to link the correct libraries (*CvPlot* is based on *OpenCV*) and to add the include folders
+- Create a diagram like in the image above
 - Also add the title and the axis labels
 - When including the *CvPlot* headers take into account the [hint](https://github.com/Profactor/cv-plot/blob/master/doc/integration.md#header-only) for using *CvPlot* as **header only** library
 
