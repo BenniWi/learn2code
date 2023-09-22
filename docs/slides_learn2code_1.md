@@ -17,16 +17,6 @@ paginate: false
 
 ---
 
-# Experience Survey
-
-<a id="experience-survey"></a>
-
-<!-- markdownlint-disable-next-line -->
-https://form.jotform.com/223513864665058; Password: *dhbw2022*
-![width:500px](images/qr-code_TFE22.png "survey qr")
-
----
-
 # Goal of this Course
 
 <a id="goal-of-this-course"></a>
@@ -53,8 +43,8 @@ The goal of this course is to enable all participants to learn proper software e
 - [Some Linux Basics](#some-linux-basics)
 - [The Language **C**](#the-language-c)
 - [The *basics* Example](#the-basics-example)
-- [Common Environment](#common-environment)
 - [Git](#git)
+- [Common Environment](#common-environment)
 - [Basics in **C** #1](#basics-in-c-1)
 - [What is **Compiling**?](#what-is-compiling)
 - [CMake](#cmake)
@@ -206,80 +196,6 @@ Finally, you can run the binary with
 
 ---
 
-# Common Environment
-
-<a id="common-environment"></a>
-
----
-
-## Why Should I Use It?
-
-![width:300px](images/works_on_my_machine.jpg "works on my machine")
-
-- Maybe you don't have a linux PC
-- We all have the same system (compiler etc.)
-  - If it works on your machine, it works on my machine
-- Necessary tools and configs are already installed
-
----
-
-![width:400px](images/common_env_born.jpg "common env born")
-
----
-
-## VirtualBox
-
-<a id="virtualbox"></a>
-
-**VirtualBox** is a foss (free and open source software) virtual machine
-![width:200px](images/Virtualbox_logo.png "virtual box")
-You can download it [here](https://www.virtualbox.org/wiki/Downloads).
-
----
-
-## What is a Virtual Machine
-
-> In computing, a virtual machine (VM) is the virtualization/emulation of a computer system. ([wikipedia](https://en.wikipedia.org/wiki/Virtual_machine))
-
----
-
-### Getting Started
-
-- Where to download? &rarr; [here](https://bwstaff-my.sharepoint.com/:f:/g/personal/thomas_kibler_bwstaff_de/EhfzkACTG7JGpk48VydgANsBwi7xBnSv8V1dSbHbCL3raQ?e=h0ukws)
-- Import the downloaded virtual machine
-  ![width:500px](images/v-box-add.png "v-box-add")
-- select the **.ova** file from your local disc &rarr; finish
-- select the imported machine and click ![width:80px](images/v-box-start.png "v-box-start")
-- username: *learn2code*, password: *dhbw2022*
-
----
-
-## gitpod
-
-> [Gitpod](https://www.gitpod.io/) is an open-source Kubernetes application for ready-to-code cloud development environments that spins up fresh, automated dev environments for each task, in the cloud, in seconds. ([gitpod@github](https://github.com/gitpod-io/gitpod))
-> ![width:200px](images/gitpod.png "gitpod")
-
-You can use this [repo](https://github.com/BenniWi/learn-git) and the corresponding [gitpod](https://gitpod.io/#https://github.com/BenniWi/learn-git)
-<a href="https://gitpod.io/#git@github.com:BenniWi/learn2code.git">
-<img
-src="https://img.shields.io/badge/Contribute%20with-Gitpod-908a85?logo=gitpod"
-alt="Contribute with Gitpod"
-/>
-</a>
-
----
-
-## GitHub Codespaces
-
-> A codespace is a development environment that's hosted in the cloud. You can customize your project for GitHub Codespaces [...], which creates a repeatable codespace configuration [...]. ([github](https://github.com/features/codespaces))
-> ![width:200px](images/codespaces.png "codespaces")
-
-You can use this [repo](https://github.com/BenniWi/learn-git) and the corresponding [codespace](https://github.com/codespaces/new?hide_repo_select=true&ref=main&repo=559622217&machine=basicLinux32gb&location=WestEurope)
-
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://github.com/codespaces/new?hide_repo_select=true&ref=main&repo=559622217&machine=basicLinux32gb&location=WestEurope)
-
----
-
 # Git
 
 <a id="git"></a>
@@ -359,34 +275,26 @@ git log --graph # show the commit graph on command line
 
 ### Prerequisites
 
-1. Drop a comment [here](https://github.com/BenniWi/learn-git/issues/1) and I'll add you as a *Collaborator*
-2. Add an SSH key for your machine (only if you don't use the codespace/gitpod)
+1. On GitHub create a new repository from the [learn2code template](https://github.com/BenniWi/learn2code_template)
+2. Add an SSH key for your machine
 
-- ![width:1000px](images/ssh-keygen.png "ssh-keygen")
-- Print your public key to console: ```cat .ssh/id_rsa.pub```
-- On GitHub: *profile* &rarr; *settings* &rarr; *SSH and GPG keys* &rarr; *New SSH key*
-  - paste and *add* your public key with a descriptive name
+   - ![width:1000px](images/ssh-keygen.png "ssh-keygen")
+   - Print your public key to console: ```cat .ssh/id_rsa.pub```
+   - On GitHub: *profile* &rarr; *settings* &rarr; *SSH and GPG keys* &rarr; *New SSH key*
+     - paste and *add* your public key with a descriptive name
 
 ---
 
 ### Playing around
 
-we are working on this public repository [learn-git](https://github.com/BenniWi/learn-git)
+Go to the new repository you created in the last step and get the URL: *CODE* :arrow_right: *local* :arrow_right: *SSH*
 
 ```sh
-git clone git@github.com:BenniWi/learn-git.git # get the repo
-cd learn-git
-mkdir <choose a folder name>
-echo "some text" > <your folder name>/<your file name>
+git clone <InsertYourRepoURL> # get the repo
+cd <YourRepoName> # go into the repo folder
+echo "some text" > <your file name> #write text to file
 # add and commit your changes
 git push # bring local changes to the remote repo
-```
-
-It is very likely, that you will run into problems because the remote repo has changed in the meantime. Try one of these:
-
-```sh
-git pull --rebase
-git pull --merge
 ```
 
 ---
@@ -398,6 +306,53 @@ git pull --merge
 - use [.gitignore](https://git-scm.com/docs/gitignore) to keep your workspace clear
 - get familiar with the command line
 - learn the [best practices](https://sourcelevel.io/blog/7-git-best-practices-to-start-using-in-your-next-commit)
+
+---
+
+# Common Environment
+
+<a id="common-environment"></a>
+
+---
+
+## Why Should I Use It?
+
+![width:300px](images/works_on_my_machine.jpg "works on my machine")
+
+- Maybe you don't have a linux PC
+- We all have the same system (compiler etc.)
+  - If it works on your machine, it works on my machine
+- Necessary tools and configs are already installed
+
+---
+
+![width:400px](images/common_env_born.jpg "common env born")
+
+---
+
+## gitpod
+
+> [Gitpod](https://www.gitpod.io/) is an open-source Kubernetes application for ready-to-code cloud development environments that spins up fresh, automated dev environments for each task, in the cloud, in seconds. ([gitpod@github](https://github.com/gitpod-io/gitpod))
+> ![width:200px](images/gitpod.png "gitpod")
+
+You can use this [repo](https://github.com/BenniWi/learn-git) and the corresponding [gitpod](https://gitpod.io/#https://github.com/BenniWi/learn-git)
+<a href="https://gitpod.io/#git@github.com:BenniWi/learn2code.git">
+<img
+src="https://img.shields.io/badge/Contribute%20with-Gitpod-908a85?logo=gitpod"
+alt="Contribute with Gitpod"
+/>
+</a>
+
+---
+
+## GitHub Codespaces
+
+> A codespace is a development environment that's hosted in the cloud. You can customize your project for GitHub Codespaces [...], which creates a repeatable codespace configuration [...]. ([github](https://github.com/features/codespaces))
+> ![width:200px](images/codespaces.png "codespaces")
+
+You can use this [repo](https://github.com/BenniWi/learn-git) and the corresponding [codespace](https://github.com/codespaces/new?hide_repo_select=true&ref=main&repo=559622217&machine=basicLinux32gb&location=WestEurope)
+
+[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://github.com/codespaces/new?hide_repo_select=true&ref=main&repo=559622217&machine=basicLinux32gb&location=WestEurope)
 
 ---
 
