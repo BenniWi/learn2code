@@ -15,7 +15,7 @@ paginate: false
 # Homework #1
 
 1. Create a [Github](https://github.com/) account
-2. Use the [learn git](https://github.com/BenniWi/learn-git) repo to try
+2. Use the [learn2code template](https://github.com/BenniWi/learn-git) repo to try
    1. codespaces
    2. gitpod
 3. Write the *basics* example (from the course) on the remote machine
