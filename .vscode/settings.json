@@ -115,4 +115,6 @@
         "Struct",
         "Wilking"
     ],
+    
+    "terminal.integrated.defaultProfile.linux": "bash"
 }
