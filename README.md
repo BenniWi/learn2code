@@ -89,4 +89,4 @@ Most of the code samples are supporting [CMake](https://cmake.org/).
 All *CMake* capable samples are collected in the top-level [CMakeLists.txt](CMakeLists.txt).
 Configure this top level project and you are good to go.
 
-For all non CMake samples you should use the compiler of your joyce (mostly [gcc](https://gcc.gnu.org/) or [clang](https://clang.llvm.org/) and build it manually.
+For all non CMake samples you should use the compiler of your choice (mostly [gcc](https://gcc.gnu.org/) or [clang](https://clang.llvm.org/) and build it manually.
