@@ -92,14 +92,34 @@ The goal of this course is to enable all participants to learn proper software e
 
 ---
 
+# Some Linux Basics
+
+<a id="some-linux-basics"></a>
+
+---
+
+# The Shell
+
+> Simply put, the shell is a program that takes commands from the keyboard and gives them to the operating system to perform. [...] ([linuxcommand.org](https://linuxcommand.org/lc3_lts0010.php))
+
+---
+
+## bash vs. zsh
+
+The most common shell is the *bash* (**B**ourne **A**gain **SH**ell). Code snippets in this course are given for *bash*.
+
+The zsh (**Z** shell) is getting more and more popular and is already the standard on some systems (e.g. Apple).
+
+If you open a terminal with a *zsh*, you can always type in ```bash`````` and you will get a *bash* shell.
+
+---
+
 <style scoped>
   h1   {font-size: 60px}
   {font-size: 18px}
 </style>
 
-# Some Linux Basics
-
-<a id="some-linux-basics"></a>
+## Basic Bash Commands
 
 - open terminal ```ctrl + alt + t```
 - go to home ```cd ~``` or just ```cd```
