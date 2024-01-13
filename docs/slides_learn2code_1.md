@@ -110,7 +110,7 @@ The most common shell is the *bash* (**B**ourne **A**gain **SH**ell). Code snipp
 
 The zsh (**Z** shell) is getting more and more popular and is already the standard on some systems (e.g. Apple).
 
-If you open a terminal with a *zsh*, you can always type in ```bash`````` and you will get a *bash* shell.
+If you open a terminal with a *zsh*, you can always type in ```bash``` and you will get a *bash* shell.
 
 ---
 
