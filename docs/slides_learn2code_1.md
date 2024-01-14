@@ -121,7 +121,6 @@ If you open a terminal with a *zsh*, you can always type in ```bash``` and you w
 
 ## Basic Bash Commands
 
-- open terminal ```ctrl + alt + t```
 - go to home ```cd ~``` or just ```cd```
 - go to last folder ```cd -```
 - show current directory ```pwd```
