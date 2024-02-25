@@ -829,9 +829,11 @@ Add:
 
 ```sh
 -G "Unix Makefiles" 
--D CMAKE_C_COMPILER=clang 
--D CMAKE_CXX_COMPILER=clang++ 
+-D CMAKE_C_COMPILER=gcc 
+-D CMAKE_CXX_COMPILER=g++ 
 ```
+
+<font size="+1">(you could also use e.g.  the llvm toolchain with ```clang-16``` and ```clang-cpp-16```)</font>
 
 Figure out what these options are doing with:
 
@@ -950,7 +952,13 @@ There, you can also change:
 - build target
   ...
 
-(Setting breakpoints in a code file is easy, try to figure it out)
+<font size="+1">:exclamation: If you cant see the *CMake* status bar, add this line to your ```.vscode/settings.json``` file
+
+```json
+"cmake.options.statusBarVisibility": "compact",
+```
+
+</font>
 
 ---
 

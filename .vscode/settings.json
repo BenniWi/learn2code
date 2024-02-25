@@ -12,6 +12,7 @@
     },
 
     "cmake.configureArgs": ["-DCMAKE_EXPORT_COMPILE_COMMANDS=ON"],
+    "cmake.options.statusBarVisibility": "compact",
     "cmake.buildDirectory": "${workspaceFolder}/build",
 
     "clang-format.executable": "clang-format-16",
