@@ -1475,7 +1475,7 @@ To start a new configuration from scratch, the [doxywizard](https://www.doxygen.
 
 ## Enable *doxygen* in Your Codespace
 
-Install *doxygen* to your codespace by editing your [*Dockerfile*](https://github.com/BenniWi/learn2code_1_demo_project/blob/main/.devcontainer/Dockerfile):
+Install *doxygen* to your codespace by editing your [*Dockerfile*](https://github.com/BenniWi/learn2code_containers/blob/main/dockerfiles/learn2code_base/Dockerfile#L24):
 
 ```sh
 sudo apt-get install -y doxygen graphviz
