@@ -28,6 +28,7 @@ target_include_directories(student_struct_hw7_exec PRIVATE include)
 # link your libraries
 target_link_libraries(student_struct_hw7_exec PRIVATE student_struct)
 
+include(CTest)
 enable_testing()
 # check if we have gtest
 find_package(GTest REQUIRED)

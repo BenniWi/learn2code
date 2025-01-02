@@ -27,6 +27,7 @@ target_link_libraries(tdd_ex_exec PRIVATE tdd_functions_lib)
 
 
 # enable the testing
+include(CTest)
 enable_testing()
 # check if we have gtest
 find_package(GTest REQUIRED)

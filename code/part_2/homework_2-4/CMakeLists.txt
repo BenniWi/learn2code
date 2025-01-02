@@ -24,6 +24,7 @@ target_include_directories(hw24_animals_exec PRIVATE include)
 # link your libraries
 target_link_libraries(hw24_animals_exec PRIVATE hw24_animals)
 
+include(CTest)
 enable_testing()
 # check if we have gtest
 find_package(GTest REQUIRED)
