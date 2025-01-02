@@ -1,5 +1,5 @@
 {
-  "image": "benniwi/learn2code:22.04_lecture",
+  "image": "benniwi/learn2code:24.04_lecture",
 
   // Configure tool-specific properties.
 	"customizations": {

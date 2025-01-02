@@ -26,12 +26,12 @@ jobs:
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     steps:
       - name: Install latest nodejs
         run: | 
             sudo apt install -y curl
-            curl -sL https://deb.nodesource.com/setup_18.x | sudo -E bash -
+            curl -sL https://deb.nodesource.com/setup_22.x | sudo -E bash -
             sudo apt-get update
             sudo apt-get install -y nodejs
     

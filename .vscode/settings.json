@@ -1,5 +1,5 @@
 {
-    "markdown.marp.enableHtml": true,
+    "markdown.marp.html": "all",
 
     "markdown.extension.toc.levels": "1..1",
     "markdown.extension.toc.updateOnSave": false,
@@ -15,9 +15,9 @@
     "cmake.options.statusBarVisibility": "compact",
     "cmake.buildDirectory": "${workspaceFolder}/build",
 
-    "clang-format.executable": "clang-format-16",
+    "clang-format.executable": "clang-format-18",
 
-    "clang-tidy.executable": "clang-tidy-16",
+    "clang-tidy.executable": "clang-tidy-18",
     "clang-tidy.fixOnSave": true,
     "clang-tidy.lintOnSave": false,
     "clang-tidy.buildPath": "build",
