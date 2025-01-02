@@ -1,5 +1,8 @@
-#define CVPLOT_HEADER_ONLY
+#define CVPLOT_HEADER_ONLY   // necessary to use CvPlot as a pure template library
+#pragma GCC diagnostic push  // disable gcc warnings for cvplot
+#pragma GCC diagnostic ignored "-Wcatch-value"
 #include <CvPlot/cvplot.h>
+#pragma GCC diagnostic pop
 #include <rapidcsv.h>
 
 #include <armadillo>

@@ -1,5 +1,5 @@
 # specify some details about the image to use
-image: benniwi/learn2code:lecture
+image: benniwi/learn2code:24.04_lecture
 
 vscode:
   extensions:
