@@ -2,7 +2,6 @@
     "recommendations": [
         "donjayamanne.githistory",
         "ms-python.python",
-        "twxs.cmake",
         "mhutchie.git-graph",
         "ms-vscode.cpptools-themes",
         "cs128.cs128-clang-tidy",
