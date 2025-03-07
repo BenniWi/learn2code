@@ -39,7 +39,7 @@ jobs:
         run: sudo npm install -g @marp-team/marp-cli  
       
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
       - name: Create a temporary folder
         working-directory: ${{github.workspace}}
         run: mkdir deploy
@@ -57,14 +57,14 @@ jobs:
           echo "<a href="part1.html">Part I</a><br>" > index.html
           echo "<a href="part2.html">Part II</a>" >> index.html
       - name: Setup Pages
-        uses: actions/configure-pages@v3
+        uses: actions/configure-pages@v5
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v1
+        uses: actions/upload-pages-artifact@v3
         with:
           # Upload entire repository
           path: '${{github.workspace}}/deploy'
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v1
+        uses: actions/deploy-pages@v4
 
 
